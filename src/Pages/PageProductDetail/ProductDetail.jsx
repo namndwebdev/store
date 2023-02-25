@@ -23,8 +23,6 @@ const items = [
   },
 ];
 export default function ProductDetail() {
-  console.log("check mound");
-
   return (
     <>
       <div className="detail">
