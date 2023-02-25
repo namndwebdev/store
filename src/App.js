@@ -1,25 +1,81 @@
 import logo from './logo.svg';
 import './App.css';
+import ProductList from './Components/ProductList/ProductList';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [data, setData] = useState([
+    {
+        title: 'May tinh thu nhat 1',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 2',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 1',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 1',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 2',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 1',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 1',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 2',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+    {
+        title: 'May tinh thu nhat 1',
+        beforeDiscount: '18.000.000d',
+        afterDiscount: '16.000.000d',
+        percentDiscount: '3%',
+        thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
+    },
+]);
+
+return (
+    <>
+        <ProductList data={data} title="text- 1"></ProductList>
+        <ProductList data={data} title="text -2"></ProductList>
+    </>
+);
 }
 
 export default App;
