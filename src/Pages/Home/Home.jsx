@@ -1,5 +1,6 @@
 import ProductList from '../../Components/ProductList/ProductList';
 import { useState } from 'react';
+import MegaMenu from '../Menu/MegaMenu';
 
 export default function Home() {
   const [data, setData] = useState([
@@ -70,6 +71,7 @@ export default function Home() {
 
 return (
     <>
+        <MegaMenu />
         <ProductList data={data} title="text- 1"></ProductList>
         <ProductList data={data} title="text -2"></ProductList>
     </>
