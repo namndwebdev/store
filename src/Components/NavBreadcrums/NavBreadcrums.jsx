@@ -1,18 +1,30 @@
-import React from 'react'
-import { Breadcrumb } from 'antd';
-import "./NavBreadcrums.css"
+import React from "react";
+import "./NavBreadcrums.css";
+import { useLocation, Link } from "react-router-dom";
+import Home from "../../Pages/Home/Home";
 
-export default function NavBreadcrums() {
-  return <>
-        <Breadcrumb separator="" className='Title_breadcrums'>
-    <Breadcrumb.Item >Bạn đang ở</Breadcrumb.Item>
-    <Breadcrumb.Separator>:</Breadcrumb.Separator>
-    <Breadcrumb.Item href=""> Trang chủ</Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item href=""> Apple </Breadcrumb.Item>
-    <Breadcrumb.Separator />
-    <Breadcrumb.Item>MacBook Pro 13 M1 8GB 256GB - Grey</Breadcrumb.Item>
-  </Breadcrumb>
-    </>
+export default function Breadcrumbs() {
+  const location = useLocation();
+
+  let currentLink = "";
+
+  const crumbs = location.pathname
   
+    .split("/")
+    .filter((crumb) => crumb !== "")
+    .map((crumb) => {
+      currentLink += `/${crumb}`;
+
+      return (
+        <div className="crumb" key={crumb}>
+          <Link to={currentLink}>{crumb}</Link>
+        </div>
+      );
+    });
+
+  return <div className="breadcrumbs">
+    <span>Bạn đang ở:</span>
+    <Link to={"/"}>Trang chủ </Link>
+    {crumbs}
+    </div>;
 }
