@@ -3,6 +3,7 @@ import { Divider, Typography, Button, Tabs, Col, Row } from "antd";
 import InforProduct from "./ProductDetail_infor";
 import { React } from "react";
 import CarouselGlobal from "../../Components/ProductDetail/CarouselGlobal";
+import NavBreadcrums from "../../Components/NavBreadcrums/NavBreadcrums";
 
 const { Text } = Typography;
 const items = [
@@ -25,6 +26,7 @@ const items = [
 export default function ProductDetail() {
   return (
     <>
+    <NavBreadcrums/>
       <div className="detail">
         {/* DETAIL TOP */}
         <div className="detail_top" style={{ margin: "5px" }}>

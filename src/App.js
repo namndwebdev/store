@@ -3,11 +3,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import ProductDetail from "./Pages/PageProductDetail/ProductDetail";
 import Home from "./Pages/Home/Home";
+import NavBreadcrums from "./Components/NavBreadcrums/NavBreadcrums";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>

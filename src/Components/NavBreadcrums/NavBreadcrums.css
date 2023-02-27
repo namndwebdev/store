@@ -1,0 +1,9 @@
+.Title_breadcrums{
+    background-color: rgba(128, 128, 128, 0.197);
+    margin: 20px 100px 20px 100px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.Title_breadcrums a :hover{
+    color: #f45b4f;
+}
