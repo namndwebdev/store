@@ -3,6 +3,7 @@ import { useState } from 'react';
 import MegaMenu from '../Menu/MegaMenu';
 
 export default function Home() {
+    const [page, setPage] = useState(1);
   const [data, setData] = useState([
     {
         title: 'May tinh thu nhat 1',
@@ -69,11 +70,16 @@ export default function Home() {
     },
 ]);
 
+console.log("check -rerender")
+
 return (
+
+    
+    
     <>
         <MegaMenu />
-        <ProductList data={data} title="text- 1"></ProductList>
-        <ProductList data={data} title="text -2"></ProductList>
+        <ProductList setPage={setPage} currentPage={page} data={data} title="PC GEARVN - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC"></ProductList>
+        <ProductList setPage={setPage} currentPage={page} data={data} title="PC GEARVN - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC"></ProductList>
     </>
 );
 }

@@ -31,6 +31,14 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.product .thumbnail-product{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 0 !important;
+}
+
 .ant-card-cover {
     max-height: 240px;
     position: relative;
@@ -41,16 +49,55 @@
 }
 .cart-wp {
     width: 20% !important;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
+.card-wp-parents .pagination{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.banner .banner-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    align-items: center;
 
+}
+.banner .banner-item h2{
+    font-size: 22px;
+    font-weight: 500;
+   
+}
+.banner-item a{
+    text-decoration: none !important;
+    color: white !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding-right: 10px;
+}
+.banner-item span{
+    font-size:14px ;
+}
 .custom-antd {
-    padding: 0 12px;
     width: 90%;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 0;
 }
+
+.wp-thumbnail-image-product{
+    width: 230px !important;
+    height: 230px !important;
+    position: relative;
+}
+
+.custom-antd .ant-card-cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-title h2 {
     margin: 0;
     padding: 0;
@@ -59,9 +106,9 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
     color: #323332;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    height: 45px;
+    height: 35px;
     margin-bottom: 10px;
 }
 
@@ -76,13 +123,13 @@
 .card-price .oldprice {
     color: rgb(136, 136, 136);
     text-decoration: line-through;
-    font-size: 13px;
+    font-size: 14px;
 }
 .card-price .saleprice {
     color: red;
     font-weight: 750;
     /* font-size: 20px; */
-    font-size: 18px;
+    font-size: 20px;
 }
 .card-price p {
     padding: 0;
@@ -111,10 +158,22 @@
     font-size: 12px;
     justify-content: center;
     transition: all linear 0.3s;
-    bottom: -50px;
+    bottom: -60px;
+    padding: 10px 0;
 }
+
+.order-btn p{
+    font-style: italic;
+    font-weight: 500;
+    
+}
+
+.order-btn *{
+    font-size: 13px;
+}
+
 .order-btn .ant-btn {
-    /* background: none repeat scroll 0 0 rgba(121, 117, 101, 0.8); */
+    background: none repeat scroll 0 0 rgba(121, 117, 101, 0.8);
     background: #252525;
 }
 
