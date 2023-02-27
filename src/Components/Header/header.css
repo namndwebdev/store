@@ -1,0 +1,152 @@
+
+.header {
+  
+    background-color: #f1f0f1;
+    padding: 4px 0 ;
+}
+
+.header .header-item{
+    display: flex;
+    margin: 20px 153px 0 153px;
+}
+
+.header .right-header{
+    flex: 1;
+    cursor: pointer;
+}
+
+.header .right-header__line1{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.header .right-header__line1 span{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header .right-header__line2{
+    display: flex;
+    flex: 1;  
+    gap: 10px;  
+    padding: 10px 0;
+}
+
+.header .span-left{
+    position: relative;
+}
+
+.header .span-left::after{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: red;
+}
+
+.header .right-header__line2 span{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header .left-header {
+    width: 170px;
+    height: 52.05px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.header .searchbox-header {
+    width: 554px;
+    height: 30px;
+    /* overflow: hidden; */
+	position: relative;
+    outline: none;
+}
+
+.header .button-header {
+    position: absolute;
+	top: 0;
+	right: 0;
+	height: 32px;
+	width: 32px;
+    line-height: 32px;
+	outline: none;
+	cursor: pointer;
+    color: white;
+    background-color: #ea1c00;
+    border: 1px solid #ea1c00;
+    overflow: hidden;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .input-header {
+    width: 100%;
+    height: 32px;
+    background-color: white;
+    padding: 0;margin: 0;border: 1px solid  #ccc;
+    outline: none;
+    padding: 5px 15px 5px 15px;
+    border-radius: 20px;
+}
+
+
+
+.between-line {
+    display: block;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.sub-header{
+    display: flex;
+    margin: 10px 153px 0 153px;
+    flex: 1;
+}
+
+.sub-header .header-a__color {
+    color: #505050;
+    border: 1px solid #505050;
+    text-decoration: none;
+    margin-left: 7px;
+    padding: 7px;
+    font-weight: 500;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+
+.sub-header a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    margin-left: 7px;
+    flex: 1;
+}
+
+.sub-header a:hover {
+    background-color: #ea1c00;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.sub-header .sub-header__menu{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid ;
+    border-radius: 4px;
+    background-color: #505050;
+    color: white;
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+  
+  
