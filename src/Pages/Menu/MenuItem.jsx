@@ -44,42 +44,42 @@ const data_menu_item_configuration = [
 ]
 const MenuItem = (props) => {
     return (
-        <div className='wrap-menu-item'>
+        <div className='wrap-megamenu-item'>
             {
                 props.typedata === 'lap_top' && (
                     <>
                         <div>
-                            <p className='title-menu-item'>Thương hiệu</p>
+                            <p className='title-megamenu-item'>Thương hiệu</p>
                             <ul>
                                 {
                                     data_menu_item_brand.map((item)=>(
-                                        <li className='item-menu-laptop'>{item.title}</li>
+                                        <li className='item-megamenu-laptop'>{item.title}</li>
                                     ))
                                 }
                             </ul>
                         </div>
                         <div>
-                            <p className='title-menu-item'>Laptop theo giá</p>
+                            <p className='title-megamenu-item'>Laptop theo giá</p>
                             <ul>
                             {
                                     data_menu_item_price.map((item)=>(
-                                        <li className='item-menu-laptop'>{item.title}</li>
+                                        <li className='item-megamenu-laptop'>{item.title}</li>
                                     ))
                                 }
                             </ul>
                         </div>
                         <div>
-                            <p className='title-menu-item'>Cấu Hình</p>
+                            <p className='title-megamenu-item'>Cấu Hình</p>
                             <ul>
                             {
                                     data_menu_item_configuration.map((item)=>(
-                                        <li className='item-menu-laptop'>{item.title}</li>
+                                        <li className='item-megamenu-laptop'>{item.title}</li>
                                     ))
                                 }
                             </ul>
                         </div>
                         <div>
-                            <img className='img-laptop-menu' src="https://via.placeholder.com/50x50/FF0000/FFFFFF"></img>
+                            <img className='img-laptop-megamenu' src="https://via.placeholder.com/50x50/FF0000/FFFFFF"></img>
                         </div>
                         </>
                 )
@@ -88,37 +88,37 @@ const MenuItem = (props) => {
                 props.typedata === 'lap_top_gaming' && (
                     <>
                         <div>
-                            <p className='title-menu-item'>Thương hiệu Gaming</p>
+                            <p className='title-megamenu-item'>Thương hiệu Gaming</p>
                             <ul>
                             {
                                     data_menu_item_brand.map((item)=>(
-                                        <li className='item-menu-laptop'>{item.title}</li>
+                                        <li className='item-megamenu-laptop'>{item.title}</li>
                                     ))
                                 }
                             </ul>
                         </div>
                         <div>
-                            <p className='title-menu-item'>Laptop theo giá</p>
+                            <p className='title-megamenu-item'>Laptop theo giá</p>
                             <ul>
                             {
                                     data_menu_item_price.map((item)=>(
-                                        <li className='item-menu-laptop'>{item.title}</li>
+                                        <li className='item-megamenu-laptop'>{item.title}</li>
                                     ))
                                 }
                             </ul>
                         </div>
                         <div>
-                            <p className='title-menu-item'>Cấu Hình</p>
+                            <p className='title-megamenu-item'>Cấu Hình</p>
                             <ul>
                             {
                                     data_menu_item_configuration.map((item)=>(
-                                        <li className='item-menu-laptop'>{item.title}</li>
+                                        <li className='item-megamenu-laptop'>{item.title}</li>
                                     ))
                                 }
                             </ul>
                         </div>
                         <div>
-                            <img className='img-laptop-menu' src="https://via.placeholder.com/50x50/FF0000/FFFFFF"></img>
+                            <img className='img-laptop-megamenu' src="https://via.placeholder.com/50x50/FF0000/FFFFFF"></img>
                         </div>
                     </>
                 )

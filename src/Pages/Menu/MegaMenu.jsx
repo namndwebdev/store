@@ -64,11 +64,11 @@ export default function MegaMenu() {
     }
 
     return <>
-    <div className="wrap-list-menu">
+    <div className="wrap-list-megamenu">
     <ul  onMouseLeave={()=>setIsShowMenuItem(false)}>
         {
             data_menu.map((item) => (
-                <li className="item-menu"
+                <li className="item-megamenu"
                     key={item.id}
                     onMouseEnter={() => handleWhenHover(item.id)}
                 >
