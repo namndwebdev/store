@@ -1,45 +1,28 @@
-.Title_breadcrums{
-    background-color: rgba(128, 128, 128, 0.197);
-    margin: 20px 100px 20px 100px;
-    
-    
-}
-.Title_breadcrums a :hover{
-    color: #f45b4f;
-}
-
 .breadcrumbs {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 10px 10px;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    
-  }
-  .breadcrumbs > *{
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: none;
-    
-  }
-  .breadcrumbs .crumb , a:hover{
-    color: #f45b4f;
-  }
-
-  .breadcrumbs .crumb:before {
-    content: '>';
-    margin-right: 5px;
-  }
-  .breadcrumbs .crumb:last-child:after {
-    display: none;
-  }
-  .breadcrumbs .crumb a  {
-    color:#6abae7;
-    text-decoration: none !important;
-  }
-  .breadcrumbs :nth-child(2){
-    color:#6abae7;
-  }
-  .breadcrumbs :last-child a  {
-    color:black;
-  }
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+.breadcrumbs > * {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  color: #f45b4f;
+}
+.breadcrumbs a:hover {
+  color: #f45b4f;
+}
+.breadcrumbs a:last-child:after {
+  display: none;
+}
+.breadcrumbs a {
+  color: #6abae7;
+  text-decoration: none !important;
+}
+.breadcrumbs :last-child a {
+  color: black;
+}
