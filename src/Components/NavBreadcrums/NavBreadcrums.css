@@ -13,11 +13,9 @@
 .breadcrumbs a:hover {
   color: #f45b4f;
 }
-.breadcrumbs a:hover {
-  color: #f45b4f;
-}
 .breadcrumbs a:last-child:after {
   display: none;
+  
 }
 .breadcrumbs a {
   color: #6abae7;

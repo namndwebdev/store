@@ -35,7 +35,7 @@ export default function Breadcrumbs({}) {
         data.length > 0 &&
         data.map((item, index) => (
           // <BreadcrumbItem icon={item.icon} to={item.to}>{item.title}</BreadcrumbItem>
-          <Link to={item.to}>{item.icon} {item.title} </Link>
+          <Link to={item.to} key={item.title}>{item.icon} {item.title} </Link>
         ))}
     </div>
   );

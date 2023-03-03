@@ -1,31 +1,44 @@
 import "./ProductDetail.css";
 import { Divider, Typography, Button, Tabs, Col, Row } from "antd";
 import InforProduct from "./ProductDetail_infor";
-import { React } from "react";
+import { React,useEffect, useState  } from "react";
 import CarouselGlobal from "../../Components/ProductDetail/CarouselGlobal";
 import NavBreadcrums from "../../Components/NavBreadcrums/NavBreadcrums";
-
+import { useParams} from 'react-router-dom'
 const { Text } = Typography;
-const items = [
-  {
-    key: "1",
-    label: `Mô tả sản phẩm`,
-    children: <InforProduct />,
-  },
-  {
-    key: "2",
-    label: `Đặc điểm nổi bật`,
-    children: `Táo xịn`,
-  },
-  {
-    key: "3",
-    label: `Thông tin bảo hành`,
-    children: `Bảo hành trọn đời`,
-  },
-];
+
 export default function ProductDetail() {
+  let {id} = useParams()
+  let [product,setProduct]=useState([])
+  let [imageList,setImageList]=useState([])
+  const items = [
+    {
+      key: "1",
+      label: `Mô tả sản phẩm`,
+      children: <InforProduct description={product.description}/>,
+    },
+    {
+      key: "2",
+      label: `Đặc điểm nổi bật`,
+      children: `Táo xịn`,
+    },
+    {
+      key: "3",
+      label: `Thông tin bảo hành`,
+      children: `Bảo hành trọn đời`,
+    },
+  ];
+  useEffect(()=>{
+      fetch(`https://backoffice.nodemy.vn/api/products/${id}?populate=*`)
+      .then(res => res.json())
+      .then(data =>{             
+              setProduct(data.data.attributes)
+              const imageCarousel = data.data.attributes.image.data.map(x=>({image:x.attributes.url}))
+              setImageList(imageCarousel)
+          })
+  }, [])
   return (
-    <>
+    <> 
     <NavBreadcrums/>
       <div className="detail">
         {/* DETAIL TOP */}
@@ -41,13 +54,14 @@ export default function ProductDetail() {
                   backgroundColor: "white",
                 }}
               >
-                <CarouselGlobal hasImage={true}></CarouselGlobal>
+                <CarouselGlobal hasImage={true} data={imageList} ></CarouselGlobal>
+              
               </div>
             </Col>
             <Col span={12}>
               <div className="detail_top_left">
                 <Typography.Title level={2}>
-                  MacBook Pro 13 M1 8GB 256GB - Grey
+                {product.name}  
                 </Typography.Title>
                 <p> Hãng sản xuất : APPLE </p>
                 <p> Bảo hành : 12 tháng </p>
@@ -55,7 +69,7 @@ export default function ProductDetail() {
                 <Divider />
                 <Typography.Title level={2} type="danger" underline>
                   <span className="Discount">
-                    Ưu đãi đặc biệt khi mua kèm MACBOOK:
+                    Ưu đãi đặc biệt khi mua kèm {product.name}:
                   </span>
                 </Typography.Title>
                 <li>
@@ -70,14 +84,14 @@ export default function ProductDetail() {
                 <p>
                   <span>Giá Cũ : </span>
                   <span>
-                    <Text delete>34,990,000₫</Text>
+                    <Text delete>{product.oldPrice}₫</Text>
                   </span>
                 </p>
                 <p>
                   <span>Giá KM : </span>
                   <span>
                     <Text strong type="danger">
-                      30,590,000₫
+                      ₫
                     </Text>
                   </span>
                 </p>
@@ -98,6 +112,7 @@ export default function ProductDetail() {
           ></Tabs>
         </div>
       </div>
+
     </>
   );
 }
