@@ -1,7 +1,51 @@
 import React from "react";
+import { useState } from "react";
+import { ArrowRightOutlined } from "@ant-design/icons";
 import { Row, Col, Form, Input, Select, Button } from "antd";
-import './Checkout.css'
+import "./Checkout.css";
+import dataProvince from "../Checkout/Data/province.json";
+import dataDistrict from "../Checkout/Data/districts.json";
+import dataWrad from "../Checkout/Data/wards.json";
 export default function Checkout() {
+  const [loadings, setLoadings] = useState([]);
+  const [province, setProvince] = useState([]);
+  const [district, setDistrict] = useState('Chọn Quận / Huyện');
+  const [ward, setWard] = useState('Chọn Phường / Xã');
+  const enterLoading = (index) => {
+    setLoadings((prevLoadings) => {
+      const newLoadings = [...prevLoadings];
+      newLoadings[index] = true;
+      return newLoadings;
+    });
+    setTimeout(() => {
+      setLoadings((prevLoadings) => {
+        const newLoadings = [...prevLoadings];
+        newLoadings[index] = false;
+        return newLoadings;
+      });
+    }, 6000);
+  };
+  const provinceOrigin = dataProvince.map((item) => {
+    return { label: item.name, value: item.code };
+  });
+
+  const getDistrictsOfProvince = (CityCode) => {
+        let data = dataDistrict.filter((item) => {
+        return item.parentCode  == CityCode
+    })
+    return data.map((item) => {
+        return { label: item.name, value: item.code , parentCode:item.parentCode}
+    })
+  }
+
+  const getWardOfDistrict = (CityCode) => {
+    let data = dataWrad.filter((item) => {
+    return item.parentCode  == CityCode
+})
+return data.map((item) => {
+    return { label: item.name, value: item.code , parentCode:item.parentCode}
+})
+}
   return (
     <div className="Checkout-container">
       <Row>
@@ -14,7 +58,7 @@ export default function Checkout() {
             <li>></li>
             <li>Thông tin giao hàng</li>
           </ul>
-          <h2>Thông tin giao hàng</h2>
+          <p>Thông tin giao hàng</p>
           <p>Bạn đã có tài khoản?</p>
           <a>Đăng nhập</a>
           <Form>
@@ -81,38 +125,35 @@ export default function Checkout() {
                 <Form.Item>
                   <Select
                     defaultValue="Chọn tỉnh / thành"
-                    options={[
-                      {
-                        value: "lucy",
-                        label: "Lucy",
-                      },
-                    ]}
+                    options={provinceOrigin}
+                    onChange={(value) => {
+                      setProvince(value);
+                      setDistrict('Chọn Quận / Huyện')
+                      setWard('Chọn Phường / Xã')
+                    }}
+                        />
+                </Form.Item>
+              </Col>
+              <Col span={8}>
+                <Form.Item>
+                  <Select
+                    value={district}
+                    options={getDistrictsOfProvince(province)}
+                    onChange={(value) => {
+                        setDistrict(value)
+                        setWard('Chọn Phường / Xã')
+                    }}
                   />
                 </Form.Item>
               </Col>
               <Col span={8}>
                 <Form.Item>
                   <Select
-                    defaultValue="Chọn quận / huyện"
-                    options={[
-                      {
-                        value: "lucy",
-                        label: "Lucy",
-                      },
-                    ]}
-                  />
-                </Form.Item>
-              </Col>
-              <Col span={8}>
-                <Form.Item>
-                  <Select
-                    defaultValue="Chọn phường / xã "
-                    options={[
-                      {
-                        value: "lucy",
-                        label: "Lucy",
-                      },
-                    ]}
+                    value={ward}
+                    options={getWardOfDistrict(district)}
+                    onChange={(value) => {
+                        setWard(value)
+                    }}
                   />
                 </Form.Item>
               </Col>
@@ -153,24 +194,34 @@ export default function Checkout() {
               <p>Giá tiền</p>
             </Col>
           </Row>
+          <div className="separate"></div>
           <Row>
             <Col span={18}>
-                <Input placeholder="Mã giảm giá"></Input>
+              <Input placeholder="Mã giảm giá"></Input>
             </Col>
-            <Col span={6}>
-                <Button> Sử dụng</Button>
+            <Col span={6} style={{ display: "flex", justifyContent: "right" }}>
+              <Button
+                type="primary"
+                icon={<ArrowRightOutlined />}
+                loading={loadings[1]}
+                onClick={() => enterLoading(1)}
+              >
+                Sử dụng
+              </Button>
             </Col>
           </Row>
+          <div className="separate"></div>
           <div className="check-total">
-        <div className="check-total__item">
-            <p>Tạm Tính</p>
-            <p>Phí vận chuyển</p>
-        </div>
-        <div className="check-total__item">
-            <p>Giá</p>
-            <p>?</p>
-        </div>
+            <div className="check-total__item">
+              <p>Tạm Tính</p>
+              <p>Phí vận chuyển</p>
+            </div>
+            <div className="check-total__item">
+              <p>Giá</p>
+              <p>?</p>
+            </div>
           </div>
+          <div className="separate"></div>
           <div className="total">
             <p>Tổng cộng</p>
             <p>???????????</p>
