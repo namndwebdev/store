@@ -52,9 +52,9 @@ export default function CarouselGlobal({ hasImage = true, data, ...props }) {
       ) : (
         <Carousel
           data={dataImg}
-          time={900}
+          time={2000}
           width="850px"
-          height="500px"
+          height="350px"
           captionStyle={captionStyle}
           radius="10px"
           captionPosition="bottom"
