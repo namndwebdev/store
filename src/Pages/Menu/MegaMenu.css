@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&family=Mynerve&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
+:root{
+  --item-megamenu-h: 34px;
+  --p-color:  #ea1c04;
+}
+
 *{
   padding: 0 ;
   margin: 0;
   box-sizing: border-box;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family:"Segoe UI", Helvetica, Arial, sans-serif;
  
 }
 
 .wrap-list-megamenu {
+  padding-top: 10px;
   width: 180px;
   height: 550px;
   margin-left: 10px auto ;
@@ -20,20 +26,56 @@
   position: relative;
   padding-left: 35px;
   background-color:#fff;
+  margin-left: 10px;
   
 }
 
   .wrap-list-megamenu li {
   list-style: none;
   font-weight: 500;
-  font-size: 13px;
-  padding: 10px;
+  font-size: 14px;
+  padding-left: 10px;
+  height: var(--item-megamenu-h);
+  line-height: var(--item-megamenu-h);
   cursor: pointer;
-  transition: all 0.2s;
-  line-height: 36px;
-  background-color:#fff;
+  z-index: 1000;
+  background-color: white;
+  color: #505050;
+  
 
 }
+
+.item-megamenu:hover {
+  opacity: .7;
+  background-color: var(--p-color);
+  color: white;
+}
+
+.hovermegamenu{
+  position: relative;
+}
+
+.hovermegamenu::before {
+  right: 0;
+  top: 0;
+  border-top: calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  border-left: calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  border-bottom: calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  border-right:  calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  z-index: 100;
+  position: absolute;
+  margin: auto;
+  content: "";
+  transform: translateX(100%);
+}
+
+.hovermegamenu:hover::before{
+  border-left: calc(var(--item-megamenu-h) * 0.5) solid var(--p-color);
+}
+.MenuItem-Megamenu {
+  padding-top: 30px;
+}
+
 .item-megamenu-laptop {
   color: #666;
   list-style: none;
@@ -48,18 +90,13 @@
   color: rgb(160, 35, 35);
 }
 
-.item-megamenu:hover {
-  opacity: .7;
-  background-color:#ea1c04;
-  transform: scale(1.1);
-
-}
 
 .wrap-megamenu-item {
+  padding-top: 15px;
   position: absolute;
-  top: 0;
-  left: 185px;
-  width: 1163px;
+  top: 10px;
+  left: 190px;
+  width: 1135px;
   height: 550px;
   background-color:white;
   display: flex;
@@ -67,8 +104,9 @@
   border-radius: 8px;
   align-items: baseline;
   
-  
 }
+
+
 .title-megamenu-item {
   list-style: none;
   font-weight: 500;
