@@ -6,6 +6,8 @@ export default function MegaMenu() {
     const [dataMega, SetDataMega] = useState([])
     const [isShowMenuItem, setIsShowMenuItem] = useState(false)
     const [typedata, setTypeData] = useState(null)
+    const [idactive,SetIdActive] = useState(null)
+    
 
     useEffect(() => {
         fetch('https://backoffice.nodemy.vn/api/categories')
@@ -18,6 +20,7 @@ export default function MegaMenu() {
    const handleWhenHover = (id) => {
         setIsShowMenuItem(true)
         setTypeData(id)
+        SetIdActive(id)
     }
 
     return <>
@@ -25,9 +28,11 @@ export default function MegaMenu() {
             <ul onMouseLeave={() => setIsShowMenuItem(false)}>
                 {
                     dataMega.map((item) => (
-                        <li className="item-megamenu"
+                        <li
+                            className="item-megamenu hovermegamenu"
                             key={item.id}
-                            onMouseEnter={() => handleWhenHover(item.id)}
+                            onMouseEnter={() =>handleWhenHover(item.id)}
+                            onMouseLeave={()=>{SetIdActive(null)}}
                         >
                             {item.attributes.name}
                         </li>

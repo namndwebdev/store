@@ -19,9 +19,9 @@ export default function ContentMenu (){
                         <CarouselHome />
                     </div>
                 </Col>
-                <Col span={8}>
+                <Col  span={8}>
                     {RightImg.map((item)=>{
-                        return <img src ={item}></img>
+                        return <img  style={{paddingTop:'10px'}} src ={item}></img>
                     })}
                     </Col>
             </Row>
@@ -30,7 +30,7 @@ export default function ContentMenu (){
             <Row>
             {UnderImg.map((item)=>{
               return (<Col span={8}>
-             <img src={item}></img>
+             <img style={{paddingTop:'10px'}} src={item}></img>
            </Col>)
                  })}
             </Row>

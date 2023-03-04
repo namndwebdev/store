@@ -5,11 +5,11 @@ import FooterMenu from './FooterMenu';
 const { Header, Footer, Sider, Content } = Layout;
 
 const contentStyle = {
-  backgroundColor: 'white',
+  backgroundColor: '#f8f8f8',
 };
 const siderStyle = {
   zIndex:"10",
-  backgroundColor: "white",
+  backgroundColor: "#f8f8f8",
 };
 const footerStyle = {
   backgroundColor: 'white',
