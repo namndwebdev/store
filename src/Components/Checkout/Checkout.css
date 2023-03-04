@@ -1,0 +1,47 @@
+.Checkout-container {
+  width: 60%;
+  margin: 0 auto;
+}
+.Checkout-container .Checkout-right {
+  padding: 56px 5% 0 44px;
+}
+.Checkout-container .Checkout-right .separate {
+  margin: 20px 0;
+  height: 1px;
+  width: 100%;
+  width: 100%;
+  background-color: #e1e1e1;
+}
+.Checkout-container .Checkout-right .check-total {
+  display: flex;
+  justify-content: space-between;
+}
+.Checkout-container .Checkout-right .check-total p {
+  margin: 10px 0;
+}
+.Checkout-container .Checkout-right .total {
+  display: flex;
+  justify-content: space-between;
+}
+.Checkout-container .Checkout-left {
+  padding: 56px 66px 0 5%;
+}
+.Checkout-container .Checkout-left h1 {
+  font-size: 28px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.Checkout-container .Checkout-left ul {
+  padding: 10px 0;
+}
+.Checkout-container .Checkout-left ul li {
+  list-style-type: none;
+  display: inline;
+  font-size: 14px;
+}
+
+.Checkout-container .Checkout-left h2{
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
