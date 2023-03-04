@@ -1,5 +1,5 @@
 import React from "react";
-import CarouselGlobal from "./CarouselGlobal";
+import CarouselGlobal from "../ProductDetail/CarouselGlobal";
 import './CarouselHome.css'
 function CarouselHome() {
     const dataImage = [{
