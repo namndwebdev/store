@@ -76,7 +76,7 @@ const MenuItem = ({ typedata }) => {
                             </ul>
                         </div>
                         <div>
-                            <img className='img-laptop-megamenu' src="https://via.placeholder.com/50x50/FF0000/FFFFFF"></img>
+                            <img className='img-laptop-megamenu' src="https://via.placeholder.com/50x150/blue/FFFFFF"></img>
                         </div>
                     </>
                 )
@@ -115,7 +115,7 @@ const MenuItem = ({ typedata }) => {
                             </ul>
                         </div>
                         <div>
-                            <img className='img-laptop-megamenu' src="https://via.placeholder.com/50x50/FF0000/FFFFFF"></img>
+                            <img className='img-laptop-megamenu' src="https://via.placeholder.com/50x150/blue/FFFFFF"></img>
                         </div>
                     </>
                 )

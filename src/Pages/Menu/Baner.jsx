@@ -2,6 +2,7 @@ import { Layout, Space } from 'antd';
 import MegaMenu from './MegaMenu';
 import ContentMenu from './ContentMenu';
 import FooterMenu from './FooterMenu';
+
 const { Header, Footer, Sider, Content } = Layout;
 
 const contentStyle = {

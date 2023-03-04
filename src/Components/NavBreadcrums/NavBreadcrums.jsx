@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./NavBreadcrums.css";
 import { useLocation, Link } from "react-router-dom";
 import Home from "../../Pages/Home/Home";
 import BreadcrumbItem from "../Button/Button";
 import Icon, { RightOutlined } from '@ant-design/icons';
+import { useState } from "react";
 
 export default function Breadcrumbs({}) {
-  const location = useLocation();
+  const[dataBread, setDataBread] = useState([])
+  useEffect(()=>{
+    fetch(`https://backoffice.nodemy.vn/api/products/4?populate=*`)
+      .then(res => res.json())
+      .then(data =>{             
+         setDataBread(data.data.attributes)
+         console.log(data.data.attributes.name);
+         console.log(data.data.attributes.idBrand.data.attributes.name);
+             
+          })
+  },[])
+  // const location = useLocation();
   let data = [
     { title: "Trang chủ", to:"/", },
     { title: "Laptop Asus", to: "/",icon:<RightOutlined />  },
