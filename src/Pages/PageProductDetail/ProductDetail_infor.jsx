@@ -5,12 +5,12 @@ import MarkdownViewer from "./MarkdownViewer";
 import remarkGfm from "remark-gfm";
 import { Col, Row, Typography } from "antd";
 
-export default function ProductDetail_infor({description}) {
+export default function ProductDetail_infor({description,cpu,ram}) {
  
   let result2 = String(description)
   result2 = result2.replaceAll("](/uploads","](https://backoffice.nodemy.vn/uploads")
 console.log(result2)
-  
+
   return (
     <>
       {/* DETAIL TABLE */}
@@ -24,7 +24,7 @@ console.log(result2)
                 <u>CPU</u>
               </a>
             </td>
-            <td>{}</td>
+            <td>{cpu}</td>
           </tr>
           <tr>
             <td>
@@ -32,7 +32,7 @@ console.log(result2)
                 <u>RAM</u>
               </a>
             </td>
-            <td> 8GB</td>
+            <td> {ram}</td>
           </tr>
           <tr>
             <td>

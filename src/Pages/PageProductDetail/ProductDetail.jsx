@@ -15,7 +15,7 @@ export default function ProductDetail() {
     {
       key: "1",
       label: `Mô tả sản phẩm`,
-      children: <InforProduct description={product.description}/>,
+      children: <InforProduct description={product.description} cpu={product.cpu} ram={product.ram}/>,
     },
     {
       key: "2",
@@ -40,7 +40,7 @@ export default function ProductDetail() {
   return (
     <> 
     <NavBreadcrums/>
-      <div className="detail">
+      <div className="detail"  >
         {/* DETAIL TOP */}
         <div className="detail_top" style={{ margin: "5px" }}>
           <Row>
