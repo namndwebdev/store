@@ -9,8 +9,8 @@ import dataWrad from "../Checkout/Data/wards.json";
 export default function Checkout() {
   const [loadings, setLoadings] = useState([]);
   const [province, setProvince] = useState([]);
-  const [district, setDistrict] = useState('Chọn Quận / Huyện');
-  const [ward, setWard] = useState('Chọn Phường / Xã');
+  const [district, setDistrict] = useState("Chọn Quận / Huyện");
+  const [ward, setWard] = useState("Chọn Phường / Xã");
   const enterLoading = (index) => {
     setLoadings((prevLoadings) => {
       const newLoadings = [...prevLoadings];
@@ -30,26 +30,34 @@ export default function Checkout() {
   });
 
   const getDistrictsOfProvince = (CityCode) => {
-        let data = dataDistrict.filter((item) => {
-        return item.parentCode  == CityCode
-    })
+    let data = dataDistrict.filter((item) => {
+      return item.parentCode == CityCode;
+    });
     return data.map((item) => {
-        return { label: item.name, value: item.code , parentCode:item.parentCode}
-    })
-  }
+      return {
+        label: item.name,
+        value: item.code,
+        parentCode: item.parentCode,
+      };
+    });
+  };
 
   const getWardOfDistrict = (CityCode) => {
     let data = dataWrad.filter((item) => {
-    return item.parentCode  == CityCode
-})
-return data.map((item) => {
-    return { label: item.name, value: item.code , parentCode:item.parentCode}
-})
-}
+      return item.parentCode == CityCode;
+    });
+    return data.map((item) => {
+      return {
+        label: item.name,
+        value: item.code,
+        parentCode: item.parentCode,
+      };
+    });
+  };
   return (
     <div className="Checkout-container">
       <Row>
-        <Col span={12} className="Checkout-left">
+        <Col span={16} className="Checkout-left">
           <h1>GEARVN.COM</h1>
           <ul>
             <li>
@@ -59,12 +67,15 @@ return data.map((item) => {
             <li>Thông tin giao hàng</li>
           </ul>
           <p>Thông tin giao hàng</p>
-          <p>Bạn đã có tài khoản?</p>
-          <a>Đăng nhập</a>
+          <div className="checkout-login">
+            <p>Bạn đã có tài khoản?</p>
+            <a>Đăng nhập</a>
+          </div>
+
           <Form>
             <Form.Item
               name="username"
-              noStyle
+              style={{ marginBottom: "15px" }}
               rules={[
                 {
                   required: true,
@@ -98,6 +109,12 @@ return data.map((item) => {
                   name="phoneNumber"
                   rules={[
                     {
+                      pattern: new RegExp(
+                        /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/
+                      ),
+                      message: "Số điện thoại không hợp lệ",
+                    },
+                    {
                       required: true,
                       message: "Số điện thoại không được để trống",
                     },
@@ -128,10 +145,10 @@ return data.map((item) => {
                     options={provinceOrigin}
                     onChange={(value) => {
                       setProvince(value);
-                      setDistrict('Chọn Quận / Huyện')
-                      setWard('Chọn Phường / Xã')
+                      setDistrict("Chọn Quận / Huyện");
+                      setWard("Chọn Phường / Xã");
                     }}
-                        />
+                  />
                 </Form.Item>
               </Col>
               <Col span={8}>
@@ -140,8 +157,8 @@ return data.map((item) => {
                     value={district}
                     options={getDistrictsOfProvince(province)}
                     onChange={(value) => {
-                        setDistrict(value)
-                        setWard('Chọn Phường / Xã')
+                      setDistrict(value);
+                      setWard("Chọn Phường / Xã");
                     }}
                   />
                 </Form.Item>
@@ -152,38 +169,42 @@ return data.map((item) => {
                     value={ward}
                     options={getWardOfDistrict(district)}
                     onChange={(value) => {
-                        setWard(value)
+                      setWard(value);
                     }}
                   />
                 </Form.Item>
               </Col>
             </Row>
             <h2>Phương thức vận chuyển</h2>
-            <Input placeholder="Giao hàng tận nơi"></Input>
-            <h2>Phương thức thanh toán</h2>
+            <Input placeholder="Giao hàng tận nơi" disabled="true"></Input>
+            <h2 style={{marginTop:'10px', fontWeight:'bold'}}>Phương thức thanh toán</h2>
             <p>Thanh toán khi giao hàng (COD)</p>
             <p>
               Là phương thức khách hàng nhận hàng mới trả tiền. Áp dụng với tất
               cả các đơn hàng trên toàn quốc
             </p>
-            <Row>
+            <Row style={{ marginTop: "15px" }}>
               <Col span={12}>
                 <a>Giỏ hàng</a>
               </Col>
               <Col span={12}>
-                <Button type="primary" htmlType="submit">
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{ textAlign: "right", float: "right" }}
+                >
                   Hoàn tất đơn hàng
                 </Button>
               </Col>
             </Row>
           </Form>
         </Col>
-        <Col span={12} className="Checkout-right">
+        <Col span={8} className="Checkout-right">
           <Row>
             <Col span={8}>
               <img
                 src="https://toigingiuvedep.vn/wp-content/uploads/2022/03/hinh-nen-nguoi-nhen-chibi-cute-cho-dien-thoai.jpg"
-                style={{ width: "70px", height: "70px" }}
+                style={{ width: "70px", height: "70px", borderRadius: "8px" }}
                 alt="Sản phẩm"
               ></img>
             </Col>
@@ -196,10 +217,10 @@ return data.map((item) => {
           </Row>
           <div className="separate"></div>
           <Row>
-            <Col span={18}>
+            <Col span={12}>
               <Input placeholder="Mã giảm giá"></Input>
             </Col>
-            <Col span={6} style={{ display: "flex", justifyContent: "right" }}>
+            <Col span={12} style={{ display: "flex", justifyContent: "right" }}>
               <Button
                 type="primary"
                 icon={<ArrowRightOutlined />}
