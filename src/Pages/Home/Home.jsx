@@ -75,7 +75,6 @@ export default function Home() {
 return (
     <>
         <Header></Header>
-        <Breadcrumbs/>
         <Baner></Baner>
         <ProductList data={data} title="text- 1"></ProductList>
         <ProductList data={data} title="text -2"></ProductList>

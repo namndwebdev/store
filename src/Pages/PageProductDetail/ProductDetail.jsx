@@ -1,10 +1,10 @@
 import "./ProductDetail.css";
 import { Divider, Typography, Button, Tabs, Col, Row } from "antd";
-import InforProduct from "./ProductDetail_infor";
 import { React,useEffect, useState  } from "react";
 import CarouselGlobal from "../../Components/ProductDetail/CarouselGlobal";
 import NavBreadcrums from "../../Components/NavBreadcrums/NavBreadcrums";
 import { useParams} from 'react-router-dom'
+import ProductDetail_infor from "./ProductDetail_infor";
 const { Text } = Typography;
 
 export default function ProductDetail() {
@@ -15,7 +15,7 @@ export default function ProductDetail() {
     {
       key: "1",
       label: `Mô tả sản phẩm`,
-      children: <InforProduct description={product.description} cpu={product.cpu} ram={product.ram}/>,
+      children: <ProductDetail_infor description={product.description} cpu={product.cpu} ram={product.ram}/>,
     },
     {
       key: "2",
@@ -39,7 +39,8 @@ export default function ProductDetail() {
   }, [])
   return (
     <> 
-    <NavBreadcrums/>
+    {/* BreadCrumbs */}
+    <NavBreadcrums nameProduct={product.name} nameBrand={product.idBrand.data.attributes.name}/>
       <div className="detail"  >
         {/* DETAIL TOP */}
         <div className="detail_top" style={{ margin: "5px" }}>
@@ -54,8 +55,8 @@ export default function ProductDetail() {
                   backgroundColor: "white",
                 }}
               >
-                <CarouselGlobal hasImage={true} data={imageList} ></CarouselGlobal>
-              
+                {/* Carousel */}
+                <CarouselGlobal hasImage={true} data={imageList} ></CarouselGlobal>            
               </div>
             </Col>
             <Col span={12}>

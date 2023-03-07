@@ -4,6 +4,7 @@ import "./App.css";
 import ProductDetail from "./Pages/PageProductDetail/ProductDetail";
 import Home from "./Pages/Home/Home";
 import Checkout from "./Components/Checkout/Checkout";
+import Breadcrumbs from "./Components/NavBreadcrums/NavBreadcrums";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="checkout/" element={<Checkout></Checkout>} />
       </Routes>
+     
     </div>
   );
 }
