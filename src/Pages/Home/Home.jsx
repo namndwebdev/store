@@ -2,6 +2,9 @@ import ProductList from '../../Components/ProductList/ProductList';
 import { useState } from 'react';
 import MegaMenu from '../Menu/MegaMenu';
 import Header from '../../Components/Header/Header'
+import SubHeader from '../../Components/Header/SubHeader';
+import Breadcrumbs from '../../Components/NavBreadcrums/NavBreadcrums';
+import Baner from '../../Pages/Menu/Baner'
 
 export default function Home() {
   const [data, setData] = useState([
@@ -73,6 +76,9 @@ export default function Home() {
 return (
     <>
         <Header></Header>
+        <SubHeader></SubHeader>
+        <Breadcrumbs/>
+        <Baner></Baner>
         <MegaMenu />
         <ProductList data={data} title="text- 1"></ProductList>
         <ProductList data={data} title="text -2"></ProductList>
