@@ -5,6 +5,7 @@ import Header from '../../Components/Header/Header'
 import SubHeader from '../../Components/Header/SubHeader';
 import Breadcrumbs from '../../Components/NavBreadcrums/NavBreadcrums';
 import Baner from '../../Pages/Menu/Baner'
+import Footer from '../../Components/Footer/Footer'
 
 export default function Home() {
   const [data, setData] = useState([
@@ -82,6 +83,7 @@ return (
         <MegaMenu />
         <ProductList data={data} title="text- 1"></ProductList>
         <ProductList data={data} title="text -2"></ProductList>
+        <Footer></Footer>
     </>
 );
 }
