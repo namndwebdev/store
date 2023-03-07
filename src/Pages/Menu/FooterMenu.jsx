@@ -1,3 +1,4 @@
+import { useEffect,useState } from 'react';
 import { Col, Row } from 'antd';
 const imageFooter = [
     "https://via.placeholder.com/320x180/FF0000/FFFFFF",
@@ -7,11 +8,26 @@ const imageFooter = [
 ]
 
 export default function FooterMenu (){
+    const [bottomImg,SetBottomImg] = useState([])
+    useEffect(()=>{
+        const callAPI = () => {
+            fetch('https://backoffice.nodemy.vn/api/homepage?populate=*')
+            .then(res=>res.json())
+            .then((data)=>{
+               const arraybottom = data.data.attributes.bottomBanner.data.map((item)=>{
+                return item.attributes.url
+               })
+               SetBottomImg(arraybottom)
+            
+            })
+        }
+        callAPI()
+    },[])    
     return <>
     <Row>
-    {imageFooter.map((item)=>{
+    {bottomImg.map((item)=>{
         return (<Col style={{padding:"0px 5px"}}  span={6}>
-             <img style={{width:'100%',height:'100%', paddingRight:'5px'}} src={item}></img>
+             <img style={{objectFit:'contain',width:'100%',height:'100%', paddingRight:'5px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
         </Col>)
     })}
        
