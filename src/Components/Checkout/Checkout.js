@@ -63,7 +63,7 @@ export default function Checkout() {
             <li>
               <a>Giỏ hàng</a>
             </li>
-            <li>></li>
+            <li></li>
             <li>Thông tin giao hàng</li>
           </ul>
           <p>Thông tin giao hàng</p>
