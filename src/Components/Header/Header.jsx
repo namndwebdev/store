@@ -10,27 +10,27 @@ const Header = () => {
         <div className='header'>
          <div className='header-item'>
          <div className='left-header'>
-                <img src={''} alt="logo" />
+                <img src={'https://via.placeholder.com/170x52.05/green'} alt="logo" />
             </div>
             <div className='right-header'>
                 <div className='right-header__line1'>
                     <div className='searchbox-header'>
                         <input className='input-header' type="text" placeholder='Nhập mã sản phẩm hoặc tên sản phẩm' /> 
-                        <button className='button-header'><UilSearch style={{fontSize:'5px'}}></UilSearch></button>
+                        <button className='button-header'><UilSearch className='button-header__icon' style={{width:'17px',height:'17px', fontWeight:'700'}}></UilSearch></button>
                     </div>
-                    <span>
-                        <UilNotes></UilNotes>
+                    <span style={{ marginLeft:'15px' }}>
+                        <UilNotes style={{fontSize:'50px'}}></UilNotes>
                         <span style={{fontWeight:'700',fontSize:'11px'}}>ĐĂNG KÝ</span>
                     </span>
-                    <span>
+                    <span style={{ marginLeft:'28px' }}>
                         <UilUserCircle></UilUserCircle>
                         <span style={{fontWeight:'700',fontSize:'11px'}}>ĐĂNG NHẬP</span>
                     </span>
-                    <span>
+                    <span style={{ marginLeft:'28px' }}>
                         <UilTicket></UilTicket>
                         <span style={{fontWeight:'700',fontSize:'11px'}}>KHUYẾN MÃI</span>
                     </span>
-                    <span>
+                    <span style={{ marginLeft:'28px' }}>
                         <UilShoppingCart></UilShoppingCart>
                         <span style={{fontWeight:'700',fontSize:'11px'}}>GIỎ HÀNG</span>
                     </span>
@@ -48,7 +48,7 @@ const Header = () => {
                         <UilUser></UilUser>
                         <span>TUYỂN DỤNG</span>
                     </span>
-                    <span>
+                    <span className='span-left__last'>
                         <UilArchway></UilArchway>
                         <span>HỆ THỐNG SHOWROOM</span>
                     </span>
