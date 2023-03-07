@@ -36,6 +36,7 @@ const Header = () => {
                     </span>
                 </div>
                 <div className='right-header__line2'>
+                    <span className='span-left'></span>
                     <span className='span-left'>
                         <UilPhone></UilPhone>
                         <span>TỔNG ĐÀI</span>
