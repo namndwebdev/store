@@ -32,18 +32,22 @@ export default function ContentMenu (){
                         <CarouselHome />
                     </div>
                 </Col>
+                
                 <Col span={8} style={{width:"100%",height:"100%",paddingRight:"20px"}}>
                     {imgRight.map((item)=>{
-                        return <img  style={{objectFit:'cover',display:'block',width:'90%',height:'50%',paddingTop:'10px'}} src ={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                        return<>                
+                        <img  style={{objectFit:'cover',display:'block',width:'90%',height:'50%',paddingTop:'10px'}} src ={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>                      
+                        </>
                     })}
-                    </Col>
+                </Col>
+                   
             </Row>
         </div>
         <div className='MegaMenu-Image-SubItem'>
-            <Row style={{paddingRight:"10px"}}>
+            <Row justify="space-between">
             {imgSub.map((item)=>{
               return (<Col span={8} style={{width:"100%",padding:"0px 10px 0px 0px"}}>
-             <img style={{objectFit:'cover',display:'block',width:'93%',height:'100%',paddingTop:'10px',paddingLeft:'10px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+             <img style={{objectFit:'cover',display:'block',width:'100%',height:'100%',paddingTop:'10px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
            </Col>)
                  })}
             </Row>

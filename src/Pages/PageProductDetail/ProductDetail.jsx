@@ -92,7 +92,7 @@ export default function ProductDetail() {
                   <span>Giá KM : </span>
                   <span>
                     <Text strong type="danger">
-                      ₫
+                    {product.price}₫
                     </Text>
                   </span>
                 </p>
