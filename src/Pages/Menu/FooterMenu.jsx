@@ -10,7 +10,7 @@ export default function FooterMenu (){
     return <>
     <Row>
     {imageFooter.map((item)=>{
-        return (<Col  span={6}>
+        return (<Col style={{padding:"0px 5px"}}  span={6}>
              <img style={{width:'100%',height:'100%', paddingRight:'5px'}} src={item}></img>
         </Col>)
     })}

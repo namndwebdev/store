@@ -11,10 +11,13 @@ const contentStyle = {
 const siderStyle = {
   zIndex:"10",
   backgroundColor: "#f8f8f8",
+  padding:"10px",
+  marginRight:"3px"
 };
 const footerStyle = {
   backgroundColor: 'white',
-  paddingInline:'5px'
+  paddingInline:'5px',
+  padding:"10px 0px",
 };
 
 export default function Baner (){
@@ -26,7 +29,7 @@ export default function Baner (){
     size={[0, 48]}
            >
   <Layout>
-    <Layout>
+    <Layout style={{padding:'10px'}}>
       <Sider style={siderStyle}><MegaMenu></MegaMenu></Sider>
       <Content style={contentStyle}><ContentMenu></ContentMenu></Content>
     </Layout>

@@ -54,7 +54,7 @@ export default function CarouselGlobal({ hasImage = true, data, ...props }) {
           data={dataImg}
           time={2000}
           width="850px"
-          height="350px"
+          height="400px"
           captionStyle={captionStyle}
           radius="10px"
           captionPosition="bottom"
@@ -67,6 +67,7 @@ export default function CarouselGlobal({ hasImage = true, data, ...props }) {
           style={{
             width: "100%",
             margin: "10px auto",
+            height:"100%"
           }}
         />
       )}

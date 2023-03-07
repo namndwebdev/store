@@ -2,7 +2,7 @@ import ProductList from '../../Components/ProductList/ProductList';
 import { useState } from 'react';
 import MegaMenu from '../Menu/MegaMenu';
 import Header from '../../Components/Header/Header'
-import Breadcrumbs from '../../Components/NavBreadcrums/NavBreadcrums';
+
 import Baner from '../Menu/Baner'
 
 export default function Home() {
