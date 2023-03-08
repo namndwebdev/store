@@ -77,7 +77,7 @@ export default function Home() {
 return (
     <>
         <Header></Header>
-        <SubHeader></SubHeader>
+        {/* <SubHeader></SubHeader> */}
         <Breadcrumbs/>
         <Baner></Baner>
         <MegaMenu />
