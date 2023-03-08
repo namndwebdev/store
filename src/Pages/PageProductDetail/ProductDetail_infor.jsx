@@ -9,7 +9,7 @@ export default function ProductDetail_infor({description,cpu,ram}) {
  
   let result2 = String(description)
   result2 = result2.replaceAll("](/uploads","](https://backoffice.nodemy.vn/uploads")
-console.log(result2)
+
 
   return (
     <>

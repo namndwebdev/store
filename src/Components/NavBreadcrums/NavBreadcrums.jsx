@@ -49,7 +49,7 @@ export default function Breadcrumbs({nameProduct , nameBrand }) {
        <RightOutlined /> 
        <Link to="/" key={nameProduct}> {nameBrand} </Link> 
        <RightOutlined /> 
-       <span key={nameProduct}> {nameProduct} </span>      
+       <span key={nameBrand}> {nameProduct} </span>      
     </div>
   );
 }
