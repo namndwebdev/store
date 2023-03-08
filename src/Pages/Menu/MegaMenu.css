@@ -16,21 +16,19 @@
 
 .wrap-list-megamenu {
   padding-top: 10px;
-  width: 100%;
-  height: 100%;
-  margin-left: 10px auto ;
+  width: 180px;
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   border-radius: 5px;
   position: relative;
   padding-left: 35px;
-  background-color:#fff;
   margin-left: 10px;
   
 }
 
-  .wrap-list-megamenu li {
+  .wrap-list-megamenu .item-megamenu {
   list-style: none;
   font-weight: 500;
   font-size: 14px;
@@ -92,7 +90,7 @@
 
 
 .wrap-megamenu-item {
-  padding-top: 15px;
+  
   position: absolute;
   top: 10px;
   left: 190px;
@@ -102,7 +100,15 @@
   display: flex;
   justify-content:space-between; 
   border-radius: 8px;
-  align-items: baseline;
+  overflow: hidden;
+  
+  
+  
+}
+.wrap-megamenu-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 15px;
   
 }
 
@@ -119,11 +125,16 @@
 
 .img-laptop-megamenu {
   width: 200px;
-  height: 100%;
-  position: absolute;
   right: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   top:0;
+  height: 100%;
   
 }
 
+.img-laptop-megamenu img{
+  width: 100%;
+  height: 100%;
+  
+
+}

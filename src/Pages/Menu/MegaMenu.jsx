@@ -10,7 +10,7 @@ export default function MegaMenu() {
     
 
     useEffect(() => {
-        fetch('https://backoffice.nodemy.vn/api/categories')
+        fetch('https://backoffice.nodemy.vn/api/dropdown-tabs?populate[section][populate][0]=link')
             .then((res) => res.json())
             .then((data) => {
                 SetDataMega(data.data);
@@ -26,15 +26,15 @@ export default function MegaMenu() {
     return <>
         <div className="wrap-list-megamenu">
             <ul onMouseLeave={() => setIsShowMenuItem(false)}>
-                {
+                {   
                     dataMega.map((item) => (
                         <li
                             className="item-megamenu hovermegamenu"
                             key={item.id}
-                            onMouseEnter={() =>handleWhenHover(item.id)}
+                            onMouseEnter={() =>handleWhenHover(item.attributes.section)}
                             onMouseLeave={()=>{SetIdActive(null)}}
                         >
-                            {item.attributes.name}
+                            {item.attributes.label}
                         </li>
                     )
                     )
