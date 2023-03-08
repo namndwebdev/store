@@ -90,7 +90,7 @@
 
 
 .wrap-megamenu-item {
-  padding-top: 15px;
+  
   position: absolute;
   top: 10px;
   left: 190px;
@@ -100,7 +100,15 @@
   display: flex;
   justify-content:space-between; 
   border-radius: 8px;
-  align-items: baseline;
+  overflow: hidden;
+  
+  
+  
+}
+.wrap-megamenu-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 15px;
   
 }
 
@@ -117,11 +125,16 @@
 
 .img-laptop-megamenu {
   width: 200px;
-  height: 100%;
-  position: absolute;
   right: 0;
   border-radius: 10px;
   top:0;
+  height: 100%;
   
 }
 
+.img-laptop-megamenu img{
+  width: 100%;
+  height: 100%;
+  
+
+}
