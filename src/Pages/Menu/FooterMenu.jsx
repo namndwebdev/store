@@ -26,8 +26,8 @@ export default function FooterMenu (){
     return <>
     <Row>
     {bottomImg.map((item)=>{
-        return (<Col style={{padding:"0px 5px"}}  span={6}>
-             <img style={{objectFit:'contain',width:'100%',height:'100%', paddingRight:'5px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+        return (<Col  span={6}>
+             <img key={item} style={{objectFit:'contain',width:'100%',height:'100%', paddingRight:'5px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
         </Col>)
     })}
        
