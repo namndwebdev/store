@@ -33,7 +33,7 @@ export default function ContentMenu (){
                     </div>
                 </Col>
                 
-                <Col span={8} style={{width:"100%",height:"100%",paddingRight:"20px"}}>
+                <Col span={8}>
                     {imgRight.map((item)=>{
                         return<>                
                         <img  style={{objectFit:'cover',display:'block',width:'90%',height:'50%',paddingTop:'10px'}} src ={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>                      

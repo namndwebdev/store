@@ -9,8 +9,8 @@ const { Text } = Typography;
 
 export default function ProductDetail() {
   let {id} = useParams()
-  let [product,setProduct]=useState(null)
-  let [imageList,setImageList]=useState([])
+  let [product,setProduct]= useState({}) //(null)
+  let [imageList,setImageList]= useState([])
   const items = [
     {
       key: "1",
