@@ -2,7 +2,7 @@
 .header {
     font-family: 'Roboto';
     background-color: #f1f0f1;
-    padding: 4px 0 ;
+    padding: 35px 0 0 0 ;
 }
 
 .header * {
@@ -19,16 +19,18 @@
 
 .header .header-item{
     display: flex;
-    margin: 20px 153px 0 153px;
+    margin: 15px 0 0 70px;
 }
 
 .header .right-header{
     flex: 1;
     cursor: pointer;
+
 }
 
 .header .right-header__line1{
     display: flex;
+    margin-top: 6px;
     
 }
 
@@ -74,6 +76,7 @@
 }
 
 .header .left-header {
+    margin-top: 5px;   
     width: 170px;
     height: 52.05px;
     margin-right: 15px;
@@ -129,12 +132,14 @@
 
 .sub-header__background {
     background-color: #f1f0f1;
+    padding: 5px;
+    border-top: 1px solid #d4d4d4;
 
 }
 
 .sub-header{
     display: flex;
-    margin: 0px 153px 0 153px;
+    margin: 0px 1.6% ;
     flex: 1;
 }
 
@@ -143,7 +148,7 @@
     border: 1px solid #505050;
     text-decoration: none;
     margin-left: 7px;
-    padding: 7px 30px;
+    padding: 7px 75px;
     font-weight: 500;
     font-size: 13px;
     border-radius: 5px;

@@ -36,9 +36,9 @@ const Header = () => {
                     <span>
                         { dataHeader  && dataHeader.length > 0 && dataHeader[0].attributes.menuheader.link.map((item) => {
                             return <span>
-                                <span style={{ marginLeft:'15px' }}>
+                                <span style={{ marginLeft:'35px' }}>
                                     <UilNotes></UilNotes>
-                                    <span style={{fontWeight:'700',fontSize:'13px'}}>{item.label}</span>
+                                    <span style={{margin:"0px 20px 0px 0px",fontWeight:'700',fontSize:'13px'}}>{item.label}</span>
                                 </span>
                             </span>
                         })}
