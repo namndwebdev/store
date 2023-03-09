@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import logoHeader from '../../static/svg/logo-header'
+<<<<<<< HEAD
 import {
   UilNotes,
   UilUserCircle,
@@ -13,6 +14,10 @@ import {
 } from "@iconscout/react-unicons";
 import "./header.css";
 import SubHeader from "./SubHeader";
+=======
+import './header.css'
+import SubHeader from './SubHeader'
+>>>>>>> 708a524 (Quys update)
 
 const Header = () => {
   const [dataHeader, setDataHeader] = useState([]);
