@@ -73,6 +73,10 @@
     gap: 6px;
 }
 
+.header .right-header__line2 span:last-child {
+    font-weight: bold;
+}
+
 .header .left-header {
     width: 170px;
     height: 52.05px;
