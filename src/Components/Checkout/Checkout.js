@@ -1,6 +1,7 @@
 import React from "react";
-import { useState } from "react";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import {Link, useNavigate} from 'react-router-dom'
+import { useState} from "react";
+import { ArrowRightOutlined, RightOutlined } from "@ant-design/icons";
 import { Row, Col, Form, Input, Select, Button } from "antd";
 import "./Checkout.css";
 import dataProvince from "../Checkout/Data/province.json";
@@ -54,6 +55,12 @@ export default function Checkout() {
       };
     });
   };
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `thank`; 
+    navigate(path);
+  }
+  
   return (
     <div className="Checkout-container">
       <Row>
@@ -61,7 +68,7 @@ export default function Checkout() {
           <h1>GEARVN.COM</h1>
           <ul>
             <li>
-              <a>Giỏ hàng</a>
+              <Link to="">Giỏ hàng</Link>
             </li>
             <li></li>
             <li>Thông tin giao hàng</li>
@@ -69,7 +76,7 @@ export default function Checkout() {
           <p>Thông tin giao hàng</p>
           <div className="checkout-login">
             <p>Bạn đã có tài khoản?</p>
-            <a>Đăng nhập</a>
+            <Link to="">Đăng nhập</Link>
           </div>
 
           <Form>
@@ -192,6 +199,9 @@ export default function Checkout() {
                   type="primary"
                   htmlType="submit"
                   style={{ textAlign: "right", float: "right" }}
+                  onClick={()=> {
+                    routeChange()
+                  }}
                 >
                   Hoàn tất đơn hàng
                 </Button>

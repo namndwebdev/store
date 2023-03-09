@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
-import logo from "./logo.svg";
 import "./App.css";
 import ProductDetail from "./Pages/PageProductDetail/ProductDetail";
 import Home from "./Pages/Home/Home";
 import Checkout from "./Components/Checkout/Checkout";
-import Breadcrumbs from "./Components/NavBreadcrums/NavBreadcrums";
+import CheckoutThank from "./Components/Checkout/CheckoutThank";
 
 function App() {
   return (
@@ -14,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/product/:slug" element={<ProductDetail />} />
         <Route path="checkout/" element={<Checkout></Checkout>} />
+        <Route path="checkout/thank/" element={<CheckoutThank></CheckoutThank>}/>
       </Routes>
      
     </div>

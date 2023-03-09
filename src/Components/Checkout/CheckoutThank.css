@@ -1,0 +1,15 @@
+.CheckoutThank-container{
+justify-content: center;
+display: flex;
+align-items: center;
+height: 100vh;
+text-align: center;
+}
+.CheckoutThank-container h2{
+    font-size: 30px;
+    margin: 30px 0;
+}
+.CheckoutThank-container svg{
+    width: 50px;
+    height: 50px;
+}
