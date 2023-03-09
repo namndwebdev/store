@@ -8,7 +8,7 @@ import ProductDetail_infor from "./ProductDetail_infor";
 const { Text } = Typography;
 
 export default function ProductDetail() {
-  let {id} = useParams()
+  let {slug} = useParams()
   let [product,setProduct]= useState({}) //(null)
   let [imageList,setImageList]= useState([])
   const items = [
@@ -30,16 +30,25 @@ export default function ProductDetail() {
   ];
  
   useEffect(()=>{
-      fetch(`https://backoffice.nodemy.vn/api/products/${id}?populate=*`)
+      fetch(`https://backoffice.nodemy.vn/api/products/${slug}`)
       .then(res => res.json())
       .then(data =>{        
-              console.log(data.data.attributes);
+              
               setProduct(data.data.attributes)
-              // const imageCarousel = data.data.attributes.image.data.map(x=>({image:x.attributes.url}))
-              // console.log(imageCarousel);
+              const array = []
+                data.data.attributes.image.data.map(x=>{
+                const Obj = {}
+                Obj.image = `${process.env.REACT_APP_LINK_BACK_END}${x.attributes.url}`
+                array.push(Obj)
+              })
+           
+              setImageList(array)
+
+              
               // setImageList(imageCarousel)
           })
   }, [])
+  console.log(imageList);
 
   return (
     <> 
