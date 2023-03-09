@@ -5,6 +5,7 @@ import Header from '../../Components/Header/Header'
 import Breadcrumbs from '../../Components/NavBreadcrums/NavBreadcrums';
 import Baner from '../Menu/Baner'
 import SubHeader from '../../Components/Header/SubHeader';
+import { Footer } from 'antd/es/layout/layout';
 
 export default function Home() {
   const [data, setData] = useState([
