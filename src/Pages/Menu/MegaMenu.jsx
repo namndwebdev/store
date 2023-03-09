@@ -10,17 +10,17 @@ export default function MegaMenu() {
     
 
     useEffect(() => {
-        fetch('https://backoffice.nodemy.vn/api/dropdown-tabs?populate[section][populate][0]=link')
+        fetch('https://backoffice.nodemy.vn/api/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link')
             .then((res) => res.json())
             .then((data) => {
                 SetDataMega(data.data);
             })
     }, [])
 
-   const handleWhenHover = (id) => {
+   const handleWhenHover = (data) => {
         setIsShowMenuItem(true)
-        setTypeData(id)
-        SetIdActive(id)
+        setTypeData(data)
+        SetIdActive(data)
     }
 
     return <>
@@ -34,6 +34,7 @@ export default function MegaMenu() {
                             onMouseEnter={() =>handleWhenHover(item.attributes.section)}
                             onMouseLeave={()=>{SetIdActive(null)}}
                         >
+                            <span dangerouslySetInnerHTML={{__html:item.attributes.icon}}/>- 
                             {item.attributes.label}
                         </li>
                     )
