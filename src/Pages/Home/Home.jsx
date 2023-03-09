@@ -78,7 +78,6 @@ return (
     <>
         <Header></Header>
         <Baner></Baner>
-        <MegaMenu />
         <ProductList data={data} title="text- 1"></ProductList>
         <ProductList data={data} title="text -2"></ProductList>
         <Footer></Footer>
