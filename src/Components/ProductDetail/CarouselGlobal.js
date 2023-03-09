@@ -7,28 +7,52 @@ const captionStyle = {
   height: "auto",
 };
 export default function CarouselGlobal({ hasImage = true, data, ...props }) {
-  const dataImg = [
-    {
-      image: "https://product.hstatic.net/1000026716/product/1_8ecb12c659554e7186f5ad4636c4718c.jpg",
-    },
-    {
-      image: "https://product.hstatic.net/1000026716/product/macbook_pro_13_m1_8gb_256gb_-_grey_91a325e5173c455c8642e34a072741aa.png",
-    },
-    {
-      image: "https://product.hstatic.net/1000026716/product/2_93657bc06b224a50a126d3e6bdbd0e1b.jpg",
-    },
-    {
-      image: "https://product.hstatic.net/1000026716/product/3_a4a190631a5a4f889ea5cf649f0f9707.jpg",
-    },
-    {
-      image: "https://product.hstatic.net/1000026716/product/4_3cb242b2a3da4cf88a4fa793703e59ad.jpg",
-    },
-  ];
+ 
+
+  const dataImage = [{
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_1.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_3.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_4.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_4.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_6.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_7.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_8.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_9.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_10.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_11.jpg?v=34910",
+  },
+  {
+    image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_12.jpg?v=34910",
+  },
+
+  ]
+
+console.log(data);
+
   return (
     <>
-      {hasImage ? (
+    
+      {hasImage && data && data.length > 0  ? (
         <Carousel
-          data={props.dataImage ? props.dataImage : dataImg}
+          data={data}
           time={1500}
           width="850px"
           height="500px"
@@ -51,7 +75,7 @@ export default function CarouselGlobal({ hasImage = true, data, ...props }) {
         />
       ) : (
         <Carousel
-          data={dataImg}
+          data={dataImage}
           time={2000}
           width="850px"
           height="400px"
@@ -67,6 +91,7 @@ export default function CarouselGlobal({ hasImage = true, data, ...props }) {
           style={{
             width: "100%",
             margin: "10px auto",
+            height:"100%"
           }}
         />
       )}
