@@ -3,7 +3,7 @@ import { Card, Button } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 const { Meta } = Card;
 
-function Product({ data }) {
+function Product({ data }) {  
     return (
         <>
             {data &&

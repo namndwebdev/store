@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductDetail.css";
 import ReactMarkdown from "react-markdown";
 import MarkdownViewer from "./MarkdownViewer";
 import remarkGfm from "remark-gfm";
 import { Col, Row, Typography } from "antd";
 
-export default function ProductDetail_infor() {
+export default function ProductDetail_infor({description,cpu,ram}) {
+ 
+  let result2 = String(description)
+  result2 = result2.replaceAll("](/uploads","](https://backoffice.nodemy.vn/uploads")
+
+
   return (
     <>
       {/* DETAIL TABLE */}
@@ -19,7 +24,7 @@ export default function ProductDetail_infor() {
                 <u>CPU</u>
               </a>
             </td>
-            <td>M1 8CPU 8GPU</td>
+            <td>{cpu}</td>
           </tr>
           <tr>
             <td>
@@ -27,7 +32,7 @@ export default function ProductDetail_infor() {
                 <u>RAM</u>
               </a>
             </td>
-            <td> 8GB</td>
+            <td> {ram}</td>
           </tr>
           <tr>
             <td>
@@ -129,7 +134,8 @@ export default function ProductDetail_infor() {
       {/* DETAIL BOTTOM */}
       <Row>
         <Col span={24}>
-          <MarkdownViewer />
+          <div>Markdown here</div>
+          <ReactMarkdown>{result2}</ReactMarkdown>  
         </Col>
       </Row>
     </>

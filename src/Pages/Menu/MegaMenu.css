@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&family=Mynerve&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
+:root{
+  --item-megamenu-h: 34px;
+  --p-color:  #ea1c04;
+}
+
 *{
   padding: 0 ;
   margin: 0;
   box-sizing: border-box;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family:"Segoe UI", Helvetica, Arial, sans-serif;
  
 }
 
-.wrap-list-menu {
-  border: 1px solid rgb(248, 243, 243);
+.wrap-list-megamenu {
+  padding-top: 10px;
   width: 180px;
   height: 550px;
   display: flex;
@@ -19,19 +24,57 @@
   border-radius: 5px;
   position: relative;
   padding-left: 35px;
+  margin-left: 10px;
   
 }
 
-.item-menu {
+  .wrap-list-megamenu .item-megamenu {
   list-style: none;
   font-weight: 500;
-  font-size: 13px;
-  padding: 10px;
+  font-size: 14px;
+  padding-left: 10px;
+  height: var(--item-megamenu-h);
+  line-height: var(--item-megamenu-h);
   cursor: pointer;
-  transition: all 0.7s;
+  z-index: 1000;
+  background-color: white;
+  color: #505050;
+  
 
 }
-.item-menu-laptop {
+
+.item-megamenu:hover {
+  opacity: .7;
+  background-color: var(--p-color);
+  color: white;
+}
+
+.hovermegamenu{
+  position: relative;
+}
+
+.hovermegamenu::before {
+  right: 0;
+  top: 0;
+  border-top: calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  border-left: calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  border-bottom: calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  border-right:  calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  z-index: 100;
+  position: absolute;
+  margin: auto;
+  content: "";
+  transform: translateX(100%);
+}
+
+.hovermegamenu:hover::before{
+  border-left: calc(var(--item-megamenu-h) * 0.5) solid var(--p-color);
+}
+.MenuItem-Megamenu {
+  padding-top: 30px;
+}
+
+.item-megamenu-laptop {
   color: #666;
   list-style: none;
   font-weight: normal;
@@ -41,32 +84,36 @@
   display: block; 
   padding-left: 30px;
 }
-.item-menu-laptop:hover{
+.item-megamenu-laptop:hover{
   color: rgb(160, 35, 35);
 }
 
-.item-menu:hover {
-  opacity: .7;
-  background-color:#ea1c04;
-  transform: scale(1.1);
 
-}
-
-.wrap-menu-item {
+.wrap-megamenu-item {
+  
   position: absolute;
-  top: 0;
-  left: 185px;
-  width: 1100px;
-  height: 500px;
+  top: 10px;
+  left: 190px;
+  width: 1240px;
+  height: 550px;
   background-color:white;
   display: flex;
-  justify-content: flex-start; 
+  justify-content:space-between; 
   border-radius: 8px;
-  align-items: baseline;
+  overflow: hidden;
+  
   
   
 }
-.title-menu-item {
+.wrap-megamenu-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  
+}
+
+
+.title-megamenu-item {
   list-style: none;
   font-weight: 500;
   padding-left: 30px;
@@ -76,12 +123,18 @@
   align-items: center;
 }
 
-.img-laptop-menu {
-  width: auto;
-  height: 100%;
-  position: absolute;
+.img-laptop-megamenu {
+  width: 200px;
   right: 0;
   border-radius: 10px;
   top:0;
+  height: 100%;
   
+}
+
+.img-laptop-megamenu img{
+  width: 100%;
+  height: 100%;
+  
+
 }
