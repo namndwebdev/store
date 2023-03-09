@@ -7,8 +7,7 @@ const captionStyle = {
   height: "auto",
 };
 export default function CarouselGlobal({ hasImage = true, data, ...props }) {
- 
-
+  
   const dataImage = [{
     image: "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_1.jpg?v=34910",
   },
