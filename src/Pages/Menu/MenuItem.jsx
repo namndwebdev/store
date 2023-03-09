@@ -1,35 +1,8 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
-const data_menu_item_price = [
-    {
-        id: '5-10tr',
-        title: '5-10tr'
-    },
-    {
-        id: '10-20tr',
-        title: '10-20tr'
-    },
-    {
-        id: 'tren20tr',
-        title: 'Trên 20tr'
-    },
-]
-const data_menu_item_configuration = [
-    {
-        id: 'I3-RTX1650',
-        title: 'I3-RTX1650'
-    },
-    {
-        id: 'I5-RXG3600',
-        title: 'I5-RXG3600'
-    },
-    {
-        id: 'I7-RTX3060',
-        title: 'I7-RTX3060'
-    },
-]
+
 const MenuItem = ({ typedata }) => {
-    console.log(typedata);
+    
 
 
 
