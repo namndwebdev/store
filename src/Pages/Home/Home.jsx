@@ -2,10 +2,9 @@ import ProductList from '../../Components/ProductList/ProductList';
 import { useState } from 'react';
 import MegaMenu from '../Menu/MegaMenu';
 import Header from '../../Components/Header/Header'
-import SubHeader from '../../Components/Header/SubHeader';
 import Breadcrumbs from '../../Components/NavBreadcrums/NavBreadcrums';
-import Baner from '../../Pages/Menu/Baner'
-import Footer from '../../Components/Footer/Footer'
+import Baner from '../Menu/Baner'
+import SubHeader from '../../Components/Header/SubHeader';
 
 export default function Home() {
   const [data, setData] = useState([
@@ -77,7 +76,7 @@ export default function Home() {
 return (
     <>
         <Header></Header>
-        {/* <SubHeader></SubHeader> */}
+        <SubHeader></SubHeader>
         <Breadcrumbs/>
         <Baner></Baner>
         <MegaMenu />
