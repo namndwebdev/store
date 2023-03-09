@@ -124,7 +124,19 @@
     border-radius: 20px;
 }
 
+.header .top-header__icon .bi.bi-journal-text,
+.header .top-header__icon .bi.bi-person-circle,
+.header .top-header__icon .bi.bi-ticket-perforated,
+.header .top-header__icon .bi.bi-cart {
+    font-size: 24px;
+}
 
+.header .mid-header__icon .bi.bi-telephone,
+.header .mid-header__icon .bi.bi-youtube,
+.header .mid-header__icon .bi.bi-newspaper,
+.header .mid-header__icon .bi.bi-person{
+    font-size: 20px;
+}
 
 .between-line {
     display: block;
@@ -161,6 +173,8 @@
     margin-left: 7px;
     flex: 1;
     gap: 8px;
+    position: relative;
+    bottom: 5px;
 }
 
 

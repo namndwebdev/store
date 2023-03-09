@@ -36,8 +36,9 @@ const Header = () => {
                     <span>
                         { dataHeader  && dataHeader.length > 0 && dataHeader[0].attributes.menuheader.link.map((item) => {
                             return <span>
+                                
                                 <span style={{ marginLeft:'15px' }}>
-                                    <UilNotes></UilNotes>
+                                <span className='top-header__icon' dangerouslySetInnerHTML={{__html:item.icon}}/>
                                     <span style={{fontWeight:'700',fontSize:'13px'}}>{item.label}</span>
                                 </span>
                             </span>
@@ -66,7 +67,7 @@ const Header = () => {
                         { dataHeader && dataHeader.length > 0 && dataHeader[1].attributes.menuheader.link.map((item, index) => {
                             return <>
                                 <span className={index !== 3 && 'span-left'}>
-                                    <UilPhone></UilPhone>
+                                <span className='mid-header__icon' dangerouslySetInnerHTML={{__html:item.icon}}/>
                                     <span>{item.label}</span>
                                 </span>
                             </>

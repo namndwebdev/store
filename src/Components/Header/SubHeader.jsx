@@ -9,7 +9,8 @@ const SubHeader = ({data}) => {
         <span>
         <span className='sub-header__menu'><UilBars></UilBars>Danh mục sản phẩm</span>
           { data && data.length > 0 && data[2].attributes.menuheader.link.map((item, index) => {
-            return <a href='#' className='header-a__color'><UilBill className='sub-header__icons' style={{marginLeft:''}}></UilBill>{item.label}</a>
+            return <a href='#' className='header-a__color'><span dangerouslySetInnerHTML={{__html:item.icon}}/>
+            {item.label}</a>
             
           }) }
         </span>
