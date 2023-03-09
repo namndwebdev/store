@@ -1,11 +1,11 @@
 import React from 'react'
 
-export const Footer = () => {
+const Footer = () => {
   return <>
     <div className='footer'>
         <div className='footer-promotion'>
             <form action="">
-                <span className='footer-promotion__logo'></span>
+            <span className='footer-promotion__logo'><img src="https://theme.hstatic.net/1000026716/1000440777/14/bg-register.png" alt="" /></span>
                 <span>Mua hàng online với nhiều ưu đãi tại GEARVN</span>
                 <span></span>
             </form>
@@ -18,3 +18,5 @@ export const Footer = () => {
     </div>
   </>
 }
+
+export default Footer
