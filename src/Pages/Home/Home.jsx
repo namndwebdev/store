@@ -5,7 +5,6 @@ import Header from '../../Components/Header/Header'
 
 import Baner from '../Menu/Baner'
 import SubHeader from '../../Components/Header/SubHeader';
-import Breadcrumbs from '../../Components/NavBreadcrums/NavBreadcrums';
 
 export default function Home() {
   const [data, setData] = useState([
@@ -78,7 +77,6 @@ return (
     <>
         <Header></Header>
         <SubHeader></SubHeader>
-        <Breadcrumbs></Breadcrumbs>
         <Baner></Baner>
         <ProductList data={data} title="text- 1"></ProductList>
         <ProductList data={data} title="text -2"></ProductList>

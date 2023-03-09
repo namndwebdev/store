@@ -10,7 +10,7 @@ const Header = () => {
         <div className='header'>
          <div className='header-item'>
          <div className='left-header'>
-                <img src={'https://via.placeholder.com/170x52.05/green'} alt="logo" />
+                <img src={'https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=34910'} alt="logo" />
             </div>
             <div className='right-header'>
                 <div className='right-header__line1'>
