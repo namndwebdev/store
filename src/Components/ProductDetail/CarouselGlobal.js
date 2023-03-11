@@ -1,11 +1,12 @@
 import { React } from "react";
 import { Carousel } from "react-carousel-minimal";
-const captionStyle = {
-  fontSize: "2em",
-  fontWeight: "bold",
-  width: "100%",
-  height: "auto",
-};
+// const captionStyle = {
+//   fontSize: "2em",
+//   fontWeight: "bold",
+//   width: "100%",
+//   height: "auto",
+  
+// };
 export default function CarouselGlobal({ hasImage = true, data, ...props }) {
   
   const dataImage = [{
@@ -44,56 +45,53 @@ export default function CarouselGlobal({ hasImage = true, data, ...props }) {
 
   ]
 
-console.log(data);
-
+  let carouselDetail = <Carousel
+      data={data}
+      time={1500}
+      width="100%"
+      height="500px"
+      // captionStyle={captionStyle}
+      radius="10px"
+      captionPosition="bottom"
+      automatic={true}
+      dots={false}
+      pauseIconColor="black"
+      pauseIconSize="40px"
+      slideBackgroundColor="white"
+      slideImageFit="cover"
+      thumbnails={true}
+      thumbnailWidth="15%"
+      showNavBtn={true}
+      style={{
+        width: "100%",
+        margin: "10px auto",
+        height:"100%",
+      }}
+      />
+  let carouselHome = <Carousel
+      data={dataImage}
+      time={2000}
+      width="850px"
+      height="400px"
+      // captionStyle={captionStyle}
+      radius="10px"
+      captionPosition="bottom"
+      automatic={true}
+      dots={true}
+      pauseIconColor="white"
+      pauseIconSize="40px"
+      slideBackgroundColor="white"
+      slideImageFit="contain"
+      style={{
+        width: "100%",
+        margin: "10px auto",
+        height:"100%"
+      }}
+      />
+      console.log(data);
   return (
     <>
-    
-      {hasImage && data && data.length > 0  ? (
-        <Carousel
-          data={data}
-          time={1500}
-          width="850px"
-          height="500px"
-          captionStyle={captionStyle}
-          radius="10px"
-          captionPosition="bottom"
-          automatic={true}
-          dots={false}
-          pauseIconColor="white"
-          pauseIconSize="40px"
-          slideBackgroundColor="white"
-          slideImageFit="contain"
-          thumbnails={true}
-          thumbnailWidth="15%"
-          showNavBtn={true}
-          style={{
-            width: "100%",
-            margin: "10px auto",
-          }}
-        />
-      ) : (
-        <Carousel
-          data={dataImage}
-          time={2000}
-          width="850px"
-          height="400px"
-          captionStyle={captionStyle}
-          radius="10px"
-          captionPosition="bottom"
-          automatic={true}
-          dots={true}
-          pauseIconColor="white"
-          pauseIconSize="40px"
-          slideBackgroundColor="white"
-          slideImageFit="contain"
-          style={{
-            width: "100%",
-            margin: "10px auto",
-            height:"100%"
-          }}
-        />
-      )}
+      {data && data.length > 0 ? ( hasImage ? carouselDetail: carouselHome ) : carouselHome } 
     </>
   );
 }

@@ -5,6 +5,8 @@ import CarouselGlobal from "../../Components/ProductDetail/CarouselGlobal";
 import NavBreadcrums from "../../Components/NavBreadcrums/NavBreadcrums";
 import { useParams} from 'react-router-dom'
 import ProductDetail_infor from "./ProductDetail_infor";
+import Header from "../../Components/Header/Header";
+import CarouselVer2 from "../../Components/ProductDetail/CarouselVer2";
 const { Text } = Typography;
 
 export default function ProductDetail() {
@@ -35,24 +37,32 @@ export default function ProductDetail() {
       .then(data =>{        
               
               setProduct(data.data.attributes)
-              const array = []
-                data.data.attributes.image.data.map(x=>{
-                const Obj = {}
-                Obj.image = `${process.env.REACT_APP_LINK_BACK_END}${x.attributes.url}`
-                array.push(Obj)
+              /// Carousel ver2
+              const listLink = []
+              data.data.attributes.image.data.map(x=>{
+              let imgLink = `${process.env.REACT_APP_LINK_BACK_END}${x.attributes.url}`
+                listLink.push(imgLink)
               })
-           
-              setImageList(array)
+              setImageList(listLink)
 
-              
-              // setImageList(imageCarousel)
+              ///CarouselGlobal
+
+              // const array = []
+              //   data.data.attributes.image.data.map(x=>{
+              //   const Obj = {}
+              //   Obj.image = `${process.env.REACT_APP_LINK_BACK_END}${x.attributes.url}`
+              //   array.push(Obj)
+              // })
+              // setImageList(array)
+
           })
   }, [])
-  console.log(imageList);
-
   return (
     <> 
-    {/* BreadCrumbs */}'
+    {/* Header */}
+    <Header></Header>
+
+    {/* BreadCrumbs */}
     { product ? <NavBreadcrums nameProduct={product.name} nameBrand={ product.idBrand && product.idBrand.data.attributes.name} /> :null}
      
       <div className="detail"  >
@@ -65,13 +75,13 @@ export default function ProductDetail() {
                 className="detail_top_right"
                 style={{
                   width: "90%",
-                  margin: "0px ",
                   height: "100%",
                   backgroundColor: "white",
                 }}
               >
                 {/* Carousel */}
-                <CarouselGlobal hasImage={true} data={imageList} ></CarouselGlobal>            
+                {/* <CarouselGlobal hasImage={true} data={imageList}></CarouselGlobal> */}
+                <CarouselVer2 hasImage={false} data={imageList} ></CarouselVer2>           
               </div>
             </Col>
             <Col span={12}>
