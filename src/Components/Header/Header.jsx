@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 // import logoHeader from '../../static/svg/logo-header'
-import { UilNotes,UilUserCircle,UilTicket,UilShoppingCart,UilSearch,UilPhone,UilYoutube,UilUser,UilArchway  } from '@iconscout/react-unicons'
 import './header.css'
 import SubHeader from './SubHeader'
 
@@ -36,9 +35,10 @@ const Header = () => {
                     <span>
                         { dataHeader  && dataHeader.length > 0 && dataHeader[0].attributes.menuheader.link.map((item) => {
                             return <span>
-                                <span style={{ marginLeft:'35px' }}>
-                                    <UilNotes></UilNotes>
-                                    <span style={{margin:"0px 20px 0px 0px",fontWeight:'700',fontSize:'13px'}}>{item.label}</span>
+                                
+                                <span style={{ marginLeft:'15px' }}>
+                                <span className='top-header__icon' dangerouslySetInnerHTML={{__html:item.icon}}/>
+                                    <span style={{fontWeight:'700',fontSize:'13px'}}>{item.label}</span>
                                 </span>
                             </span>
                         })}
@@ -66,7 +66,7 @@ const Header = () => {
                         { dataHeader && dataHeader.length > 0 && dataHeader[1].attributes.menuheader.link.map((item, index) => {
                             return <>
                                 <span className={index !== 3 && 'span-left'}>
-                                    <UilPhone></UilPhone>
+                                <span className='mid-header__icon' dangerouslySetInnerHTML={{__html:item.icon}}/>
                                     <span>{item.label}</span>
                                 </span>
                             </>
