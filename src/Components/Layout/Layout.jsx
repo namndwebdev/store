@@ -8,7 +8,7 @@ import SubHeader from '../Header/SubHeader'
 const Layout = () => {
   return <>
     <Header></Header>
-    <SubHeader></SubHeader>
+    {/* <SubHeader></SubHeader> */}
       <Outlet></Outlet>
     <Footer></Footer>
   </>

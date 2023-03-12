@@ -1,13 +1,11 @@
 import React from "react";
-import CarouselGlobal from "../ProductDetail/CarouselGlobal";
-import CarouselVer2 from "../ProductDetail/CarouselVer2";
+import CarouselGlobal from "../Carousel/CarouselGlobal";
 import './CarouselHome.css'
 function CarouselHome() {
 
   return (
     <>
-      {/* <CarouselGlobal  hasImage={true} ></CarouselGlobal> */}
-      <CarouselVer2  hasImage={false}  ></CarouselVer2>
+      <CarouselGlobal  hasImage={false}  ></CarouselGlobal>
     </>
   );
 }

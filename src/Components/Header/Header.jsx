@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 // import logoHeader from '../../static/svg/logo-header'
+import { UilNotes,UilUserCircle,UilTicket,UilShoppingCart,UilSearch,UilPhone,UilYoutube,UilUser,UilArchway  } from '@iconscout/react-unicons'
 import './header.css'
 import SubHeader from './SubHeader'
 

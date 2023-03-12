@@ -1,15 +1,19 @@
 import "./ProductDetail.css";
-import { Divider, Typography, Button, Tabs, Col, Row } from "antd";
+import { Divider, Typography, Button, Tabs, Col, Row, Space } from "antd";
 import { React,useEffect, useState  } from "react";
-import CarouselGlobal from "../../Components/ProductDetail/CarouselGlobal";
 import NavBreadcrums from "../../Components/NavBreadcrums/NavBreadcrums";
 import { useParams} from 'react-router-dom'
 import ProductDetail_infor from "./ProductDetail_infor";
-import Header from "../../Components/Header/Header";
-import CarouselVer2 from "../../Components/ProductDetail/CarouselVer2";
+import CarouselGlobal from "../../Components/Carousel/CarouselGlobal";
+import { useSelector, useDispatch } from 'react-redux'
+import {tang,giam,reset,tangTheosoluong} from '../../redux/productSlice'
 const { Text } = Typography;
 
 export default function ProductDetail() {
+
+  const dispatch = useDispatch()
+  var number = useSelector( (stateTong)=>{ return stateTong.product.value })
+
   let {slug} = useParams()
   let [product,setProduct]= useState({}) //(null)
   let [imageList,setImageList]= useState([])
@@ -59,9 +63,6 @@ export default function ProductDetail() {
   }, [])
   return (
     <> 
-    {/* Header */}
-    <Header></Header>
-
     {/* BreadCrumbs */}
     { product ? <NavBreadcrums nameProduct={product.name} nameBrand={ product.idBrand && product.idBrand.data.attributes.name} /> :null}
      
@@ -80,8 +81,7 @@ export default function ProductDetail() {
                 }}
               >
                 {/* Carousel */}
-                {/* <CarouselGlobal hasImage={true} data={imageList}></CarouselGlobal> */}
-                <CarouselVer2 hasImage={false} data={imageList} ></CarouselVer2>           
+                <CarouselGlobal hasImage={true} data={imageList} ></CarouselGlobal>           
               </div>
             </Col>
             <Col span={12}>
@@ -121,9 +121,12 @@ export default function ProductDetail() {
                     </Text> : null}
                   </span>
                 </p>
-                <Button type="primary" size="large" danger>
+                <Button type="primary" size="large" danger onClick={()=>{dispatch(tang())}}>
                   Đặt hàng
                 </Button>
+                <Space/>
+                <span> cộng thêm <Text mark>{number}</Text> sản phẩm </span>
+                <Button type="primary" size="large" onClick={()=>{dispatch(reset())}}>Reset</Button> 
               </div>
             </Col>
           </Row>

@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import "./CarouselVer2.css";
+import "./CarouselGlobal.css";
 import Icon, { LeftOutlined,RightOutlined } from '@ant-design/icons';
 import { React} from "react";
 
