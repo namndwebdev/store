@@ -6,6 +6,7 @@ const Footer = () => {
         <div className='footer-promotion'>
             <form action="">
             <span className='footer-promotion__logo'><img src="https://theme.hstatic.net/1000026716/1000440777/14/bg-register.png" alt="" /></span>
+                <h1>FOOTER HERE</h1>
                 <span>Mua hàng online với nhiều ưu đãi tại GEARVN</span>
                 <span></span>
             </form>
