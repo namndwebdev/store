@@ -34,6 +34,8 @@ const PreviousBtn = (props) => {
     "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_11.jpg?v=34910",
     "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_12.jpg?v=34910",
   ]
+
+
 export default function CarouselVer2({ hasImage = true, data,  ...props }) {
   
 
@@ -43,18 +45,18 @@ export default function CarouselVer2({ hasImage = true, data,  ...props }) {
           dots
           initialSlide={1}
           infinite
-          prevArrow={<PreviousBtn />}
+          prevArrow={<PreviousBtn  />}
           nextArrow={<NextBtn />}
           dotsClass="slick-dots custom-indicator"
         >
           {dataImage.map((item) => (
             <div key={Math.random()}>
-              <img src={item} alt="" style={{ width: "100%", height: "40vh" }} />
+              <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit:"contain" }} />
             </div>
           ))}
         </Slider>
 
-      let carouselDetail = <Slider
+      let carouselDetail = <Slider 
           autoplay
           autoplaySpeed={1500}
           dots
@@ -78,11 +80,12 @@ export default function CarouselVer2({ hasImage = true, data,  ...props }) {
                   </div>
               );
           }}
+          
           dotsClass="slick-dots custom-indicator"
         >
           {data && data.map((item) => (
-            <div key={Math.random()}>
-              <img src={item} alt="" style={{ width: "100%", height: "40vh" }} />
+            <div key={Math.random()}  >
+              <img src={item} alt="" style={{ width: "100%", height: "45vh",objectFit:"contain" }} />
             </div>
           ))}
         </Slider>

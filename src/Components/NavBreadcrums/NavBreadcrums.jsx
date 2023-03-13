@@ -8,7 +8,7 @@ export default function Breadcrumbs({nameProduct , nameBrand }) {
     <div className="breadcrumbs">
       <div>
         <span>Bạn đang ở:</span>
-        <Link to='/'> Trang chủ</Link>
+        <Link to='/home'> Trang chủ</Link>
         <RightOutlined /> 
         <Link to="/" key={nameProduct}> {nameBrand} </Link> 
         <RightOutlined /> 

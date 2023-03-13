@@ -70,7 +70,6 @@ export default function ProductDetail() {
         {/* DETAIL TOP */}
         <div className="detail_top" style={{ margin: "5px" }}>
           <Row>
-           
             <Col span={12}>
               <div
                 className="detail_top_right"
