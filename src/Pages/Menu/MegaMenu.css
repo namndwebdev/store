@@ -90,20 +90,16 @@
 
 
 .wrap-megamenu-item {
-  
   position: absolute;
   top: 10px;
   left: 190px;
-  width: 1240px;
+  width: 1260px;
   height: 550px;
   background-color:white;
   display: flex;
   justify-content:space-between; 
   border-radius: 8px;
   overflow: hidden;
-  
-  
-  
 }
 .wrap-megamenu-section {
   display: flex;
