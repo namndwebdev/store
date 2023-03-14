@@ -9,13 +9,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import Test from './test'
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
     <BrowserRouter>
-        <App />
+        <App/>
     </BrowserRouter>
     </Provider>
   </React.StrictMode>
