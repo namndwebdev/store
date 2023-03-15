@@ -1,0 +1,4 @@
+.cart-wp {
+  display: flex;
+  flex-direction: column;
+}
