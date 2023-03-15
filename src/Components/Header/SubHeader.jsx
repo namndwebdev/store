@@ -1,5 +1,10 @@
-import React from 'react'
-import {UilBars, UilBill,UilWrench,UilTruck   } from '@iconscout/react-unicons'
+import React from "react";
+import {
+  UilBars,
+  UilBill,
+  UilWrench,
+  UilTruck,
+} from "@iconscout/react-unicons";
 
 const SubHeader = ({data}) => {
   return <>
@@ -19,9 +24,9 @@ const SubHeader = ({data}) => {
         <a href='#' className='header-a__color'><UilBill className='sub-header__icons'></UilBill> HƯỚNG DẪN TRẢ GÓP</a>
         <a href='#' className='header-a__color'><UilWrench className='sub-header__icons'></UilWrench> CHÍNH SÁCH BẢO HÀNH</a>
         <a href='#' className='header-a__color'><UilTruck className='sub-header__icons'></UilTruck>CHÍNH SÁCH VẬN CHUYỂN</a> */}
-      </div>
-    </div>
-  </>
-}
+          </div>
+        </div>
+    </>
+};
 
 export default SubHeader;

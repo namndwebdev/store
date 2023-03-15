@@ -15,13 +15,14 @@ export default function CheckoutThank() {
       <div>
         <CheckSquareFilled />
         <h2>Cảm ơn bạn đã mua hàng tại GearVn</h2>
-        <Button
+        <button
+        className="btn-back"
           onClick={() => {
             routeChange();
           }}
         >
-          Quay về trang thanh toán
-        </Button>
+          <span>Quay về trang thanh toán</span>
+        </button>
       </div>
     </div>
   );

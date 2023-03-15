@@ -5,6 +5,34 @@
 .Checkout-container .Checkout-right {
   padding: 56px 5% 0 44px;
 }
+.Checkout-container .Checkout-right .btn-discount {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: silver;
+  position: relative;
+  overflow: hidden;
+}
+.Checkout-container .Checkout-right .btn-discount span {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+.Checkout-container .Checkout-right .btn-discount::after {
+  content: "";
+  width: 130%;
+  height: 100%;
+  background-color: #1677ff;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+  transform: skewX(30deg) translateX(-110%);
+  transition: all 0.5s;
+}
+.Checkout-container .Checkout-right .btn-discount:hover::after {
+  transform: skewX(30deg) translateX(-10px);
+}
 .Checkout-container .Checkout-right .separate {
   margin: 20px 0;
   height: 1px;
@@ -34,7 +62,7 @@
 .Checkout-container .Checkout-left ul {
   padding: 10px 0;
 }
-.Checkout-container .Checkout-left ul a{
+.Checkout-container .Checkout-left ul a {
   font-size: 12px;
 }
 .Checkout-container .Checkout-left ul li {
@@ -44,29 +72,33 @@
   margin-right: 5px;
 }
 
-.Checkout-container .Checkout-left h2{
-    font-weight: normal;
-    font-size: 16px;
-    margin-bottom: 10px;
+.Checkout-container .Checkout-left h2 {
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
-.Checkout-container .Checkout-left .checkout-login{
+.Checkout-container .Checkout-left .checkout-login {
   margin: 10px 0;
-  display: flex ;
+  display: flex;
   font-size: 12px;
 }
 
-.checkout-login p,a{
-font-size: 13px;
-margin-right: 5px;
+.checkout-login p,
+a {
+  font-size: 13px;
+  margin-right: 5px;
 }
-.Checkout-container .Checkout-left input{
-  margin:0;
-  padding:10px 10px;
+.Checkout-container .Checkout-left input {
+  margin: 0;
+  padding: 10px 10px;
 }
-.Checkout-container .Checkout-left :where(.css-dev-only-do-not-override-1km3mtt).ant-form-item .ant-form-item-explain-error{
+.Checkout-container
+  .Checkout-left
+  :where(.css-dev-only-do-not-override-1km3mtt).ant-form-item
+  .ant-form-item-explain-error {
   font-size: 10px;
   margin: 5px 0;
 }
-.Checkout-container span{
+.Checkout-container span {
   font-size: 14px;
 }

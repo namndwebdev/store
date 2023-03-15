@@ -1,31 +1,16 @@
 import React from "react";
 import {Link, useNavigate} from 'react-router-dom'
 import { useState} from "react";
-import { ArrowRightOutlined, RightOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined} from "@ant-design/icons";
 import { Row, Col, Form, Input, Select, Button } from "antd";
 import "./Checkout.css";
 import dataProvince from "../Checkout/Data/province.json";
 import dataDistrict from "../Checkout/Data/districts.json";
 import dataWrad from "../Checkout/Data/wards.json";
 export default function Checkout() {
-  const [loadings, setLoadings] = useState([]);
   const [province, setProvince] = useState([]);
   const [district, setDistrict] = useState("Chọn Quận / Huyện");
   const [ward, setWard] = useState("Chọn Phường / Xã");
-  const enterLoading = (index) => {
-    setLoadings((prevLoadings) => {
-      const newLoadings = [...prevLoadings];
-      newLoadings[index] = true;
-      return newLoadings;
-    });
-    setTimeout(() => {
-      setLoadings((prevLoadings) => {
-        const newLoadings = [...prevLoadings];
-        newLoadings[index] = false;
-        return newLoadings;
-      });
-    }, 6000);
-  };
   const provinceOrigin = dataProvince.map((item) => {
     return { label: item.name, value: item.code };
   });
@@ -231,14 +216,7 @@ export default function Checkout() {
               <Input placeholder="Mã giảm giá"></Input>
             </Col>
             <Col span={12} style={{ display: "flex", justifyContent: "right" }}>
-              <Button
-                type="primary"
-                icon={<ArrowRightOutlined />}
-                loading={loadings[1]}
-                onClick={() => enterLoading(1)}
-              >
-                Sử dụng
-              </Button>
+              <button className="btn-discount"><span>Sử dụng</span></button>
             </Col>
           </Row>
           <div className="separate"></div>
