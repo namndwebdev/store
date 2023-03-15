@@ -180,16 +180,7 @@ export default function Checkout() {
                 <a>Giỏ hàng</a>
               </Col>
               <Col span={12}>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  style={{ textAlign: "right", float: "right" }}
-                  onClick={()=> {
-                    routeChange()
-                  }}
-                >
-                  Hoàn tất đơn hàng
-                </Button>
+              <button type="submit" className="btn-succes">Hoàn tất đơn hàng</button>
               </Col>
             </Row>
           </Form>
