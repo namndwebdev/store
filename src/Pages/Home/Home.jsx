@@ -24,8 +24,9 @@ export default function Home() {
     <>
       <Header></Header>
       <Baner></Baner>
-      <ProductList home={true} dataList={data}></ProductList>
-      <ProductList home={true} dataList={data}></ProductList>
+      <ProductList dataList={data}></ProductList>
+      <ProductList dataList={data}></ProductList>
+
     </>
   );
 }

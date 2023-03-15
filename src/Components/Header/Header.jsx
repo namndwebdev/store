@@ -1,8 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { UilSearch } from '@iconscout/react-unicons'
+import React, { useEffect, useState } from "react";
 // import logoHeader from '../../static/svg/logo-header'
-import './header.css'
-import SubHeader from './SubHeader'
+import {
+  UilNotes,
+  UilUserCircle,
+  UilTicket,
+  UilShoppingCart,
+  UilSearch,
+  UilPhone,
+  UilYoutube,
+  UilUser,
+  UilArchway,
+} from "@iconscout/react-unicons";
+import "./header.css";
+import SubHeader from "./SubHeader";
 
 const Header = () => {
   const [dataHeader, setDataHeader] = useState([]);
