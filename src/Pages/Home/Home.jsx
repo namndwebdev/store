@@ -11,7 +11,7 @@ import FooterMenu from "../Menu/FooterMenu";
 
 export default function Home() {
   let [data, setData] = useState([]);
-
+  let count = 0;
   useEffect(() => {
     fetch(`https://backoffice.nodemy.vn/api/products?populate=*`)
       .then((res) => res.json())
