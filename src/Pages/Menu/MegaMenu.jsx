@@ -6,8 +6,8 @@ export default function MegaMenu() {
     const [dataMega, SetDataMega] = useState([])
     const [isShowMenuItem, setIsShowMenuItem] = useState(false)
     const [typedata, setTypeData] = useState(null)
-    const [idactive,SetIdActive] = useState(null)
-    
+    const [idactive, SetIdActive] = useState(null)
+
 
     useEffect(() => {
         fetch('https://backoffice.nodemy.vn/api/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link')
@@ -17,7 +17,7 @@ export default function MegaMenu() {
             })
     }, [])
 
-   const handleWhenHover = (data) => {
+    const handleWhenHover = (data) => {
         setIsShowMenuItem(true)
         setTypeData(data)
         SetIdActive(data)
@@ -26,15 +26,15 @@ export default function MegaMenu() {
     return <>
         <div className="wrap-list-megamenu">
             <ul onMouseLeave={() => setIsShowMenuItem(false)}>
-                {   
+                {
                     dataMega.map((item) => (
                         <li
                             className="item-megamenu hovermegamenu"
                             key={item.id}
-                            onMouseEnter={() =>handleWhenHover(item.attributes.section)}
-                            onMouseLeave={()=>{SetIdActive(null)}}
+                            onMouseEnter={() => handleWhenHover(item.attributes.section)}
+                            onMouseLeave={() => { SetIdActive(null) }}
                         >
-                            <span dangerouslySetInnerHTML={{__html:item.attributes.icon}}/>- 
+                            <span dangerouslySetInnerHTML={{ __html: item.attributes.icon }} />-
                             {item.attributes.label}
                         </li>
                     )

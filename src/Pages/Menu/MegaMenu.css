@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&family=Mynerve&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
-:root{
+:root {
   --item-megamenu-h: 34px;
-  --p-color:  #ea1c04;
+  --p-color: #ea1c04;
 }
 
-*{
-  padding: 0 ;
+* {
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:"Segoe UI", Helvetica, Arial, sans-serif;
- 
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+
 }
 
 .wrap-list-megamenu {
@@ -25,10 +25,10 @@
   position: relative;
   padding-left: 20px;
   margin-left: 10px;
-  
+
 }
 
-  .wrap-list-megamenu .item-megamenu {
+.wrap-list-megamenu .item-megamenu {
   list-style: none;
   font-weight: 500;
   font-size: 14px;
@@ -39,7 +39,7 @@
   z-index: 1000;
   background-color: white;
   color: #505050;
-  
+
 
 }
 
@@ -49,7 +49,7 @@
   color: white;
 }
 
-.hovermegamenu{
+.hovermegamenu {
   position: relative;
 }
 
@@ -59,7 +59,7 @@
   border-top: calc(var(--item-megamenu-h) * 0.5) solid transparent;
   border-left: calc(var(--item-megamenu-h) * 0.5) solid transparent;
   border-bottom: calc(var(--item-megamenu-h) * 0.5) solid transparent;
-  border-right:  calc(var(--item-megamenu-h) * 0.5) solid transparent;
+  border-right: calc(var(--item-megamenu-h) * 0.5) solid transparent;
   z-index: 100;
   position: absolute;
   margin: auto;
@@ -67,9 +67,10 @@
   transform: translateX(100%);
 }
 
-.hovermegamenu:hover::before{
+.hovermegamenu:hover::before {
   border-left: calc(var(--item-megamenu-h) * 0.5) solid var(--p-color);
 }
+
 .MenuItem-Megamenu {
   padding-top: 30px;
 }
@@ -81,37 +82,39 @@
   font-size: 13px;
   margin: 3px 0;
   cursor: pointer;
-  display: block; 
+  display: block;
   padding-left: 30px;
 }
-.item-megamenu-laptop:hover{
+
+.item-megamenu-laptop:hover {
   color: rgb(160, 35, 35);
 }
 
 
 .wrap-megamenu-item {
-  
+
   position: absolute;
   top: 10px;
   left: 190px;
   width: 1240px;
   height: 550px;
-  background-color:white;
+  background-color: white;
   display: flex;
-  justify-content:space-between; 
+  justify-content: space-between;
   border-radius: 8px;
   overflow: hidden;
-  
-  
-  
+
+
+
 }
+
 .wrap-megamenu-section {
   display: flex;
   flex-wrap: wrap;
   padding-top: 15px;
   justify-content: space-between;
   padding-right: 10px;
-  
+
 }
 
 
@@ -129,13 +132,13 @@
   width: 200px;
   right: 0;
   border-radius: 10px;
-  top:0;
+  top: 0;
   height: 100%;
   flex-shrink: 0;
-  
+
 }
 
-.img-laptop-megamenu img{
+.img-laptop-megamenu img {
   width: 100%;
   height: 100%;
 

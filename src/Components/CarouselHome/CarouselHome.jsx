@@ -5,7 +5,7 @@ function CarouselHome() {
 
   return (
     <>
-      <CarouselGlobal  hasImage={false}  ></CarouselGlobal>
+      <CarouselGlobal hasImage={false}  ></CarouselGlobal>
     </>
   );
 }

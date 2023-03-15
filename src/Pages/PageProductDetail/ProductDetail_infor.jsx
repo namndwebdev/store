@@ -1,69 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ProductDetail.css";
 import ReactMarkdown from "react-markdown";
-import MarkdownViewer from "./MarkdownViewer";
-import remarkGfm from "remark-gfm";
 import { Col, Row, Typography } from "antd";
 
-export default function ProductDetail_infor({description,cpu,ram}) {
- 
+export default function ProductDetail_infor({ description, cpu, ram }) {
+
   let result2 = String(description)
-  result2 = result2.replaceAll("](/uploads","](https://backoffice.nodemy.vn/uploads")
+  result2 = result2.replaceAll("](/uploads", "](https://backoffice.nodemy.vn/uploads")
 
 
   return (
     <>
       {/* DETAIL TABLE */}
-
       <div className="detail_table">
         <Typography.Title level={2}>THÔNG SỐ KĨ THUẬT :</Typography.Title>
         <table>
           <tr>
-            <td>
-              <a href="">
-                <u>CPU</u>
-              </a>
-            </td>
+            <td>CPU</td>
             <td>{cpu}</td>
           </tr>
           <tr>
-            <td>
-              <a href="">
-                <u>RAM</u>
-              </a>
-            </td>
+            <td>RAM</td>
             <td> {ram}</td>
           </tr>
           <tr>
-            <td>
-              <a href="">
-                <u>Ổ lưu trữ:</u>
-              </a>
-            </td>
+            <td>Ổ lưu trữ:</td>
             <td>256GB SSD</td>
           </tr>
           <tr>
-            <td>
-              <a href="">
-                <u>Card đồ họa</u>
-              </a>
-            </td>
+            <td>Card đồ họa</td>
             <td>M1 8CPU 8GPU</td>
           </tr>
           <tr>
-            <td>
-              <a href="">
-                <u>Màn hình</u>
-              </a>
-            </td>
+            <td>Màn hình</td>
             <td>13.3 inch (2560x1600), IPS, Led Backlit, True Tone</td>
           </tr>
           <tr>
-            <td>
-              <a href="">
-                <u>Bàn phím</u>
-              </a>
-            </td>
+            <td>Bàn phím</td>
             <td>Magic Keyboard, Touchbar, có LED</td>
           </tr>
           <tr>
@@ -135,7 +108,7 @@ export default function ProductDetail_infor({description,cpu,ram}) {
       <Row>
         <Col span={24}>
           <div>Markdown here</div>
-          <ReactMarkdown>{result2}</ReactMarkdown>  
+          <ReactMarkdown>{result2}</ReactMarkdown>
         </Col>
       </Row>
     </>

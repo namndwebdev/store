@@ -4,18 +4,21 @@
   border-radius: 5px;
   background-color: #f8f8f8
 }
-.breadcrumbs > div {
+
+.breadcrumbs>div {
   width: 100%;
   margin: 0 8%;
-  
 }
-.breadcrumbs > div > a:hover {
+
+.breadcrumbs>div>a:hover {
   color: #f45b4f;
 }
-.breadcrumbs > div > a {
+
+.breadcrumbs>div>a {
   color: #6abae7;
   text-decoration: none !important;
 }
-.breadcrumbs > div > a:last-child {
+
+.breadcrumbs>div>a:last-child {
   color: black;
 }
