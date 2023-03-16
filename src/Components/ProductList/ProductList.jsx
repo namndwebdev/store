@@ -6,11 +6,9 @@ const ProductList = ({ dataList }) => {
   return (
     <div className="product-list-container">
       <h2 className="product-list__title">PC GEARVN - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</h2>
-    <div className="row">
-      {dataList.map((data) => (
-        <Product data={data}></Product>
-      ))}
-    </div>
+      <div className="row">
+        <Product data={dataList}></Product>
+      </div>
     </div>
   );
 };
