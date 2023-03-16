@@ -8,6 +8,8 @@ const ProductList = ({ dataList }) => {
       <h2 className="product-list__title">PC GEARVN - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</h2>
       <div className="row">
         <Product data={dataList}></Product>
+        <h2 className="product-list__title">PC GEARVN - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</h2>
+        <Product data={dataList}></Product>
       </div>
     </div>
   );
