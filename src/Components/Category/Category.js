@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import ProductList from "../ProductList/ProductList";
 import Header from "../Header/Header";
-import Baner from "../../Pages/Menu/Baner";
 import "../Category/Category.css";
 import Product from "../Product/Product";
 export default function Category() {
@@ -20,14 +17,16 @@ export default function Category() {
       });
   }, []);
   return (
-    <div className="">
+    <div>
       <Header></Header>
-      <div className="container">
-        <h2>Title</h2>
-        <div>breadcum</div>
-        <div>
+      <div className="">
+        <div className="container">
+        <h2 className="fs-2 text mt-2 mb-2 fw-normal">Laptop Gaming Acer</h2>
+        <div className="mt-2 mb-2">Bạn đang ở: Trang chủ <i class="bi bi-arrow-right-circle-fill"></i> Laptop Gaming Acer chính hãng, giá tốt nhất</div>
+        <div className="row">
         <Product data={productList} className="category-content"></Product>
         </div>
+      </div>
       </div>
     </div>
   );
