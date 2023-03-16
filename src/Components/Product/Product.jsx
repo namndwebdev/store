@@ -20,7 +20,7 @@ function Product({ data }) {
             src={`https://backoffice.nodemy.vn${data?.attributes?.image?.data[0].attributes.url}`}
             alt=""
           />
-          <div className="card-body" style={{fontSize:'16px'}}>
+          <div className="card-body" style={{ fontSize: '16px' }}>
             <h3>{data.attributes.name}</h3>
             <div className="card-price">
               <div>
