@@ -6,19 +6,25 @@ import SubHeader from './SubHeader'
 import { useSelector } from 'react-redux'
 import ShoppingCartOutlined from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
+import { useDispatch } from 'react-redux';
+import { addToCart, updateCartList } from "../../redux/cartSlice";
 const Header = () => {
     const [dataHeader, setDataHeader] = useState([])
     const cart = useSelector(state => state.cart)
-
+    console.log(cart.cartItem);
+    const dispatch = useDispatch();
     useEffect(() => {
         fetch('https://backoffice.nodemy.vn/api/menu-headers?populate[menuheader][populate][0]=link')
             .then((res) => res.json())
             .then((data) => {
                 setDataHeader(data.data)
-
             })
     }, [])
     // console.log(dataHeader[0].attributes.menuheader.link)
+    useEffect(() => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        dispatch(updateCartList(cartItems))
+    }, []);
     return (
         <>
             <div className='header'>
@@ -44,7 +50,7 @@ const Header = () => {
                                     </span>
                                 })}
                                 <span className='cart'>
-                                    <Badge badgeContent={cart.cartItem.length} color="error">
+                                    <Badge badgeContent={cart.cartItem?.length} color="error">
                                         <ShoppingCartOutlined />
                                     </Badge>
                                 </span>

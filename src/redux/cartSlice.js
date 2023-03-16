@@ -12,21 +12,17 @@ export const cartSlice = createSlice({
   reducers: {
 
     addToCart: (state, { payload }) => {
-      toast.success(`Đã thêm ${payload.name} vào giỏ hàng`);
-      state.cartItem = [...state.cartItem, payload];
-      localStorage.setItem('cart', JSON.stringify(state.cartItem)); // Lưu giỏ hàng vào LocalStorage
+      // toast.success(`Đã thêm ${payload.name} vào giỏ hàng`);
+      const addItem = state.cartItem.find(item => item.name == payload.name)
+      const cartItem = addItem ? state.cartItem.map(x => x.name == addItem.name ? { ...x, quantity: x.quantity + 1 } : x) : [...state.cartItem, { ...payload, quantity: Number(1) }]
+      localStorage.setItem('cart', JSON.stringify(cartItem)); // Lưu giỏ hàng vào LocalStorage
+      return { ...state, cartItem }
     },
-    // addToCart: (state, {payload}) => {
-    // const addItem = state.cartItem.find(x=>x.name===payload.name)
-    // return {...state,cartItem:[...state.cartItem,payload]}
-    // },
+    updateCartList: (state, { payload }) => {
+      return { ...state, cartItem: payload }
+    },
   },
 });
 
-export const {
-  setItems,
-  addToCart,
-
-} = cartSlice.actions;
-
+export const { setItems, addToCart, updateCartList } = cartSlice.actions;
 export default cartSlice.reducer;

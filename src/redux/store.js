@@ -4,5 +4,4 @@ export default configureStore({
     reducer: {
         cart: cartReducer,
     },
-
-})
+},)

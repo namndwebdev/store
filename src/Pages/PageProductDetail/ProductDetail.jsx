@@ -82,13 +82,13 @@ export default function ProductDetail() {
         <p>
           <span>Giá Cũ : </span>
           <span>
-            {product ? <Text delete> {product.oldPrice}₫ </Text> : null}
+            {product ? <Text strong type="secondary" delete> {Number(product.price)?.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </Text> : null}
           </span>
         </p>
         <p>
           <span>Giá KM : </span>
           <span>
-            {product ? <Text strong type="danger"> {product.price} </Text> : null}
+            {product ? <Text strong type="danger"> {Number(product.price)?.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </Text> : null}
           </span>
         </p>
         <Button type="primary" size="large" danger onClick={() => { dispatch(addToCart(product)) }}>
