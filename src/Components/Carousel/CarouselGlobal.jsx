@@ -26,7 +26,7 @@ console.log(data);
 
   let carouselHome = <Slider
     autoplay
-    autoplaySpeed={1500}
+    autoplaySpeed={1700}
     dots
     initialSlide={1}
     infinite
