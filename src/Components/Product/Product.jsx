@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination } from "antd"
 import { useState } from "react";
-
+import './Product.css'
 function Product({ data }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(4);
@@ -27,14 +27,21 @@ function Product({ data }) {
   };
   return (
     <>{currentData.map((data) => {
-      return <div className="col-3">
-        <div className="card text-start m-2">
-          <img
-            className="card-img-top"
-            src={`https://backoffice.nodemy.vn${data?.attributes?.image?.data[0].attributes.url}`}
-            alt=""
-          />
+      return <div className="col-3 product-home">
+        <div className="card text-start m-2 card-item">
+          <div className="card-img-top">
+            <img src={`https://backoffice.nodemy.vn${data?.attributes?.image?.data[0].attributes.url}`}
+              alt="">
+            </img>
+            <div className="card-mark d-flex justify-content-center align-items-center">
+              <p >Click để xem chi tiết</p>
+              <p>Đặt hàng</p>
+            </div>
+
+          </div>
+
           <div className="card-body">
+            <div className="product-item-name fs-6">{data.attributes.name}</div>
             <div className="card-price">
               <div>
                 <p className="oldprice">
@@ -59,11 +66,12 @@ function Product({ data }) {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     })}
       <Pagination
-        style={{ display: 'flex', justifyContent: 'center', marginTop:'20px'}}
+        style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
         current={currentPage}
         pageSize={pageSize}
         total={data.length}

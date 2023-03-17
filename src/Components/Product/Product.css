@@ -2,3 +2,42 @@
   display: flex;
   flex-direction: column;
 }
+.product-home{
+  overflow: hidden;
+}
+.product-home .card-img-top{
+  position: relative;
+}
+
+.product-home .card-mark{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  background-color: rgb(0,0,0,0.4);
+  transition: all 0.5s;
+  height: 0;
+  overflow: hidden;
+}
+.product-home:hover .card-mark{
+height: 50px;
+}
+.product-home .card-mark p{
+  font-size: 14px;
+}
+.product-home .card-mark p:first-child{
+  color: white;
+}
+
+.product-home .card-mark p:last-child{
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+.product-home .card-mark p:last-child:hover{
+  background-color: #0655A6;
+}
