@@ -6,11 +6,11 @@ import {
   UilTruck,
 } from "@iconscout/react-unicons";
 
-const SubHeader = ({data}) => {
+const SubHeader = ({ data }) => {
   return <>
     <div className='sub-header__background'>
-      <div style={{height:'10px'}}></div>
-      <div className='sub-header'>
+      <div style={{ height: '10px' }}></div>
+      <div className='sub-header store-container'>
         <span className='sub-header__menu'><UilBars></UilBars>Danh mục sản phẩm</span>
         <span>
           { data && data.length > 0 && data[2].attributes.menuheader.link.map((item, index) => {

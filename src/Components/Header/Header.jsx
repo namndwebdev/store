@@ -2,24 +2,33 @@ import React, { useEffect, useState } from 'react'
 import { UilNotes,UilUserCircle,UilTicket,UilShoppingCart,UilSearch,UilPhone,UilYoutube,UilUser,UilArchway  } from '@iconscout/react-unicons'
 import './header.css'
 import SubHeader from './SubHeader'
-
+import { useSelector } from 'react-redux'
+import ShoppingCartOutlined from '@material-ui/icons/ShoppingCart';
+import Badge from '@material-ui/core/Badge';
+import { useDispatch } from 'react-redux';
+import { addToCart, updateCartList } from "../../redux/cartSlice";
+import { Link } from "react-router-dom";
 const Header = () => {
-
     const [dataHeader, setDataHeader] = useState([])
+    const cart = useSelector(state => state.cart)
+
+    const dispatch = useDispatch();
     useEffect(() => {
         fetch('https://backoffice.nodemy.vn/api/menu-headers?populate[menuheader][populate][0]=link')
-        .then((res) => res.json())
-        .then((data) => {
-            setDataHeader(data.data)
-        
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                setDataHeader(data.data)
+            })
     }, [])
-
+    useEffect(() => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        dispatch(updateCartList(cartItems))
+    }, []);
   return (
     //
     <>
         <div className='header'>
-            <div className='header-menu'>
+            <div className='header-menu store-container'>
                 <div className='left-header'>
                     <img src="https://via.placeholder.com/170x52.05/green" alt="" />
                 </div>
@@ -41,6 +50,13 @@ const Header = () => {
                                 </span>
                                 })
                             }
+                            <Link to='cart/'>
+                                <span className='cart'>
+                                    <Badge badgeContent={cart.cartItem?.length} color="error">
+                                        <ShoppingCartOutlined />
+                                    </Badge>
+                                </span>
+                            </Link>
                         </span>
                     </div>
                     <div className='right-header__line2'>

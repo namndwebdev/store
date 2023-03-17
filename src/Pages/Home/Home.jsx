@@ -17,7 +17,6 @@ export default function Home() {
   console.log(data);
   return (
     <>
-      <Header></Header>
       <Baner></Baner>
       <ProductList dataList={data}></ProductList>
     </>
