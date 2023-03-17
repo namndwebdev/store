@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useSelector,useDispatch } from 'react-redux'
+import { updateCartList } from '../../redux/cartSlice'
 import './Cart.css'
 export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
@@ -13,6 +15,7 @@ export default function Cart(){
         localStorage.setItem('cart', JSON.stringify(list));
     })
     console.log(dataApi);
+    const dispatch = useDispatch()
     return <>
     <div className="Page-Cart" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:'column'}} >
         <div className="Page-Cart-Header"> <h1>GIỎ HÀNG <i style={{fontSize:'35px'}} class="bi bi-cart"></i></h1></div>
@@ -54,6 +57,8 @@ export default function Cart(){
                             <button  onClick={function ClickToRemove(){
                                 list.splice(index,1)
                                 setList([...list])
+                                dispatch(updateCartList(list))
+                                
                             }} ><i class="bi bi-trash3-fill"></i></button>
                             </td>
                            </tr>
