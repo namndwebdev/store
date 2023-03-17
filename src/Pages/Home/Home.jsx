@@ -1,77 +1,31 @@
-import ProductList from '../../Components/ProductList/ProductList';
-import { useState } from 'react';
-import Baner from '../Menu/Baner'
+import ProductList from "../../Components/ProductList/ProductList";
+import { useState } from "react";
+import MegaMenu from "../Menu/MegaMenu";
+import Header from "../../Components/Header/Header";
+import Breadcrumbs from "../../Components/NavBreadcrums/NavBreadcrums";
+import Baner from "../Menu/Baner";
+import SubHeader from "../../Components/Header/SubHeader";
+import { Footer } from "antd/es/layout/layout";
+import { useEffect } from "react";
+import FooterMenu from "../Menu/FooterMenu";
+
 export default function Home() {
-    const [data, setData] = useState([
-        {
-            title: 'May tinh thu nhat 1',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 2',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 1',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 1',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 2',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 1',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 1',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 2',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-        {
-            title: 'May tinh thu nhat 1',
-            beforeDiscount: '18.000.000d',
-            afterDiscount: '16.000.000d',
-            percentDiscount: '3%',
-            thumbnail: 'https://product.hstatic.net/1000026716/product/111_121e1c7911074629b99973a320b6c1b3_large.png',
-        },
-    ]);
-    return (
-        <>
-            <Baner />
-            <ProductList data={data} title="text- 1" />
-            <ProductList data={data} title="text -2" />
-        </>
-    );
+  let [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://backoffice.nodemy.vn/api/products?populate=*`)
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res.data);
+      });
+  }, []);
+  console.log(data);
+  return (
+    <>
+      <Baner></Baner>
+      <ProductList dataList={data}></ProductList>
+      <ProductList dataList={data}></ProductList>
+
+    </>
+  );
 }
