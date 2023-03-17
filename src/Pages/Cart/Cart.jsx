@@ -1,11 +1,7 @@
-import { current } from '@reduxjs/toolkit'
 import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import './Cart.css'
 export default function Cart(){
-
-    // const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
-    const dataApi = [{name:'Chuột Havit MS1017',price:200000,quantity:1},{name:'GVN PHANTOM Plus i4070Ti',price:64000000,quantity:1},{name:'May Tinh',price:5000,quantity:1}]
+    const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
     const [list,setList] = useState(dataApi)
     function OnChangeTextInput(e) {
         var indexElement = e.target.getAttribute('data')
@@ -16,6 +12,7 @@ export default function Cart(){
     useEffect(()=>{
         localStorage.setItem('cart', JSON.stringify(list));
     })
+    console.log(dataApi);
     return <>
     <div className="Page-Cart" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:'column'}} >
         <div className="Page-Cart-Header"> <h1>GIỎ HÀNG <i style={{fontSize:'35px'}} class="bi bi-cart"></i></h1></div>
@@ -42,8 +39,7 @@ export default function Cart(){
                 {list.map((item,index)=>{
                   return    <tr key={index} style={{height:'150px'}}>
                             <td style={{width:'20%'}} className="Page-Cart-Body-img">
-                                <img  style={{width:'80%',objectFit:'contai'}} src="https://vuongquocanh.com/wp-content/uploads/2018/05/london-eye.jpg" alt="" />
-                                
+                            <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`}></img>
                             </td>
                             <td  className='Page-Cart-Body-NameItem'>
                                 <span>{item.name}</span>
