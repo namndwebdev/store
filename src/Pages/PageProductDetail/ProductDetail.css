@@ -1,54 +1,82 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 17px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .Discount {
-    font-size: 30px;
-  }
-  .detail {
-    margin: 20px 100px 20px 100px;
-  }
-  .imgProduct {
-    width: 70%;
-    display: block;
-    margin: 5px auto;
-  }
-  .imgProduct > img {
-    width: 100%;
-    object-fit: cover;
-  }
-  .detail_bot {
-    padding: 30px;
-    border-left: 1.8px solid rgb(223, 223, 223);
-    border-right: 1.8px solid rgb(223, 223, 223);
-  }
-  table {
-    border-spacing: 0;
-  }
-  td:first-child {
-    background-color: #f7f7f7 !important;
-    border-color: #eeeeee;
-    border-style: solid;
-    border-width: 1px;
-    box-sizing: border-box;
-    padding: 8px;
-    vertical-align: top;
-    width: 168px;
-  }
-  td:last-child {
-    border-color: #eeeeee;
-    border-style: solid;
-    border-width: 1px;
-    box-sizing: border-box;
-    padding: 8px;
-    vertical-align: top;
-  }
-  table li {
-    list-style: none;
-  }
-  
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Container {
+  display: grid;
+  grid-template-columns: 1fr 3fr repeat(2, 2fr) 3fr 1fr;
+  grid-template-rows: 0.5fr repeat(4, 2fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+}
+
+.page_content {
+  grid-area: 1 / 2 / 2 / 6;
+  height: 150px;
+}
+
+.page_content_left {
+  grid-area: 1 / 2 / 2 / 4;
+
+  padding: 0 15px;
+
+}
+
+.page_content_right {
+  grid-area: 1 / 4 / 2 / 6;
+
+  padding: 0 15px;
+
+}
+
+.product_content_detail {
+  padding: 0 10px 10px 10px;
+  margin-top: 10px;
+  grid-area: 2 / 2 / 6 / 6;
+  border: 1.8px solid rgb(223, 223, 223);
+
+
+}
+
+.product_content_detail>img {
+  width: 200px;
+}
+
+.Discount {
+  font-size: 30px;
+}
+
+table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+td:first-child {
+  background-color: #f7f7f7 !important;
+  border-color: #eeeeee;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  padding: 8px;
+  vertical-align: top;
+  width: 168px;
+  font-weight: 700;
+}
+
+td:last-child {
+  border-color: #eeeeee;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  padding: 8px;
+  vertical-align: top;
+}
+
+table li {
+  list-style: none;
+}

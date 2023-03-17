@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 .header {
     font-family: 'Roboto';
     background-color: #f1f0f1;
-    padding: 4px 0 ;
+    padding: 35px 0 0 0;
 }
 
 .header * {
@@ -17,31 +18,33 @@
     font-family: inherit;
 }
 
-.header .header-item{
+.header .header-item {
     display: flex;
-    margin: 20px 153px 0 153px;
+    margin: 15px 0 0 70px;
 }
 
-.header .right-header{
+.header .right-header {
     flex: 1;
     cursor: pointer;
+
 }
 
-.header .right-header__line1{
+.header .right-header__line1 {
     display: flex;
-    
+    margin-top: 6px;
+
 }
 
-.header .right-header__line1 span{
+.header .right-header__line1 span {
     display: inline-flex;
     align-items: center;
     gap: 5px;
 }
 
-.header .right-header__line2{
+.header .right-header__line2 {
     display: flex;
-    flex: 1;  
-    gap: 10px;  
+    flex: 1;
+    gap: 10px;
     padding: 10px 0;
     color: #ea1c00;
 }
@@ -53,11 +56,11 @@
 }
 
 
-.header .span-left{
+.header .span-left {
     position: relative;
 }
 
-.header .span-left::after{
+.header .span-left::after {
     content: "";
     width: 2px;
     height: 100%;
@@ -67,13 +70,18 @@
     margin-left: 20px;
 }
 
-.header .right-header__line2 span{
+.header .right-header__line2 span {
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
 
+.header .right-header__line2 span:last-child {
+    font-weight: bold;
+}
+
 .header .left-header {
+    margin-top: 5px;
     width: 170px;
     height: 52.05px;
     margin-right: 15px;
@@ -84,26 +92,26 @@
     width: 554px;
     height: 30px;
     /* overflow: hidden; */
-	position: relative;
+    position: relative;
     outline: none;
 }
 
 .header .button-header {
     position: absolute;
-	top: 0;
-	right: 0;
-	height: 32px;
-	width: 32px;
+    top: 0;
+    right: 0;
+    height: 32px;
+    width: 32px;
     line-height: 32px;
-	outline: none;
-	cursor: pointer;
+    outline: none;
+    cursor: pointer;
     color: white;
     background-color: #ea1c00;
     border: 1px solid #ea1c00;
     overflow: hidden;
     border-radius: 20px;
     border-bottom-left-radius: 0;
-    border-top-left-radius: 0 ;
+    border-top-left-radius: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,13 +122,32 @@
     width: 100%;
     height: 32px;
     background-color: white;
-    padding: 0;margin: 0;border: 1px solid  #ccc;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
     outline: none;
     padding: 5px 15px 5px 15px;
     border-radius: 20px;
 }
 
+.header .top-header__icon .bi.bi-journal-text,
+.header .top-header__icon .bi.bi-person-circle,
+.header .top-header__icon .bi.bi-ticket-perforated,
+.header .top-header__icon .bi.bi-cart {
+    font-size: 24px;
+}
 
+.header .mid-header__icon .bi.bi-telephone,
+.header .mid-header__icon .bi.bi-youtube,
+.header .mid-header__icon .bi.bi-newspaper,
+.header .mid-header__icon .bi.bi-person {
+    font-size: 20px;
+}
+
+.sub-header .bottom-header__icon .bi.bi-cash-coin {
+    position: relative;
+    bottom: -3px;
+}
 
 .between-line {
     display: block;
@@ -129,12 +156,14 @@
 
 .sub-header__background {
     background-color: #f1f0f1;
+    padding: 5px;
+    border-top: 1px solid #d4d4d4;
 
 }
 
-.sub-header{
+.sub-header {
     display: flex;
-    margin: 0px 153px 0 153px;
+    margin: 0px 1.6%;
     flex: 1;
 }
 
@@ -143,7 +172,7 @@
     border: 1px solid #505050;
     text-decoration: none;
     margin-left: 7px;
-    padding: 7px 30px;
+    padding: 7px 75px;
     font-weight: 500;
     font-size: 13px;
     border-radius: 5px;
@@ -158,6 +187,8 @@
     margin-left: 7px;
     flex: 1;
     gap: 8px;
+    position: relative;
+    bottom: 5px;
 }
 
 
@@ -168,10 +199,10 @@
     transition: 0.5s;
 }
 
-.sub-header .sub-header__menu{
+.sub-header .sub-header__menu {
     display: inline-flex;
     align-items: center;
-    border: 1px solid ;
+    border: 1px solid;
     border-radius: 4px;
     background-color: #505050;
     color: white;
@@ -179,5 +210,8 @@
     padding: 8px 12px;
 }
 
-  
-  
+.cart {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
