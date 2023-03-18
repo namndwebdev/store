@@ -53,7 +53,7 @@ export default function ProductDetail() {
     {/* BreadCrumbs */}
     {product ? <NavBreadcrums nameProduct={product.name} nameBrand={product.idBrand && product.idBrand.data.attributes.name} /> : null}
 
-    <div className="Container">
+    <div className="Container ">
       <div className="page_content"> </div>
       <div className="page_content_left">
         {/* Carousel */}
