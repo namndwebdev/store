@@ -10,7 +10,7 @@ const ProductList = () => {
     const timer = setTimeout(() =>{
 
     })
-    fetch(`https://backofficee.nodemy.vn/api/products?pagination[page]=1&pagination[pageSize]=4&populate=*`)
+    fetch(`https://backoffice.nodemy.vn/api/products?pagination[page]=1&pagination[pageSize]=4&populate=*`)
     .then((res) => res.json())
     .then((res) => {
       setDataList(res.data);
@@ -36,7 +36,7 @@ const ProductList = () => {
         <h2 className="product-list__title">PC GEARVN - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</h2>
         {dataList ? dataList.map(data => <Product data={data}></Product>) : <SkeletonLoad></SkeletonLoad>}
       </div>
-      <Pagination total={pageSize.length} pageSize={4} onChange={handleChangePage} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} />
+      {dataList ? <Pagination total={pageSize.length} pageSize={4} onChange={handleChangePage} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} /> : null}
     </div>
   );
 };

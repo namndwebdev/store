@@ -41,6 +41,7 @@ export default function ProductDetail() {
       .then(data => {
 
         setProduct(data.data.attributes)
+
         const listLink = []
         data.data.attributes.image.data.map(x => {
           let imgLink = `${process.env.REACT_APP_LINK_BACK_END}${x.attributes.url}`
