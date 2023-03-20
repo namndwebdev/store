@@ -22,7 +22,6 @@ const NextBtn = (props) => {
 };
 
 export default function CarouselVer2({ hasImage = true, data, ...props }) {
-console.log(data);
 
   let carouselHome = <Slider
     autoplay

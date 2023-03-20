@@ -16,7 +16,6 @@ function CarouselHome() {
                     listLink.push(imgLink)
                   })
                   SetImgLeft(listLink)
-                  console.log(imgLeft);
               })
       }
       callAPI()

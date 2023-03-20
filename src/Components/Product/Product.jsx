@@ -1,19 +1,8 @@
 import React from "react";
-import { Pagination } from "antd"
-import { useState } from "react";
-import './Product.css'
+import './Product.css';
+import { Skeleton } from 'antd';
+
 function Product({ data }) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(4);
-  const handleChangePage = (page, pageSize) => {
-    setCurrentPage(page);
-    setPageSize(pageSize);
-  };
-
-  const start = (currentPage - 1) * pageSize;
-  const end = start + pageSize;
-  const currentData = data.slice(start, end);
-
   const convertToVnd = (price) => {
     const VND = new Intl.NumberFormat("vi-VN", {
       style: "currency",
@@ -26,11 +15,11 @@ function Product({ data }) {
     return `${Number.parseFloat(salePercent).toFixed(0)}%`;
   };
   return (
-    <>{currentData.map((data) => {
-      return <div className="col-3 product-home">
+    <>
+      <div className="col-3 product-home">
         <div className="card text-start m-2 card-item">
           <div className="card-img-top">
-            <img src={`https://backoffice.nodemy.vn${data?.attributes?.image?.data[0].attributes.url}`}
+            <img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
               alt="">
             </img>
             <div className="card-mark d-flex justify-content-center align-items-center">
@@ -69,14 +58,6 @@ function Product({ data }) {
 
         </div>
       </div>
-    })}
-      <Pagination
-        style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}
-        current={currentPage}
-        pageSize={pageSize}
-        total={data.length}
-        onChange={handleChangePage}
-      />
     </>
 
   );
