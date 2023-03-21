@@ -1,20 +1,29 @@
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { updateCartList } from '../../redux/cartSlice'
 import './Cart.css'
+
 export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
     const [list,setList] = useState(dataApi)
+    const [listParityProduct,setlistParityProduct] = useState()
     function OnChangeTextInput(e) {
         var indexElement = e.target.getAttribute('data')
         list[indexElement].quantity = e.target.value
         setList([...list])
      } 
-     
+
     useEffect(()=>{
         localStorage.setItem('cart', JSON.stringify(list));
     })
-    console.log(dataApi);
+    const handleOnClick = async (e) => {
+        const idCategory= e.idCategories.data[0].id;
+        const result = await axios.get(`https://backoffice.nodemy.vn/api/categories/${idCategory}?populate=*`)
+        setlistParityProduct(result.data.data.attributes.products.data) 
+        console.log(result.data.data.attributes.products.data);
+    }
+
     const dispatch = useDispatch()
     return <>
     <div className="Page-Cart" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:'column'}} >
@@ -45,7 +54,7 @@ export default function Cart(){
                             <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`}></img>
                             </td>
                             <td  className='Page-Cart-Body-NameItem'>
-                                <span>{item.name}</span>
+                                <span onClick={()=> handleOnClick(item)}>{item.name}</span>
                             </td>
                             <td style={{width:'20%'}}>
                                 <input style={{width:'30%'}} data={index} onChange={OnChangeTextInput} type="number" value={item.quantity} min='1'/>
@@ -68,7 +77,6 @@ export default function Cart(){
                         <td><h2 style={{fontSize:'20px'}}>
                             {
                                 (list.reduce(function(total, item){
-                                    console.log(total);
                                     return total + (item.price * item.quantity)
                                 }, 0)).toLocaleString('vi-VN', {style : 'currency', currency: 'VND'})
                             }
@@ -81,8 +89,33 @@ export default function Cart(){
             </table>
         </div>
         <div className='Page-Cart-Footer'><button>Thanh toán</button></div>
+        <div className="Page-Cart-Header"> <h1>Sản Phẩm Tương Tự</h1></div>
+        <div style={{width:'1200px'}} className='Page-Cart-ParityProduct'>
+        <table border={1} style={{width:'100%',textAlign:"center"}}>
+            <tbody>
+                <tr>
+                    <td><h2>Sản phẩm</h2></td>
+                    <td><h2>Tên sản phẩm</h2></td>
+                    <td><h2>Số lượng</h2></td>
+                    <td><h2>Giá tiền</h2></td>
+                </tr>
+                {listParityProduct&&listParityProduct.map((item)=>{
+                        return <tr>
+                            <td><h2>123</h2></td>
+                            <td><h2>{item.attributes.name}</h2></td>
+                            <td><h2>1</h2></td>
+                            <td><h2>{Number(item.attributes.price).toLocaleString('vi-VN', {style : 'currency', currency: 'VND'})}</h2></td>
+                        </tr>
+})}
+                    
+                
+            
+            </tbody>
+        </table>
+    </div>
 
     </div>
+    
     
     </>
 

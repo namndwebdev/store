@@ -1,6 +1,7 @@
 import { Col, Row } from 'antd';
 import CarouselHome from '../../Components/CarouselHome/CarouselHome';
 import { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
 export default function ContentMenu() {
     const [imgRight, SetImgRight] = useState([])
     const [imgSub, SetImgSub] = useState([])
