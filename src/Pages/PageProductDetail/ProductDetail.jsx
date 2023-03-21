@@ -12,8 +12,6 @@ const { Text } = Typography;
 export default function ProductDetail() {
   const dispatch = useDispatch()
   const cart = useSelector(state => state.cart)
-  // console.log(cart)
-  // console.log(`cart co ${cart.cartItem.length}`);
   let { slug } = useParams()
   let [product, setProduct] = useState({}) //(null)
   let [imageList, setImageList] = useState([])
@@ -39,9 +37,7 @@ export default function ProductDetail() {
     fetch(`https://backoffice.nodemy.vn/api/products/${slug}`)
       .then(res => res.json())
       .then(data => {
-
         setProduct(data.data.attributes)
-
         const listLink = []
         data.data.attributes.image.data.map(x => {
           let imgLink = `${process.env.REACT_APP_LINK_BACK_END}${x.attributes.url}`

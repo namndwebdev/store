@@ -1,6 +1,6 @@
 import React from "react";
 import './Product.css';
-import { Skeleton } from 'antd';
+import { Link } from "react-router-dom";
 
 function Product({ data }) {
   const convertToVnd = (price) => {
@@ -23,7 +23,7 @@ function Product({ data }) {
               alt="">
             </img>
             <div className="card-mark d-flex justify-content-center align-items-center">
-              <p >Click để xem chi tiết</p>
+              <Link to={`/product/${data.attributes.slug}`} style={{color:'white'}}>Click để xem chi tiết</Link>
               <p>Đặt hàng</p>
             </div>
 

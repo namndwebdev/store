@@ -7,9 +7,7 @@ const ProductList = () => {
   const [dataList, setDataList] = useState()
   const [pageSize, setpageSize] = useState([])
   useEffect(() => {
-    const timer = setTimeout(() =>{
-
-    })
+  
     fetch(`https://backoffice.nodemy.vn/api/products?pagination[page]=1&pagination[pageSize]=4&populate=*`)
     .then((res) => res.json())
     .then((res) => {
@@ -24,7 +22,7 @@ const ProductList = () => {
     })
   }, [])
   const handleChangePage = (page, pageSize) => {
-    fetch(`https://backofficee.nodemy.vn/api/products?pagination[page]=${page}&pagination[pageSize]=4&populate=*`)
+    fetch(`https://backoffice.nodemy.vn/api/products?pagination[page]=${page}&pagination[pageSize]=4&populate=*`)
       .then((res) => res.json())
       .then((res) => {
         setDataList(res.data);
