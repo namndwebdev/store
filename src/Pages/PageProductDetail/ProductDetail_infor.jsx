@@ -103,14 +103,15 @@ export default function ProductDetail_infor({ description, cpu, ram }) {
             <td>Bảo mật dấu vân tay</td>
           </tr>
         </table>
-      </div>
-      {/* DETAIL BOTTOM */}
+         {/* DETAIL BOTTOM */}
       <Row>
         <Col span={24}>
           <div>Markdown here</div>
           <ReactMarkdown>{result2}</ReactMarkdown>
         </Col>
       </Row>
+      </div>
+     
     </>
   );
 }
