@@ -25,11 +25,13 @@ export default function FooterMenu() {
     }, [])
     return <>
         <Row>
+            <div style={{width:'100%',height:'100%',display:'flex'}}>
             {bottomImg.map((item) => {
                 return (<Col span={6}>
                     <img key={item} style={{ objectFit: 'contain', width: '100%', height: '100%', paddingRight: '5px' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
                 </Col>)
             })}
+            </div>
 
         </Row>
 

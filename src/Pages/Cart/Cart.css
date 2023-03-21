@@ -43,7 +43,7 @@
 
 .Page-Cart-Body-Note{
     width: 95%;
-    border: 1px solid blue;
+    border: 1px solid #6498cd;
     font-weight: 500;
     height: 70px;
     
@@ -95,4 +95,11 @@
 }
 .Page-Cart-Footer{
     padding-bottom: 30px;
+}
+.Page-Cart-ParityProduct >table,tr,td {
+    border: 1px solid #f0f0f0;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    background-color: white !important;
+    border-color: #f0f0f0;
+    
 }
