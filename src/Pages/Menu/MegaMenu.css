@@ -23,8 +23,8 @@
   justify-content: flex-start;
   border-radius: 5px;
   position: relative;
-  padding-left: 20px;
-  margin-left: 10px;
+  padding-right: 0;
+  margin-left: 0;
 
 }
 
@@ -92,12 +92,11 @@
 
 
 .wrap-megamenu-item {
-
   position: absolute;
   top: 10px;
   left: 190px;
-  width: 1260px;
-  height: 550px;
+  width: 1135px;
+  height: 570px;
   background-color: white;
   display: flex;
   justify-content: space-between;
