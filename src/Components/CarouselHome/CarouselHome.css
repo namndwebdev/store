@@ -2,26 +2,32 @@
   position: absolute;
   top: 90%;
 }
-
-/* .dot {
-    flex: 0 1 auto;
-    width: 30px;
-    height: 3px;
-    margin-right: 3px;
-    margin-left: 3px;
-    border: none;
-    cursor: pointer;
-    border-radius: 0%;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  .dot.active {
-    background-color: rgb(194, 19, 19);
-  }
-  .fade {
-    animation-name: fade;
-    animation-duration: 0s;
-  } */
-
 .slick-dots li {
   list-style: none !important;
+  bottom: 20px;
+}
+.slick-dots li button {
+  flex: 0 1 auto !important;
+  width: 30px !important;
+  height: 3px !important;
+
+}
+.slick-dots li button:before{
+  width: 30px !important;
+  height: 3px !important;
+  border-left: 3px solid grey !important;
+  border-radius: 5% !important;
+  background-color: white!important;
+  content: "" !important;
+}
+
+.slick-slider {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent;
+}
+.slick-list img{
+  width: 97% !important;
+  height: 100% !important;
+  margin: 0 auto;
 }

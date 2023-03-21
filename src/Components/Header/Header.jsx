@@ -10,7 +10,7 @@ import { addToCart, updateCartList } from "../../redux/cartSlice";
 import { Link } from "react-router-dom";
 const Header = () => {
     const [dataHeader, setDataHeader] = useState([])
-    const cart = useSelector(state => state.cart)
+    const cartItemCount = useSelector(state => state.cart.cartItem.length)
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -30,7 +30,7 @@ const Header = () => {
         <div className='header'>
             <div className='header-menu store-container'>
                 <div className='left-header'>
-                    <img src="https://via.placeholder.com/170x52.05/green" alt="" />
+                    <img src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279" alt="" />
                 </div>
                 <div className='right-header'>
                     <div className="right-header__line1">
@@ -52,7 +52,7 @@ const Header = () => {
                             }
                             <Link to='cart/'>
                                 <span className='cart'>
-                                    <Badge badgeContent={cart.cartItem?.length} color="error">
+                                    <Badge badgeContent={cartItemCount} color="error">
                                         <ShoppingCartOutlined />
                                     </Badge>
                                 </span>
