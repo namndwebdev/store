@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-// import logoHeader from '../../static/svg/logo-header'
-import { UilSearch } from '@iconscout/react-unicons'
+import { UilNotes,UilUserCircle,UilTicket,UilShoppingCart,UilSearch,UilPhone,UilYoutube,UilUser,UilArchway  } from '@iconscout/react-unicons'
 import './header.css'
 import SubHeader from './SubHeader'
 import { useSelector } from 'react-redux'
@@ -11,7 +10,7 @@ import { addToCart, updateCartList } from "../../redux/cartSlice";
 import { Link } from "react-router-dom";
 const Header = () => {
     const [dataHeader, setDataHeader] = useState([])
-    const cart = useSelector(state => state.cart)
+    const cartItemCount = useSelector(state => state.cart.cartItem.length)
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -21,98 +20,68 @@ const Header = () => {
                 setDataHeader(data.data)
             })
     }, [])
-    // console.log(dataHeader[0].attributes.menuheader.link)
     useEffect(() => {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         dispatch(updateCartList(cartItems))
     }, []);
-    return (
-        <>
-            <div className='header'>
-                <div className='header-item'>
-                    <div className='left-header'>
-                        <img src={'https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=34913'} alt="logo" />
-                    </div>
-                    <div className='right-header'>
-                        <div className='right-header__line1'>
-                            <div className='searchbox-header'>
-                                <input className='input-header' type="text" placeholder='Nhập mã sản phẩm hoặc tên sản phẩm' />
-                                <button className='button-header'><UilSearch className='button-header__icon' style={{ width: '17px', height: '17px', fontWeight: '700' }}></UilSearch></button>
-                            </div>
-
-                            <span>
-                                {dataHeader && dataHeader.length > 0 && dataHeader[0].attributes.menuheader.link.map((item) => {
+  return (
+    //
+    <>
+        <div className='header'>
+            <div className='header-menu store-container'>
+                <div className='left-header'>
+                    <img src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279" alt="" />
+                </div>
+                <div className='right-header'>
+                    <div className="right-header__line1">
+                        <div className='header-search'>
+                            <input className='header-search__input' type="text" placeholder='Nhập mã hoặc tên sản phẩm...'/>
+                            <button className='header-search__button'><UilSearch style={{width:'17px',height:'17px', fontWeight:'700'}}></UilSearch></button>
+                        </div>
+                        <span className='right-header__line1-menu' >
+                            {
+                                dataHeader && dataHeader.length > 0 && dataHeader[0].attributes.menuheader.link.map((item) => {
                                     return <span>
-
-                                        <span style={{ marginLeft: '15px' }}>
-                                            <span className='top-header__icon' dangerouslySetInnerHTML={{ __html: item.icon }} />
-                                            <span style={{ fontWeight: '700', fontSize: '13px' }}>{item.label}</span>
-                                        </span>
+                                
+                                    <span style={{ marginLeft:'15px' }}>
+                                    <span className='top-header__icon' dangerouslySetInnerHTML={{__html:item.icon}}/>
+                                        <span style={{fontWeight:'700',fontSize:'15px'}}>{item.label}</span>
                                     </span>
-                                })}
-                                    <Link to='cart/'>
-                                    <span  className='cart'>
-                                        <Badge badgeContent={cart.cartItem?.length} color="error">
-                                            <ShoppingCartOutlined />
-                                        </Badge>
-                                    </span>
-                                    </Link>
-                            </span>
-
-                            {/* <span style={{ marginLeft:'15px' }}>
-                        <UilNotes style={{fontSize:'50px'}}></UilNotes>
-                        <span style={{fontWeight:'700',fontSize:'11px'}}>ĐĂNG KÝ</span>
-                    </span>
-                    <span style={{ marginLeft:'28px' }}>
-                        <UilUserCircle></UilUserCircle>
-                        <span style={{fontWeight:'700',fontSize:'11px'}}>ĐĂNG NHẬP</span>
-                    </span>
-                    <span style={{ marginLeft:'28px' }}>
-                        <UilTicket></UilTicket>
-                        <span style={{fontWeight:'700',fontSize:'11px'}}>KHUYẾN MÃI</span>
-                    </span>
-                    <span style={{ marginLeft:'28px' }}>
-                        <UilShoppingCart></UilShoppingCart>
-                        <span style={{fontWeight:'700',fontSize:'11px'}}>GIỎ HÀNG</span>
-                    </span> */}
-                        </div>
-                        <div className='right-header__line2'>
-                            <span>
-                                {dataHeader && dataHeader.length > 0 && dataHeader[1].attributes.menuheader.link.map((item, index) => {
-                                    return <>
+                                </span>
+                                })
+                            }
+                            <Link to='cart/'>
+                                <span className='cart'>
+                                    <Badge badgeContent={cartItemCount} color="error">
+                                        <ShoppingCartOutlined />
+                                    </Badge>
+                                </span>
+                            </Link>
+                        </span>
+                    </div>
+                    <div className='right-header__line2'>
+                        <span>
+                            {
+                                dataHeader && dataHeader.length > 0 && dataHeader[1].attributes.menuheader.link.map((item,index) => {
+                                    return <span>
+                                        <span>
                                         <span className={index !== 3 && 'span-left'}>
-                                            <span className='mid-header__icon' dangerouslySetInnerHTML={{ __html: item.icon }} />
-                                            <span>{item.label}</span>
+                                            <span className='mid-header__icon' dangerouslySetInnerHTML={{__html:item.icon}}/>
+                                            <span key={item.id}>{item.label}</span>
+                                        </span>    
                                         </span>
-                                    </>
-
-                                })}
-                            </span>
-
-                            {/* <span className='span-left'>
-                        <UilPhone></UilPhone>
-                        <span>TỔNG ĐÀI</span>
-                    </span>
-                    <span className='span-left'>
-                        <UilYoutube></UilYoutube>
-                        <span>VIDEOS</span>
-                    </span>
-                    <span className='span-left'>
-                        <UilUser></UilUser>
-                        <span>TUYỂN DỤNG</span>
-                    </span>
-                    <span className='span-left__last'>
-                        <UilArchway></UilArchway>
-                        <span>HỆ THỐNG SHOWROOM</span>
-                    </span> */}
-                        </div>
-                    </div >
+                                    </span>
+                                })
+                            }
+                        </span>
+                    </div>
                 </div>
             </div>
-            <span className='between-line'></span>
-            <SubHeader data={dataHeader} />
-        </>
-    )
+        </div>
+        <div style={{width:'100%', border:'1px solid #d4d4d4'}}></div>
+        <SubHeader data={dataHeader}></SubHeader>
+    </>
+  )
 }
 
 export default Header

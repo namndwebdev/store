@@ -21,10 +21,11 @@ export default function Baner() {
     direction="vertical"
     style={{
       width: '100%',
+      backgroundColor: "#f8f8f8",
     }}
     size={[0, 48]}
   >
-    <Layout>
+    <Layout className='store-container'>
       <Layout>
         <Sider style={siderStyle}><MegaMenu></MegaMenu></Sider>
         <Content style={contentStyle}><ContentMenu></ContentMenu></Content>

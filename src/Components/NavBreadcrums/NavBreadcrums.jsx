@@ -5,10 +5,10 @@ import { RightOutlined } from '@ant-design/icons';
 
 export default function Breadcrumbs({ nameProduct, nameBrand }) {
   return (
-    <div className="breadcrumbs">
-      <div>
+    <div className="breadcrumbs ">
+      <div className="store-container">
         <span>Bạn đang ở:</span>
-        <Link to='/home'> Trang chủ</Link>
+        <Link to='/'> Trang chủ</Link>
         <RightOutlined />
         <Link to="/" key={nameProduct}> {nameBrand} </Link>
         <RightOutlined />

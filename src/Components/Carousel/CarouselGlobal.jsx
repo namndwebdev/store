@@ -21,23 +21,8 @@ const NextBtn = (props) => {
   );
 };
 
-const dataImage = [
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_1.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_3.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_4.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_5.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_6.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_7.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_8.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_9.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_10.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_11.jpg?v=34910",
-  "https://theme.hstatic.net/1000026716/1000440777/14/slideshow_12.jpg?v=34910",
-]
-
-
 export default function CarouselVer2({ hasImage = true, data, ...props }) {
-
+console.log(data);
 
   let carouselHome = <Slider
     autoplay
@@ -45,13 +30,10 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
     dots
     initialSlide={1}
     infinite
-    prevArrow={<PreviousBtn />}
-    nextArrow={<NextBtn />}
-    dotsClass="slick-dots custom-indicator"
   >
-    {dataImage.map((item) => (
+    {data && data.map((item) => (
       <div key={Math.random()}>
-        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "contain" }} />
+        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "cover" }} />
       </div>
     ))}
   </Slider>
@@ -62,8 +44,6 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
     dots
     initialSlide={1}
     infinite
-    prevArrow={<PreviousBtn />}
-    nextArrow={<NextBtn />}
     customPaging={(i) => {
       return (
         <div style={{ width: "100%", height: "100%" }}>
@@ -71,10 +51,7 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
             src={data[i]}
             alt=""
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-              borderRadius: "10px",
+              borderRadius: "5px",
             }}
           />
         </div>
@@ -85,12 +62,12 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >
-        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "contain" }} />
+        <img src={item} alt="" style={{ width: "100%", height:"100%" }} />
       </div>
     ))}
   </Slider>
   return <>
-    <div style={{ margin: "0 auto", width: '100%', height: "50px" }} className="carousel">
+    <div className="carousel">
       {data && data.length > 0 ? (hasImage ? carouselDetail : carouselHome) : carouselHome}
     </div>
 

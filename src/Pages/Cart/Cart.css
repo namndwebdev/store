@@ -7,10 +7,10 @@
     font-family:"Segoe UI", Helvetica, Arial, sans-serif;
    
  }
-.Page-Cart-Body >table,tr,td {
+/* .Page-Cart-Body > table,tr,td {
     border: 1px solid #f0f0f0;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-}
+} */
 .Page-Cart-Header h1{
     text-align: center;
     padding-top: 20px;
