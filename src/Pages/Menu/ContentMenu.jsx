@@ -26,27 +26,31 @@ export default function ContentMenu() {
     return <>
         <div className='Content-Menu'>
             <div className="MegaMenu-Image">
-                <div style={{ height: "100%" }} className='MegaMenu-Image-Carousel'>
+                <div style={{ height: "100%"}} className='MegaMenu-Image-Carousel'>
                     <Row>
                         <Col span={16}>
-                            <div style={{ width: "100%", height: "368px", paddingRight: '5px', paddingBottom: "5px",margin:"10px" }}>
+                            <div style={{ width: "100%", height: "100%", paddingRight: '5px', paddingBottom: "5px",margin:"10px" }}>
                                 <CarouselHome />
                             </div>
                         </Col>
                         <Col span={8}>
+                            <div style={{height:'380px',width:'100%', paddingTop:'10px', paddingRight:'15px'}}>
                             {imgRight.map((item) => {
-                                return <img style={{ objectFit: 'cover', display: 'block', width: '90%', height: '50%', paddingTop: '10px' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                                return <img style={{ objectFit: 'contain', display: 'block', width: '100%', height: '50%' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
                             })}
+                            </div>
                         </Col>
                     </Row>
                 </div>
                 <div className='MegaMenu-Image-SubItem'>
                     <Row>
+                        <div  style={{height:'184px',display:'flex',width:'100%'}} >
                         {imgSub.map((item) => {
-                            return (<Col span={8}>
-                                <img style={{ objectFit: 'cover', display: 'block', width: '93%', height: '100%', paddingTop: '10px', paddingLeft: '10px' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                            return (<Col style={{height:'100%'}} span={8}>
+                                <img style={{ objectFit: 'contain', display: 'block', width: '100%', height: '100%' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
                             </Col>)
                         })}
+                        </div>
                     </Row>
                 </div>
             </div>
