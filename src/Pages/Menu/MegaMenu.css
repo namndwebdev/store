@@ -28,7 +28,7 @@
 .wrap-list-megamenu .content-70{
   flex: 1;
   margin-left: 10px;
-  max-width: calc(100%-190px);
+  max-width: calc(100% - 190px);
 }
 
 /* sider */ 
