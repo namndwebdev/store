@@ -7,7 +7,6 @@ const ProductList = () => {
   const [dataList, setDataList] = useState()
   const [pageSize, setpageSize] = useState([])
   useEffect(() => {
-  
     fetch(`https://backoffice.nodemy.vn/api/products?pagination[page]=1&pagination[pageSize]=4&populate=*`)
     .then((res) => res.json())
     .then((res) => {

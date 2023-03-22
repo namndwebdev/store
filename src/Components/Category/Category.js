@@ -6,10 +6,10 @@ import Product from "../Product/Product";
 import ProductList from "../ProductList/ProductList";
 export default function Category() {
   let [productList, setProductList] = useState([]);
-  let { name} = useParams();
+  let { name}  = useParams();
   useEffect(() => {
     fetch(
-      `https://backoffice.nodemy.vn/api/products?filters[idCategories][name][$eq]=${name}&populate=*`
+      `https://backoffice.nodemy.vn/api/products?filters[idCategories][name][$eq]=${name}`
     )
       .then((res) => res.json())
       .then((res) => {

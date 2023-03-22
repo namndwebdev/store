@@ -1,9 +1,6 @@
 import React from "react";
 import {
-  UilBars,
-  UilBill,
-  UilWrench,
-  UilTruck,
+  UilBars
 } from "@iconscout/react-unicons";
 
 const SubHeader = ({ data }) => {

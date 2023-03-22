@@ -16,7 +16,7 @@ function Product({ data }) {
   };
   return (
     <>
-      <div className="col-3 product-home">
+      <div className="col-xs-1 col-xl-3 product-home">
         <div className="card text-start m-2 card-item">
           <div className="card-img-top">
             <img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
