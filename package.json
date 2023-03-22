@@ -12,15 +12,17 @@
     "antd": "^5.2.2",
     "axios": "^1.3.4",
     "bootstrap-icons": "^1.10.3",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-carousel-minimal": "^1.4.1",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.5",
-    "react-router-dom": "^6.8.2",
+    "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "remark-gfm": "^3.0.1",
+    "use-debounce": "^9.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

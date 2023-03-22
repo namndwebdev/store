@@ -24,7 +24,7 @@
   border-radius: 5px;
   position: relative;
   padding-left: 20px;
-  margin-left: 10px;
+  /* margin-left: 152px; */
   
 }
 
@@ -39,8 +39,6 @@
   z-index: 1000;
   background-color: white;
   color: #505050;
-  
-
 }
 
 .item-megamenu:hover {

@@ -45,7 +45,7 @@ export default function CarouselGlobal({ hasImage = true, data, ...props }) {
 
   ]
 
-console.log(data);
+// console.log(data);
 
   return (
     <>
