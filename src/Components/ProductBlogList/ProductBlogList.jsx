@@ -13,9 +13,9 @@ export default function ProductBlogList() {
     <div className='blog-list-container'>
       <h2 className="blog-list__title">PC GEARVN - TOP LIST PC NỔI BẬT</h2>
       <div className='row'>
-        <div className='col-10' style={{ borderRight: '1px solid silver', paddingRight: '20px' }}>
+        <div className='col-9' style={{ borderRight: '1px solid silver', paddingRight: '20px' }}>
           {blogList.map((item) => {
-            return <div className='row'>
+            return <div className='row' key={item.id}>
               <div className='col-4'>
                 <img src={`https://backoffice.nodemy.vn${item.attributes.image.data[0].attributes.url}`}
                   alt="">
@@ -32,18 +32,12 @@ export default function ProductBlogList() {
           })}
         </div>
 
-        <div className='col-2 blog-list__right'>
+        <div className='col-3 blog-list__right'>
           <div className='row'>
-            <img src='https://w.ladicdn.com/s500x900/5bf3dc7edc60303c34e4991f/11-side-web-230x679-20230301043030-u7pnn.png' alt=''></img>
-          </div>
-          <div className='row mt-3'>
             <img src='https://w.ladicdn.com/s500x900/5bf3dc7edc60303c34e4991f/side-web-20230214022014-feh4d-20230313033643-ws0dz.png' alt=''></img>
           </div>
-          <div className='row mt-3'>
-            <img src='https://w.ladicdn.com/s550x950/5bf3dc7edc60303c34e4991f/side-web-20230221090231-qrep_.png' alt=''></img>
-          </div>
-          <div className='row mt-3'>
-            <img src='https://w.ladicdn.com/s550x950/5bf3dc7edc60303c34e4991f/side-web-20230213133317-_tcfj.png' alt=''></img>
+          <div className='row  mt-5'>
+            <img src='https://w.ladicdn.com/s500x900/5bf3dc7edc60303c34e4991f/11-side-web-230x679-20230301043030-u7pnn.png' alt=''></img>
           </div>
         </div>
       </div>
