@@ -1,12 +1,47 @@
-.footer {
-    
+
+
+.footer .footer-promotion__form {
+    background-color: #dedede;
+    display: flex;
+    margin: 20px 153px 0 153px
 }
 
-.footer .footer-promotion__logo {
-    display: inline-block;
-    background: no-repeat left center #dedede;
-    width: 60px;
-    height: 49px;
-    margin: 20px 153px 0 153px;
-    color: red;
+.footer .footer-promotion__form span,
+.footer .footer-promotion__form div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-register {
+    width: 33.33%;
+}
+
+
+.footer .footer-input__field,
+.footer-button__register {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+
+.footer .footer-input__field {
+    width: 70%;
+    outline: none;
+    border: none;
+}
+
+.footer-button__register {
+    border: none;
+    background-color: #e02626;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.footer-info__wrap {
+    display: flex;
+    width: 80%;
+    margin: 20px auto;
+    justify-content: space-between;
 }
