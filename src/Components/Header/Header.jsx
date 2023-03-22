@@ -2,27 +2,30 @@ import React, { useEffect, useState } from 'react'
 import { UilNotes,UilUserCircle,UilTicket,UilShoppingCart,UilSearch,UilPhone,UilYoutube,UilUser,UilArchway  } from '@iconscout/react-unicons'
 import './header.css'
 import SubHeader from './SubHeader'
-import SearchHeader from './SearchHeader'
 
 const Header = () => {
-
     const [dataHeader, setDataHeader] = useState([])
+    const cartItemCount = useSelector(state => state.cart.cartItem.length)
+
+    const dispatch = useDispatch();
     useEffect(() => {
         fetch('https://backoffice.nodemy.vn/api/menu-headers?populate[menuheader][populate][0]=link')
-        .then((res) => res.json())
-        .then((data) => {
-            setDataHeader(data.data)
-        
-        })
+            .then((res) => res.json())
+            .then((data) => {
+                setDataHeader(data.data)
+            })
     }, [])
-
+    useEffect(() => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        dispatch(updateCartList(cartItems))
+    }, []);
   return (
     //
     <>
         <div className='header'>
-            <div className='header-menu'>
+            <div className='header-menu store-container'>
                 <div className='left-header'>
-                    <img src="https://via.placeholder.com/170x52.05/green" alt="" />
+                    <img src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279" alt="" />
                 </div>
                 <div className='right-header'>
                     <div className="right-header__line1">
@@ -42,6 +45,13 @@ const Header = () => {
                                 </span>
                                 })
                             }
+                            <Link to='cart/'>
+                                <span className='cart'>
+                                    <Badge badgeContent={cartItemCount} color="error">
+                                        <ShoppingCartOutlined />
+                                    </Badge>
+                                </span>
+                            </Link>
                         </span>
                     </div>
                     <div className='right-header__line2'>

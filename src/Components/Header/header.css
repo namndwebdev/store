@@ -1,9 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.header * {
+    font-family: inherit;
+}
+
+.sub-header {
+    font-family: 'Roboto';
+}
+
+.sub-header * {
+    font-family: inherit;
+}
+
+.header .header-item {
+    display: flex;
+    margin: 15px 0 0 70px;
+}
+
+.header .right-header {
+    flex: 1;
+    cursor: pointer;
+
+}
+
+.header .right-header__line1 {
+    display: flex;
+    margin-top: 6px;
+
+}
+
+.header .right-header__line1 span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header .right-header__line2 {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    padding: 10px 0;
+    color: #ea1c00;
+}
+
+.header .right-header__line2 .span-left span,
+.header .right-header__line2 .span-left__last span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.header .span-left {
+    position: relative;
+}
+
+.header .span-left::after {
+    content: "";
+    width: 2px;
+    height: 100%;
+    min-height: 24px;
+    background-color: red;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.header .right-header__line2 span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header .right-header__line2 span:last-child {
+    font-weight: bold;
+}
+
+.header .left-header {
+    margin-top: 5px;
+    width: 170px;
+    height: 52.05px;
 }
 
 .header {
@@ -42,10 +116,10 @@
 
 .header .header-search__button {
     position: absolute;
-	top: 0;
-	right: 0;
-	height: 32px;
-	width: 32px;
+    top: 0;
+    right: 0;
+    height: 32px;
+    width: 32px;
     line-height: 32px;
     background-color: #ea1c00;
     border-radius: 20px;
@@ -86,7 +160,7 @@
 .header .mid-header__icon .bi.bi-telephone,
 .header .mid-header__icon .bi.bi-youtube,
 .header .mid-header__icon .bi.bi-newspaper,
-.header .mid-header__icon .bi.bi-person{
+.header .mid-header__icon .bi.bi-person {
     font-size: 20px;
 }
 
@@ -133,7 +207,6 @@
 
 .sub-header {
   display: flex;
-  margin: 0px 153px 0 153px;
   flex: 1;
 }
 

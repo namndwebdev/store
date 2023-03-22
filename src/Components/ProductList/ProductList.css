@@ -44,14 +44,17 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .ant-card-cover {
   max-height: 240px;
   position: relative;
   overflow: hidden;
 }
+
 .custom-antd:hover .order-btn {
   bottom: 0;
 }
+
 .cart-wp {
   width: 20% !important;
   margin-bottom: 10px;
@@ -64,6 +67,7 @@
   background-color: #fff;
   border-radius: 0;
 }
+
 .card-title h2 {
   margin: 0;
   padding: 0;
@@ -81,22 +85,26 @@
 .custom-antd .ant-card-body {
   padding: 10px;
 }
+
 .card-price {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .card-price .oldprice {
   color: rgb(136, 136, 136);
   text-decoration: line-through;
   font-size: 13px;
 }
+
 .card-price .saleprice {
   color: red;
   font-weight: 750;
   /* font-size: 20px; */
   font-size: 18px;
 }
+
 .card-price p {
   padding: 0;
   margin: 0;
@@ -126,6 +134,7 @@
   transition: all linear 0.3s;
   bottom: -50px;
 }
+
 .order-btn .ant-btn {
   /* background: none repeat scroll 0 0 rgba(121, 117, 101, 0.8); */
   background: #252525;

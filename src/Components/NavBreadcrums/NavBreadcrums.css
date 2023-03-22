@@ -1,26 +1,23 @@
 .breadcrumbs {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 10px 10px;
-  border-radius: 5px;
-  background-color: #f8f8f8;
+  width: 100%;
+  background-color: #f8f8f8
 }
-.breadcrumbs > * {
-  display: inline-block;
-  margin-right: 10px;
-  text-decoration: none;
-}
-.breadcrumbs a:hover {
+
+  .breadcrumbs>div {
+    height: 100%;
+    padding: 10px 5px ;
+
+  }
+
+.breadcrumbs>div>a:hover {
   color: #f45b4f;
 }
-.breadcrumbs a:last-child:after {
-  display: none;
-  
-}
-.breadcrumbs a {
+
+.breadcrumbs>div>a {
   color: #6abae7;
   text-decoration: none !important;
 }
-.breadcrumbs :last-child a {
+
+.breadcrumbs>div>a:last-child {
   color: black;
 }
