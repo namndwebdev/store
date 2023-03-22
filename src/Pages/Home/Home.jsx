@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <Baner></Baner>
       <ProductList dataList={data}></ProductList>
-      <ProductList dataList={data}></ProductList>
+      <ProductBlogList></ProductBlogList>
     </>
   );
 }
