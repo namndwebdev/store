@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from 'react'
 const MenuItem = ({ typedata }) => {
     
@@ -11,7 +12,9 @@ const MenuItem = ({ typedata }) => {
                       <ul>
                           {
                               item.link.map((item) => (
-                                  <li className='item-megamenu-laptop'>{item.label}</li>
+                                  <li className='item-megamenu-laptop'>
+                                    <Link to={`${item.url}`} style={{color:'black'}} >{item.label}</Link>
+                                    </li>
                               ))
                           }
                       </ul>
@@ -20,7 +23,7 @@ const MenuItem = ({ typedata }) => {
             }
         </div>
                     <div className='img-laptop-megamenu'>
-                        <img   src={`${process.env.REACT_APP_LINK_BACK_END}${typedata.bannerFeatures.data.attributes.url}`}></img>
+                       <Link to='1/'><img   src={`${process.env.REACT_APP_LINK_BACK_END}${typedata.bannerFeatures.data.attributes.url}`}></img></Link>
                     </div>  
         </div>
     )

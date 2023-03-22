@@ -19,15 +19,11 @@ export default function Category() {
   }, []);
 
   return (
-    <div>
-      <div className="">
-        <div className="container">
-        <h2 className="fs-2 text mt-2 mb-2 fw-normal">Laptop Gaming Acer</h2>
-        <div className="mt-2 mb-2">Bạn đang ở: Trang chủ <i class="bi bi-arrow-right-circle-fill"></i> Laptop Gaming Acer chính hãng, giá tốt nhất</div>
-        <div className="row">
-        <ProductList data={productList} className="category-content"></ProductList>
-        </div>
-      </div>
+    <div className="">
+      <Header></Header>
+      <div className="container">
+        
+        <ProductList dataList={productList}></ProductList>
       </div>
     </div>
   );

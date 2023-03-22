@@ -25,7 +25,7 @@
   position: relative;
   padding-left: 20px;
   margin-left: 10px;
-
+  
 }
 
 .wrap-list-megamenu .item-megamenu {
@@ -39,7 +39,7 @@
   z-index: 1000;
   background-color: white;
   color: #505050;
-
+  
 
 }
 
@@ -92,12 +92,11 @@
 
 
 .wrap-megamenu-item {
-
   position: absolute;
   top: 10px;
   left: 190px;
-  width: 1260px;
-  height: 550px;
+  width: 1135px;
+  height: 570px;
   background-color: white;
   display: flex;
   justify-content: space-between;

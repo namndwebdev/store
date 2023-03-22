@@ -1,14 +1,13 @@
 .breadcrumbs {
-  max-width: 100%;
-  padding: 10px;
-  border-radius: 5px;
+  width: 100%;
   background-color: #f8f8f8
 }
 
-.breadcrumbs>div {
-  width: 100%;
-  margin: 0 8%;
-}
+  .breadcrumbs>div {
+    height: 100%;
+    padding: 10px 5px ;
+
+  }
 
 .breadcrumbs>div>a:hover {
   color: #f45b4f;

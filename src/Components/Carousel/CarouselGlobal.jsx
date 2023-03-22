@@ -25,17 +25,14 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
 
   let carouselHome = <Slider
     autoplay
-    autoplaySpeed={1700}
+    autoplaySpeed={1500}
     dots
     initialSlide={1}
     infinite
-    prevArrow={<PreviousBtn />}
-    nextArrow={<NextBtn />}
-    dotsClass="slick-dots custom-indicator"
   >
     {data && data.map((item) => (
       <div key={Math.random()}>
-        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "contain" }} />
+        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "cover" }} />
       </div>
     ))}
   </Slider>
@@ -46,8 +43,6 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
     dots
     initialSlide={1}
     infinite
-    prevArrow={<PreviousBtn />}
-    nextArrow={<NextBtn />}
     customPaging={(i) => {
       return (
         <div style={{ width: "100%", height: "100%" }}>
@@ -55,10 +50,7 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
             src={data[i]}
             alt=""
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-              borderRadius: "10px",
+              borderRadius: "5px",
             }}
           />
         </div>
@@ -69,12 +61,12 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >
-        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "contain" }} />
+        <img src={item} alt="" style={{ width: "100%", height:"100%" }} />
       </div>
     ))}
   </Slider>
   return <>
-    <div style={{ margin: "0 auto", width: '100%', height: "50px" }} className="carousel">
+    <div className="carousel">
       {data && data.length > 0 ? (hasImage ? carouselDetail : carouselHome) : carouselHome}
     </div>
 

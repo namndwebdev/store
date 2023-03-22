@@ -17,6 +17,7 @@ export const cartSlice = createSlice({
       const cartItem = addItem ? state.cartItem.map(x => x.name == addItem.name ? { ...x, quantity: x.quantity + 1 } : x) : [...state.cartItem, { ...payload, quantity: Number(1) }]
       console.log(cartItem);
       localStorage.setItem('cart', JSON.stringify(cartItem)); // Lưu giỏ hàng vào LocalStorage
+      window.location.href = '/cart';
       return { ...state, cartItem }
     },
     updateCartList: (state, { payload }) => {

@@ -15,21 +15,14 @@
 
 }
 
-.page_content {
-  grid-area: 1 / 2 / 2 / 6;
-  height: 150px;
-}
-
 .page_content_left {
   grid-area: 1 / 2 / 2 / 4;
-
   padding: 0 15px;
 
 }
 
 .page_content_right {
   grid-area: 1 / 4 / 2 / 6;
-
   padding: 0 15px;
 
 }
@@ -79,4 +72,8 @@ td:last-child {
 
 table li {
   list-style: none;
+}
+.detail_table img{
+  margin: 0 auto;
+  width: 70%;
 }
