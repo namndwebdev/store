@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { UilNotes,UilUserCircle,UilTicket,UilShoppingCart,UilSearch,UilPhone,UilYoutube,UilUser,UilArchway  } from '@iconscout/react-unicons'
 import './header.css'
 import SubHeader from './SubHeader'
+import { useDispatch, useSelector } from 'react-redux'
+import SearchHeader from './SearchHeader'
+import { addToCart, updateCartList } from "../../redux/cartSlice";
+import Badge from '@material-ui/core/Badge';
+import ShoppingCartOutlined from '@material-ui/icons/ShoppingCart';
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [dataHeader, setDataHeader] = useState([])
