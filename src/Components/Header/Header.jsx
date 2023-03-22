@@ -2,12 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { UilNotes,UilUserCircle,UilTicket,UilShoppingCart,UilSearch,UilPhone,UilYoutube,UilUser,UilArchway  } from '@iconscout/react-unicons'
 import './header.css'
 import SubHeader from './SubHeader'
-import { useSelector } from 'react-redux'
-import ShoppingCartOutlined from '@material-ui/icons/ShoppingCart';
-import Badge from '@material-ui/core/Badge';
-import { useDispatch } from 'react-redux';
-import { addToCart, updateCartList } from "../../redux/cartSlice";
-import { Link } from "react-router-dom";
+
 const Header = () => {
     const [dataHeader, setDataHeader] = useState([])
     const cartItemCount = useSelector(state => state.cart.cartItem.length)
@@ -35,7 +30,7 @@ const Header = () => {
                 <div className='right-header'>
                     <div className="right-header__line1">
                         <div className='header-search'>
-                            <input className='header-search__input' type="text" placeholder='Nhập mã hoặc tên sản phẩm...'/>
+                            <SearchHeader></SearchHeader>
                             <button className='header-search__button'><UilSearch style={{width:'17px',height:'17px', fontWeight:'700'}}></UilSearch></button>
                         </div>
                         <span className='right-header__line1-menu' >

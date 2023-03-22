@@ -5,7 +5,7 @@ import Header from "../../Components/Header/Header";
 import Breadcrumbs from "../../Components/NavBreadcrums/NavBreadcrums";
 import Baner from "../Menu/Baner";
 import SubHeader from "../../Components/Header/SubHeader";
-import { Footer } from "antd/es/layout/layout";
+import { Footer } from "../../Components/Footer/Footer";
 import { useEffect } from "react";
 import FooterMenu from "../Menu/FooterMenu";
 
@@ -19,13 +19,13 @@ export default function Home() {
         setData(res.data);
       });
   }, []);
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <Baner></Baner>
       <ProductList dataList={data}></ProductList>
       <ProductList dataList={data}></ProductList>
-
+      <Footer></Footer>
     </>
   );
 }
