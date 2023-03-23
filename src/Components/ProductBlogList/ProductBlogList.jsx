@@ -1,14 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import './ProductBlogList.css'
+import { Pagination } from 'antd';
 export default function ProductBlogList() {
   const [blogList, setblogList] = useState([])
+  const [pageSize, setpageSize] = useState([])
+
   useEffect(() => {
-    fetch(`https://backoffice.nodemy.vn/api/products?populate=*`)
+    fetch(`https://backoffice.nodemy.vn/api/blogs?pagination[page]=1&pagination[pageSize]=4&populate=*`)
       .then((res) => res.json())
       .then((res) => {
         setblogList(res.data);
       })
   }, [])
+  useEffect(() => {
+    fetch(`https://backoffice.nodemy.vn/api/blogs?populate=*`)
+      .then((res) => res.json())
+      .then((res) => {
+        setpageSize(res.data);
+      })
+  }, [])
+
+  const handleChangePage = (page, pageSize) => {
+    fetch(`https://backoffice.nodemy.vn/api/blogs?pagination[page]=${page}&pagination[pageSize]=4&populate=*`)
+      .then((res) => res.json())
+      .then((res) => {
+        setblogList(res.data);
+      })
+  };
+
+
   return (
     <div className='blog-list-container'>
       <h2 className="blog-list__title">PC GEARVN - TOP LIST PC NỔI BẬT</h2>
@@ -17,21 +37,18 @@ export default function ProductBlogList() {
           {blogList.map((item) => {
             return <div className='row' key={item.id}>
               <div className='col-4'>
-                <img src={`https://backoffice.nodemy.vn${item.attributes.image.data[0].attributes.url}`}
-                  alt="">
-                </img>
+                <img src={item?.attributes?.image?.data?.attributes?.url} alt={item?.attributes?.image?.data?.attributes?.url}></img>
               </div>
               <div className='col-8 pt-5'>
-                <h2 className='fw-bold text-danger'>{item.attributes.name}</h2>
-                <p className='overflow-hidden'>{item.attributes.description}</p>
-                <p>CPU : {item.attributes.cpu}</p>
-                <p>RAM : {item.attributes.ram}</p>
+                <h2 className='fw-bold text-danger'>{item?.attributes?.title}</h2>
+                <p className='overflow-hidden'>{item?.attributes?.content}</p>
               </div>
             </div>
 
           })}
-        </div>
 
+          <Pagination total={pageSize.length} onChange={handleChangePage} pageSize={4} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} />
+        </div>
         <div className='col-3 blog-list__right'>
           <div className='row'>
             <img src='https://w.ladicdn.com/s500x900/5bf3dc7edc60303c34e4991f/side-web-20230214022014-feh4d-20230313033643-ws0dz.png' alt=''></img>

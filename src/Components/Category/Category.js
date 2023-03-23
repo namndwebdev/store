@@ -22,7 +22,6 @@ export default function Category() {
     <div className="">
       <Header></Header>
       <div className="container">
-        
         <ProductList dataList={productList}></ProductList>
       </div>
     </div>
