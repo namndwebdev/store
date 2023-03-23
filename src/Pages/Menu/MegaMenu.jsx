@@ -24,9 +24,11 @@ export default function MegaMenu() {
     }
 
     return <>
-        <div className="wrap-list-megamenu" onMouseLeave={() => setIsShowMenuItem(false)}>
+        <div onMouseLeave={() => setIsShowMenuItem(false)} className="wrap-list-megamenu">
             
-            <ul>
+            <ul 
+            
+            >
                 {
                     dataMega.map((item) => (
                         <li
@@ -41,12 +43,12 @@ export default function MegaMenu() {
                     )
                     )
                 }
-            </ul>
-            <div className='content-70'>
+            </ul >
+            <div  className='content-70'>
                 <ContentMenu></ContentMenu>
             </div> 
 
-            {isShowMenuItem && <MenuItem typedata={typedata}   />}
+            {isShowMenuItem && <MenuItem typedata={typedata} />}
         </div>
     </>
 }
