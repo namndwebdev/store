@@ -4,7 +4,8 @@
 }
 .slick-dots li {
   list-style: none !important;
-  bottom: 20px;
+  bottom: 80px;
+  
 }
 .slick-dots li button {
   flex: 0 1 auto !important;
