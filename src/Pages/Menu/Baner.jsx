@@ -25,7 +25,7 @@ export default function Baner() {
     }}
     size={[0, 48]}
   >
-    <Layout className='store-container' style={{margin:'0 auto'}}>
+    <Layout className='store-container'>
       <Layout>
         <Sider style={siderStyle}><MegaMenu></MegaMenu></Sider>
         <Content style={contentStyle}><ContentMenu></ContentMenu></Content>

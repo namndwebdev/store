@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import "./MegaMenu.css";
-import MenuItem from "./MenuItem";
+import { useState, useEffect } from 'react'
+import './MegaMenu.css'
+import MenuItem from './MenuItem'
 
 export default function MegaMenu() {
   const [dataMega, SetDataMega] = useState([]);
@@ -24,31 +24,26 @@ export default function MegaMenu() {
     SetIdActive(data);
   };
 
-  return (
-    <>
-      <div
-        className="wrap-list-megamenu"
-        onMouseLeave={() => setIsShowMenuItem(false)}
-      >
-        <ul>
-          {dataMega.map((item) => (
-            <li
-              className="item-megamenu hovermegamenu"
-              key={item.id}
-              onMouseEnter={() => handleWhenHover(item.attributes.section)}
-              onMouseLeave={() => {
-                SetIdActive(null);
-              }}
-            >
-              <span
-                dangerouslySetInnerHTML={{ __html: item.attributes.icon }}
-              />
-              -{item.attributes.label}
-            </li>
-          ))}
-          {isShowMenuItem && <MenuItem typedata={typedata} />}
-        </ul>
-      </div>
+    return <>
+        <div className="wrap-list-megamenu">
+            <ul onMouseLeave={() => setIsShowMenuItem(false)}>
+                {
+                    dataMega.map((item) => (
+                        <li
+                            className="item-megamenu hovermegamenu"
+                            key={item.id}
+                            onMouseEnter={() =>handleWhenHover(item.attributes)}
+                            onMouseLeave={()=>{SetIdActive(null)}}
+                        >
+                            <span dangerouslySetInnerHTML={{ __html: item.attributes.icon }} />-
+                            {item.attributes.label}
+                        </li>
+                    )
+                    )
+                }
+                {isShowMenuItem && <MenuItem typedata={typedata}   />}
+            </ul>
+        </div>
     </>
   );
 }
