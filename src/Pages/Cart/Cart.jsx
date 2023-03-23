@@ -6,6 +6,7 @@ import { updateCartList } from '../../redux/cartSlice'
 import CartParity from './CartParity'
 
 
+
 export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
     const [list,setList] = useState(dataApi)
@@ -27,7 +28,7 @@ export default function Cart(){
         console.log(idCategory);
         
     }
-    
+    const dispatch = useDispatch();
     return <>
     <div className="Page-Cart" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:'column'}} >
         <div className="Page-Cart-Header"> <h1>GIỎ HÀNG <i style={{fontSize:'35px'}} class="bi bi-cart"></i></h1></div>
@@ -69,6 +70,7 @@ export default function Cart(){
                             <button  onClick={function ClickToRemove(){
                                 list.splice(index,1)
                                 setList([...list])
+                                dispatch(updateCartList(list))
                                 
                                 
                             }} ><i class="bi bi-trash3-fill"></i></button>
@@ -91,7 +93,7 @@ export default function Cart(){
                 </tbody>               
             </table>
         </div>
-        <div className='Page-Cart-Footer'><button>Thanh toán</button></div>
+        <div className='Page-Cart-Footer'><button onClick={()=>{window.location.href = 'checkout/'}}>Thanh toán</button></div>
         <div className="Page-Cart-Header"> <h1>Sản Phẩm Tương Tự</h1></div>
         {listParityProduct&&<CartParity listParityProduct = {listParityProduct}/>}
     </div>
