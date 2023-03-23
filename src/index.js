@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import MegaMenu from "./Pages/Menu/MegaMenu";
+import Blog from "./Pages/Blogs/Blog";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

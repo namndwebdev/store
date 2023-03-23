@@ -62,12 +62,12 @@ console.log(data);
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >
-        <img src={item} alt="" style={{ width: "100%", height:"100%" }} />
+        <img src={item} alt="" style={{ width: "100%", height:"100%", objectFit: "cover" }} />
       </div>
     ))}
   </Slider>
   return <>
-    <div className="carousel">
+    <div className="carousel" style={{backgroundColor:"red",width:"100%",height:"100%"}}>
       {data && data.length > 0 ? (hasImage ? carouselDetail : carouselHome) : carouselHome}
     </div>
 

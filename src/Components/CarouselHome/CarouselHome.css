@@ -22,9 +22,10 @@
 }
 
 .slick-slider {
-  width: 100% !important;
-  height: 100% !important;
-  background-color: transparent;
+    width: 95% ;
+    height: 100%;
+  background-color: yellow;
+  position: relative;
 }
 .slick-list img{
   width: 100% !important;
