@@ -4,7 +4,7 @@
 }
 .slick-dots li {
   list-style: none !important;
-  bottom: 20px;
+  bottom: 50px !important;
 }
 .slick-dots li button {
   flex: 0 1 auto !important;
@@ -27,7 +27,7 @@
   background-color: transparent;
 }
 .slick-list img{
-  width: 97% !important;
+  width: 100% !important;
   height: 100% !important;
   margin: 0 auto;
 }
