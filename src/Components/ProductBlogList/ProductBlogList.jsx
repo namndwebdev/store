@@ -31,17 +31,20 @@ export default function ProductBlogList() {
 
   return (
     <div className='blog-list-container'>
-      <h2 className="blog-list__title">PC GEARVN - TOP LIST PC NỔI BẬT</h2>
+     <div className='row'>
+     <h2 className="blog-list__title">PC GEARVN - TOP LIST PC NỔI BẬT</h2>
+     </div>
       <div className='row'>
-        <div className='col-9' style={{ borderRight: '1px solid silver', paddingRight: '20px' }}>
+        <div className='col-12 col-lg-9 blog-list__left'>
           {blogList.map((item) => {
             return <div className='row' key={item.id}>
-              <div className='col-4'>
-                <img src={item?.attributes?.image?.data?.attributes?.url} alt={item?.attributes?.image?.data?.attributes?.url}></img>
+              <div className='col-12 pd-0 col-lg-4 img-fluid overflow-hidden'>
+              <img src='https://laptop88.vn/media/news/1237_man_hinh_laptop_lenovo.jpg' alt='' className='blog-list__img'></img>
+                {/* <img src={item?.attributes?.image?.data?.attributes?.url} alt={item?.attributes?.image?.data?.attributes?.url}></img> */}
               </div>
-              <div className='col-8 pt-5'>
-                <h2 className='fw-bold text-danger'>{item?.attributes?.title}</h2>
-                <p className='overflow-hidden'>{item?.attributes?.content}</p>
+              <div className='col-12 col-lg-8 pt-2 pt-lg-5'>
+                <h2 className='fw-bold text-danger blog-list-item__tittle'>{item?.attributes?.title}</h2>
+                <p className='blog-list__content'>{item?.attributes?.content}</p>
               </div>
             </div>
 
