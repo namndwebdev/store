@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useSelector,useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { updateCartList } from '../../redux/cartSlice'
 import './Cart.css'
 
@@ -21,7 +21,6 @@ export default function Cart(){
         const idCategory= e.idCategories.data[0].id;
         const result = await axios.get(`https://backoffice.nodemy.vn/api/categories/${idCategory}?populate=*`)
         setlistParityProduct(result.data.data.attributes.products.data) 
-        console.log(result.data.data.attributes.products.data);
     }
 
     const dispatch = useDispatch()
@@ -51,7 +50,7 @@ export default function Cart(){
                 {list.map((item,index)=>{
                   return    <tr key={index} style={{height:'150px'}}>
                             <td style={{width:'20%'}} className="Page-Cart-Body-img">
-                            <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`}></img>
+                            <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`} alt=''></img>
                             </td>
                             <td  className='Page-Cart-Body-NameItem'>
                                 <span onClick={()=> handleOnClick(item)}>{item.name}</span>

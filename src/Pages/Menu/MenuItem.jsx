@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import React from 'react'
 const MenuItem = ({ typedata }) => {
-
     return (
         <div className='wrap-megamenu-item'> 
                     <div className='wrap-megamenu-section'>
