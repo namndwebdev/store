@@ -72,6 +72,3 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
 
   </>
 }
-
-
-

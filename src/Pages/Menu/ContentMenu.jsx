@@ -30,8 +30,7 @@ export default function ContentMenu() {
                     <Row>
                         <Col span={16}>
                             <div style={{ width: "100%", height: "100%"}}>
-                                <CarouselHome />
-                               
+                                <CarouselHome />                               
                             </div>
                         </Col>
                         <Col span={8}>

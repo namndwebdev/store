@@ -3,7 +3,7 @@ import CarouselGlobal from "../Carousel/CarouselGlobal";
 import './CarouselHome.css'
 import { useEffect, useState } from 'react'
 function CarouselHome() {
-  const [imgLeft, SetImgLeft] = useState([])
+  const [dataImg, setDataImg] = useState([])
 
   useEffect(() => {
       const callAPI = () => {
@@ -11,18 +11,18 @@ function CarouselHome() {
               .then(res => res.json())
               .then((data) => {
                 const listLink = []
-                  const arrayleft = data.data.attributes.leftBanner.data.map((item) => {
+                    data.data.attributes.leftBanner.data.map((item) => {
                     let imgLink = `${process.env.REACT_APP_LINK_BACK_END}${item.attributes.url}`
                     listLink.push(imgLink)
                   })
-                  SetImgLeft(listLink)
+                  setDataImg(listLink)
               })
       }
       callAPI()
   }, [])
   return (
     <>
-      <CarouselGlobal hasImage={false} data={imgLeft}  ></CarouselGlobal>
+      <CarouselGlobal hasImage={false} data={dataImg}  ></CarouselGlobal>
     </>
   );
 }
