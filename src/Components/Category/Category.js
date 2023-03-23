@@ -22,8 +22,7 @@ export default function Category() {
     <div className="">
       <Header></Header>
       <div className="container">
-        <h2>Title</h2>
-        <div>breadcum</div>
+        
         <ProductList dataList={productList}></ProductList>
       </div>
     </div>
