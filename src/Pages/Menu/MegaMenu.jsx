@@ -24,11 +24,9 @@ export default function MegaMenu() {
     }
 
     return <>
-        <div className="wrap-list-megamenu">
+        <div className="wrap-list-megamenu" onMouseLeave={() => setIsShowMenuItem(false)}>
             
-            <ul 
-            onMouseLeave={() => setIsShowMenuItem(false)}
-            >
+            <ul>
                 {
                     dataMega.map((item) => (
                         <li

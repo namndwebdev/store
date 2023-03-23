@@ -38,7 +38,7 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
   </Slider>
 
   let carouselDetail = <Slider
-    autoplay
+    // autoplay
     autoplaySpeed={1500}
     dots
     initialSlide={1}
@@ -57,7 +57,7 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
       );
     }}
 
-    dotsClass="slick-dots custom-indicator"
+    dotsClass="slick-dots custom-indicator bottom-indicator"
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >
