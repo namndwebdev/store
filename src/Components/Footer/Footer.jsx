@@ -43,7 +43,8 @@ export const Footer = () => {
               </p>
             </div>
             <div className="footer-info__middle">
-              <h3>hèoaoqwoeoqw</h3>
+              <a href=""><b>Hệ thống cửa hàng:</b></a>
+              
             </div>
             <div className="footer-info__right">
               <h3>aHFAHEUFHAUWIEFU</h3>
