@@ -9,10 +9,8 @@
 .Container {
   display: grid;
   grid-template-columns: 1fr 3fr repeat(2, 2fr) 3fr 1fr;
-  grid-template-rows: 0.5fr repeat(4, 2fr);
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
-
+  grid-row-gap: 10px;
 }
 
 .page_content_left {
