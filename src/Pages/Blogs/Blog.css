@@ -28,7 +28,6 @@
     background-color: #000000;
     color: white;
     text-align: center;
-   
     padding: 10px;
 }
 .blog-header .blog-navbar {
@@ -223,4 +222,19 @@
 }
 .footer-about p:first-child {
     font-weight: 700;
+}
+.related-posts{
+    background-color: #ededf7;
+    margin: 10px 0;
+
+}
+.related-posts .posts{
+    display: flex;
+    align-items: center;
+}
+.related-posts h3 {
+    padding: 5px 0;
+}
+.related-posts .posts .post{
+    margin-left: 5px;
 }
