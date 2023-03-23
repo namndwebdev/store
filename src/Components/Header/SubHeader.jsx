@@ -26,7 +26,7 @@ const SubHeader = ({ data }) => {
     <>
       <div className="sub-header__background">
         <div style={{ height: "10px" }}></div>
-        <div className="sub-header">
+        <div className="sub-header store-container">
           <span
             className="sub-header__menu"
             onMouseEnter={() => setIsShowMenuItem(true)}
@@ -34,7 +34,7 @@ const SubHeader = ({ data }) => {
           >
             <UilBars></UilBars>Danh mục sản phẩm
           </span>
-          <span>
+          <span style={{display:'flex', flex:'1'}}>
             {data &&
               data.length > 0 &&
               data[2].attributes.menuheader.link.map((item, index) => {

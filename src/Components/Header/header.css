@@ -143,7 +143,7 @@
 .header .right-header__line1 span {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 14px;
 }
 
 .header .top-header__icon .bi.bi-journal-text,
@@ -201,7 +201,7 @@
 
 .sub-header {
   display: flex;
-  flex: 1;
+  margin: 0 auto;
 }
 
 .sub-header .header-a__color {
