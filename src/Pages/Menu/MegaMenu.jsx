@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import "./MegaMenu.css";
-import MenuItem from "./MenuItem";
-
+import { useState, useEffect } from 'react'
+import './MegaMenu.css'
+import MenuItem from './MenuItem'
+import ContentMenu from './ContentMenu'
 export default function MegaMenu() {
     const [dataMega, SetDataMega] = useState([])
     const [isShowMenuItem, setIsShowMenuItem] = useState(false)
@@ -25,8 +25,11 @@ export default function MegaMenu() {
 
     return <>
         <div className="wrap-list-megamenu">
-            <ul onMouseLeave={() => setIsShowMenuItem(false)}>
-                {   
+            
+            <ul 
+            onMouseLeave={() => setIsShowMenuItem(false)}
+            >
+                {
                     dataMega.map((item) => (
                         <li
                             className="item-megamenu hovermegamenu"
@@ -40,8 +43,12 @@ export default function MegaMenu() {
                     )
                     )
                 }
-                {isShowMenuItem && <MenuItem typedata={typedata} />}
             </ul>
+            <div className='content-70'>
+                <ContentMenu></ContentMenu>
+            </div> 
+
+            {isShowMenuItem && <MenuItem typedata={typedata}   />}
         </div>
     </>
   ;

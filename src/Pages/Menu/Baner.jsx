@@ -25,13 +25,10 @@ export default function Baner() {
     }}
     size={[0, 48]}
   >
-    <Layout className='store-container'>
-      <Layout>
-        <Sider style={siderStyle}><MegaMenu></MegaMenu></Sider>
-        <Content style={contentStyle}><ContentMenu></ContentMenu></Content>
-      </Layout>
-      <Footer style={footerStyle}><FooterMenu></FooterMenu></Footer>
-    </Layout>
+    <div className='store-container'>
+      <MegaMenu></MegaMenu>
+      <FooterMenu></FooterMenu>
+    </div>
   </Space>
 
 

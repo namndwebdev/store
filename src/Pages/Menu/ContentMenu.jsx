@@ -34,9 +34,9 @@ export default function ContentMenu() {
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div style={{height:'380px',width:'100%', paddingTop:'10px', paddingRight:'15px'}}>
+                            <div style={{width:'100%', paddingTop:'10px', paddingRight:'15px'}}>
                             {imgRight.map((item) => {
-                                return <img style={{ objectFit: 'contain', display: 'block', width: '100%', height: '50%' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                                return <img style={{ objectFit: 'ccover', display: 'block', width: '100%', height: 'auto' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
                             })}
                             </div>
                         </Col>
@@ -44,10 +44,10 @@ export default function ContentMenu() {
                 </div>
                 <div className='MegaMenu-Image-SubItem'>
                     <Row>
-                        <div  style={{height:'184px',display:'flex',width:'100%'}} >
+                        <div  style={{display:'flex',width:'100%'}} >
                         {imgSub.map((item) => {
                             return (<Col style={{height:'100%'}} span={8}>
-                                <img style={{ objectFit: 'contain', display: 'block', width: '100%', height: '100%' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                                <img style={{ objectFit: 'cover', display: 'block', width: '100%', height: 'auto' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
                             </Col>)
                         })}
                         </div>
