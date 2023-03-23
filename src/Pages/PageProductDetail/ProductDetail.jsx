@@ -56,8 +56,10 @@ export default function ProductDetail() {
     <div className="Container ">
       <div className="page_content"> </div>
       <div className="page_content_left">
-        {/* Carousel */}
-        <CarouselGlobal hasImage={true} data={imageList} ></CarouselGlobal>
+       <div style={{width:"80%",height:"70%",margin:"0 auto"}}>
+         {/* Carousel */}
+         <CarouselGlobal hasImage={true} data={imageList} ></CarouselGlobal>
+       </div>
       </div>
       <div className="page_content_right">
         {product ? <Typography.Title level={2}>{product.name}</Typography.Title> : null}

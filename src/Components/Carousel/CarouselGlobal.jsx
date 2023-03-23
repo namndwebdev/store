@@ -39,7 +39,7 @@ console.log(data);
   </Slider>
 
   let carouselDetail = <Slider
-    autoplay
+    // autoplay
     autoplaySpeed={1500}
     dots
     initialSlide={1}
@@ -58,7 +58,7 @@ console.log(data);
       );
     }}
 
-    dotsClass="slick-dots custom-indicator"
+    dotsClass="slick-dots custom-indicator bottom-indicator"
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >
