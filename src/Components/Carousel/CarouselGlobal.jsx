@@ -27,7 +27,7 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
     autoplay
     autoplaySpeed={1500}
     dots
-    initialSlide={1}
+    initialSlide={0}
     infinite
   >
     {data && data.map((item) => (
@@ -38,10 +38,10 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
   </Slider>
 
   let carouselDetail = <Slider
-    // autoplay
+    autoplay
     autoplaySpeed={1500}
     dots
-    initialSlide={1}
+    initialSlide={0}
     infinite
     customPaging={(i) => {
       return (

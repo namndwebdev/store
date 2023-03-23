@@ -2,23 +2,20 @@ import React from "react";
 import CarouselGlobal from "../Carousel/CarouselGlobal";
 import './CarouselHome.css'
 import { useEffect, useState } from 'react'
+import { getImgCarouselHome } from "../../services/homepage";
 function CarouselHome() {
   const [dataImg, setDataImg] = useState([])
 
   useEffect(() => {
-      const callAPI = () => {
-          fetch('https://backoffice.nodemy.vn/api/homepage?populate=*')
-              .then(res => res.json())
-              .then((data) => {
+          getImgCarouselHome()
+              .then(res => {
                 const listLink = []
-                    data.data.attributes.leftBanner.data.map((item) => {
+                    res.data.data.attributes.leftBanner.data.map((item) => {
                     let imgLink = `${process.env.REACT_APP_LINK_BACK_END}${item.attributes.url}`
                     listLink.push(imgLink)
                   })
                   setDataImg(listLink)
               })
-      }
-      callAPI()
   }, [])
   return (
     <>

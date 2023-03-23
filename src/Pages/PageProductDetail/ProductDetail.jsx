@@ -7,6 +7,7 @@ import ProductDetail_infor from "./ProductDetail_infor";
 import CarouselGlobal from "../../Components/Carousel/CarouselGlobal";
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart } from "../../redux/cartSlice";
+import {getProductBySlug} from '../../services/product'
 const { Text } = Typography;
 
 export default function ProductDetail() {
@@ -34,12 +35,11 @@ export default function ProductDetail() {
     },
   ];
   useEffect(() => {
-    fetch(`https://backoffice.nodemy.vn/api/products/${slug}`)
-      .then(res => res.json())
-      .then(data => {
-        setProduct(data.data.attributes)
+    getProductBySlug(slug)
+      .then(res => {
+        setProduct(res.data.data.attributes)
         const listLink = []
-        data.data.attributes.image.data.map(x => {
+        res.data.data.attributes.image.data.map(x => {
           let imgLink = `${process.env.REACT_APP_LINK_BACK_END}${x.attributes.url}`
           listLink.push(imgLink)
         })
