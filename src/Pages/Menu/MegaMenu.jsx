@@ -45,5 +45,4 @@ export default function MegaMenu() {
             </ul>
         </div>
     </>
-  );
 }
