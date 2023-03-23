@@ -29,8 +29,9 @@ export default function ContentMenu() {
                 <div style={{ height: "100%"}} className='MegaMenu-Image-Carousel'>
                     <Row>
                         <Col span={16}>
-                            <div style={{ width: "100%", height: "100%", paddingRight: '5px', paddingBottom: "5px",margin:"10px" }}>
+                            <div style={{ width: "100%", height: "100%"}}>
                                 <CarouselHome />
+                               
                             </div>
                         </Col>
                         <Col span={8}>

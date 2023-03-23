@@ -32,7 +32,7 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
   >
     {data && data.map((item) => (
       <div key={Math.random()}>
-        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "cover" }} />
+        <img src={item} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
     ))}
   </Slider>

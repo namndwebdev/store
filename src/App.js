@@ -7,6 +7,7 @@ import LayoutPage from "./Components/Layout/Layout";
 import Cart from "./Pages/Cart/Cart";
 import CheckoutThank from "./Components/Checkout/CheckoutThank";
 import Category from "./Components/Category/Category";
+import Blog from "./Pages/Blogs/Blog";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="collections/:name" element={<Category></Category>} />
           <Route path="cart/" element={<Cart />} />
         </Route>
+        <Route path="/blog" element={<Blog/>}/>
       </Routes>
     </div>
   );
