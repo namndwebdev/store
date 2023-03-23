@@ -1,10 +1,10 @@
 import axios from 'axios'
 import './Cart.css'
 import { useEffect, useState } from 'react'
-import { useSelector,useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { updateCartList } from '../../redux/cartSlice'
 import CartParity from './CartParity'
-
+import {getCategoryBySlug} from '../../services/category'
 
 export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
@@ -20,12 +20,9 @@ export default function Cart(){
         localStorage.setItem('cart', JSON.stringify(list));
     })
     const handleOnClick = async (e) => {
-        const idCategory= e.idCategories.data[0].attributes.slug;
-        const result = await axios.get(`https://backoffice.nodemy.vn/api/categories/${idCategory}?populate=*`)
+        const slug = e.idCategories.data[0].attributes.slug;
+        const result = await getCategoryBySlug(slug)
         setlistParityProduct(result.data.data.attributes.products.data) 
-        console.log(result.data.data.attributes.products.data);
-        console.log(idCategory);
-        
     }
     
     return <>
@@ -54,7 +51,7 @@ export default function Cart(){
                 {list.map((item,index)=>{
                   return    <tr key={index} style={{height:'150px'}}>
                             <td style={{width:'20%'}} className="Page-Cart-Body-img">
-                            <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`}></img>
+                            <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`} alt=''></img>
                             </td>
                             <td  className='Page-Cart-Body-NameItem'>
                                 <span onClick={()=> handleOnClick(item)}>{item.name}</span>

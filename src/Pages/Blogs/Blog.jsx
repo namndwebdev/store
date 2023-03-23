@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.css'
 import ReactMarkdown from "react-markdown";
+import ProductBlogList from '../../Components/ProductBlogList/ProductBlogList';
 export default function Blog() {
     const [blog, setBlog] = useState([])
     useEffect(() => {
@@ -53,23 +54,12 @@ export default function Blog() {
                         <ReactMarkdown>{content}</ReactMarkdown>
                     </div>
                     <div className="related-posts">
-                        <h3>RELATED ARTICLES</h3>
-                        <div className="posts">
-                            <div className="post">
-                                <img src="https://gstatic.gvn360.com/2023/03/4JETjErxBnB2jNSwnrLkyQ-1200-80-218x150.jpg" alt="" />
-                            </div>
-                            <div className="post">
-                                <img src="https://gstatic.gvn360.com/2023/03/Khung-1-5-1-218x150.jpg" alt="" />
-                            </div>
-                            <div className="post">
-                                <img src="https://gstatic.gvn360.com/2023/03/Khung-1-Recovered-2-218x150.jpg" alt="" />
-                            </div>
-                </div>
-
                     </div>
                 </div>
                 <div className="tab-game">
-                    <div className='box-game'>TOP GAME</div>
+                    <div>
+                        <ProductBlogList></ProductBlogList>
+                    </div>
                 </div>
             </div>
             <div className="blog-footer ">
