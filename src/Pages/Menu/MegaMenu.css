@@ -21,10 +21,19 @@
   display: flex;
   justify-content: flex-start;
   border-radius: 5px;
-  position: relative;
   padding-right: 0;
   margin-left: 0;
+}
 
+.wrap-list-megamenu .content-70{
+  flex: 1;
+  margin-left: 10px;
+  max-width: calc(100% - 190px);
+}
+
+/* sider */ 
+.wrap-list-megamenu>ul{
+  width: 180px;
 }
 
 .wrap-list-megamenu .item-megamenu {
@@ -38,7 +47,7 @@
   z-index: 1000;
   background-color: white;
   color: #505050;
-  
+
 
 }
 

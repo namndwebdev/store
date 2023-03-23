@@ -33,13 +33,13 @@ console.log(data);
   >
     {data && data.map((item) => (
       <div key={Math.random()}>
-        <img src={item} alt="" style={{ width: "100%", height: "45vh", objectFit: "cover" }} />
+        <img src={item} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
     ))}
   </Slider>
 
   let carouselDetail = <Slider
-    autoplay
+    // autoplay
     autoplaySpeed={1500}
     dots
     initialSlide={1}
@@ -58,7 +58,7 @@ console.log(data);
       );
     }}
 
-    dotsClass="slick-dots custom-indicator"
+    dotsClass="slick-dots custom-indicator bottom-indicator"
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >

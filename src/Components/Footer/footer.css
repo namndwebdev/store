@@ -13,6 +13,7 @@
     align-items: center;
 }
 
+
 .footer-register {
     width: 33.33%;
 }
@@ -43,5 +44,20 @@
     display: flex;
     width: 80%;
     margin: 20px auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+.footer-policy a{
+    font-size: 16px;
+    color: #0655a6; 
+    font-weight: bold;
+}
+
+.shop-system {
+    text-transform: uppercase;
+    color: #428bca; 
+}
+
+.shop-system:hover {
+    color: red;
 }
