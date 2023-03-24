@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { addToCart } from "../../redux/cartSlice";
 import { useSelector,useDispatch } from 'react-redux'
 import './Cart.css'
+import axios from 'axios';
 
 
-export default function CartParity({listParityProduct}) {
+export default function CartParity({listCategories}) {
     const dispatch = useDispatch()
+    const [listParityProduct,setListParityProduct] = useState([])
+    console.log(listCategories);
+    let url = 'https://backoffice.nodemy.vn/api/products?' 
+    function getProductInCategories5Latest(listCategories){
+        listCategories.forEach((item,index)=>{
+            return url += `filters[idCategories][slug][$contains]=${item}&`
+        })
+    }
+    
+    getProductInCategories5Latest(listCategories)
+    let lastUrl = url + 'sort[0]=updatedAt%3Adesc&populate=*'
+    console.log(lastUrl);
+    useEffect (()=>{
+        axios.get(`${lastUrl}`)
+        .then ((res)=>{
+            setListParityProduct(res.data.data)
+            console.log(res.data.data);
+        })  
+    },[])
+
   return (
     <div>
         <div style={{width:'1200px'}} className='Page-Cart-ParityProduct'>
@@ -18,7 +39,7 @@ export default function CartParity({listParityProduct}) {
                     <td><h2>Giá tiền</h2></td>
                 </tr>
                 {listParityProduct&&listParityProduct.map((item)=>{
-                        return <tr>
+                        return <tr key={item.attributes.name}>
                             <td><h2><img src={`${process.env.REACT_APP_LINK_BACK_END}${item.attributes.image.data[0].attributes.url}`} /></h2></td>
                             <td><h2>{item.attributes.name}</h2></td>
                             <td><button onClick={()=>{

@@ -1,34 +1,35 @@
 import axios from 'axios'
 import './Cart.css'
 import { useEffect, useState } from 'react'
-import { useSelector,useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { updateCartList } from '../../redux/cartSlice'
 import CartParity from './CartParity'
-
-
-
 export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
     const [list,setList] = useState(dataApi)
-    const [listParityProduct,setlistParityProduct] = useState()
+    function getListCategoriesFromListProduct(e){
+        return e.map((item)=>{
+            return (item.idCategories.data.map((item)=>{
+                return item.attributes.slug
+            }))
+        })
+    }
+    const array =  getListCategoriesFromListProduct(list)
+    const listCategories = array.flat().filter(Boolean)
+    
     function OnChangeTextInput(e) {
         var indexElement = e.target.getAttribute('data')
         list[indexElement].quantity = e.target.value
         setList([...list])
      } 
-
     useEffect(()=>{
         localStorage.setItem('cart', JSON.stringify(list));
-    })
-    const handleOnClick = async (e) => {
-        const idCategory= e.idCategories.data[0].attributes.slug;
-        const result = await axios.get(`https://backoffice.nodemy.vn/api/categories/${idCategory}?populate=*`)
-        setlistParityProduct(result.data.data.attributes.products.data) 
-        console.log(result.data.data.attributes.products.data);
-        console.log(idCategory);
         
-    }
+    })
+
     const dispatch = useDispatch();
+    
+   
     return <>
     <div className="Page-Cart" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:'column'}} >
         <div className="Page-Cart-Header"> <h1>GIỎ HÀNG <i style={{fontSize:'35px'}} class="bi bi-cart"></i></h1></div>
@@ -58,7 +59,7 @@ export default function Cart(){
                             <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`}></img>
                             </td>
                             <td  className='Page-Cart-Body-NameItem'>
-                                <span onClick={()=> handleOnClick(item)}>{item.name}</span>
+                                <span>{item.name}</span>
                             </td>
                             <td style={{width:'20%'}}>
                                 <input style={{width:'30%',border:'1px solid black',textAlign:'center'}} data={index} onChange={OnChangeTextInput} type="number" value={item.quantity} min='1'/>
@@ -95,7 +96,7 @@ export default function Cart(){
         </div>
         <div className='Page-Cart-Footer'><button onClick={()=>{window.location.href = 'checkout/'}}>Thanh toán</button></div>
         <div className="Page-Cart-Header"> <h1>Sản Phẩm Tương Tự</h1></div>
-        {listParityProduct&&<CartParity listParityProduct = {listParityProduct}/>}
+        {listCategories &&<CartParity listCategories={listCategories} />}
     </div>
     
     
