@@ -3,7 +3,7 @@ import './ProductBlogList.css'
 import { Pagination } from 'antd';
 export default function ProductBlogList() {
   const [blogList, setblogList] = useState([])
-  const [pageSize, setpageSize] = useState([])
+  const [pageSize, setpageSize] = useState([]) 
 
   useEffect(() => {
     fetch(`https://backoffice.nodemy.vn/api/blogs?pagination[page]=1&pagination[pageSize]=4&populate=*`)
