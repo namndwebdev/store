@@ -9,9 +9,9 @@ export default function Cart(){
     const [list,setList] = useState(dataApi)
     function getListCategoriesFromListProduct(e){
         return e.map((item)=>{
-            return (item.idCategories.data.map((item)=>{
+            return item.idCategories?item.idCategories.data.map((item)=>{
                 return item.attributes.slug
-            }))
+            }):[]
         })
     }
     const array =  getListCategoriesFromListProduct(list)
@@ -56,7 +56,7 @@ export default function Cart(){
                 {list.map((item,index)=>{
                   return    <tr key={index} style={{height:'150px'}}>
                             <td style={{width:'20%'}} className="Page-Cart-Body-img">
-                            <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`}></img>
+                            <img style={{width:'80%',objectFit:'contai'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`} alt=''></img>
                             </td>
                             <td  className='Page-Cart-Body-NameItem'>
                                 <span>{item.name}</span>

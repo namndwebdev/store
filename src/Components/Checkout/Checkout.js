@@ -1,12 +1,10 @@
-import React from "react";
-import {Link, useNavigate} from 'react-router-dom'
-import { useState} from "react";
-import { ArrowRightOutlined} from "@ant-design/icons";
-import { Row, Col, Form, Input, Select, Button } from "antd";
-import "./Checkout.css";
-import dataProvince from "../Checkout/Data/province.json";
+import { Button, Col, Form, Input, Row, Select } from "antd";
+import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import dataDistrict from "../Checkout/Data/districts.json";
+import dataProvince from "../Checkout/Data/province.json";
 import dataWrad from "../Checkout/Data/wards.json";
+import "./Checkout.css";
 export default function Checkout() {
   const [province, setProvince] = useState([]);
   const [district, setDistrict] = useState("Chọn Quận / Huyện");

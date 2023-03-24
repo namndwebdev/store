@@ -1,0 +1,18 @@
+.header-search__style {
+    background-color: white;
+    position: relative;
+}
+
+.main {
+    position: relative;
+  }
+  
+.dropdown-search {
+    width: 506px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    margin-left: 16px;
+}
+

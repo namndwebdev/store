@@ -8,21 +8,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import CarouselHome from "./Components/CarouselHome/CarouselHome";
+import "./config/axios"; //config axios global
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        {/* <div style={
-          {
-            width: '600px'
-          }
-        }>
-          <CarouselHome></CarouselHome>
-        </div> */}
-        <App></App>
+        <App/>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

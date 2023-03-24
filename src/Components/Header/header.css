@@ -12,21 +12,16 @@
     font-family: inherit;
 }
 
-.header .header-item {
-    display: flex;
-    margin: 15px 0 0 70px;
-}
 
 .header .right-header {
-    flex: 1;
+    /* flex: 1; */
     cursor: pointer;
 
 }
 
 .header .right-header__line1 {
     display: flex;
-    margin-top: 6px;
-
+    /* margin-top: 6px; */
 }
 
 .header .right-header__line1 span {
@@ -39,7 +34,7 @@
     display: flex;
     flex: 1;
     gap: 10px;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     color: #ea1c00;
 }
 
@@ -136,7 +131,8 @@
 
 .header .header-menu {
     display: flex;
-    margin: 20px 153px 0 153px;
+    margin: 0 auto  ;
+    /* margin: 20px 153px 0 153px; */
 }
 
 
@@ -147,7 +143,7 @@
 .header .right-header__line1 span {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 14px;
 }
 
 .header .top-header__icon .bi.bi-journal-text,
@@ -164,9 +160,7 @@
     font-size: 20px;
 }
 
-.header .right-header__line2 {
-    margin-top: 6px;
-}
+
 
 .header .right-header__line2 span{
     display: inline-flex;
@@ -198,7 +192,7 @@
 
 .between-line {
   display: block;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid black;
 }
 
 .sub-header__background {
@@ -207,7 +201,7 @@
 
 .sub-header {
   display: flex;
-  flex: 1;
+  margin: 0 auto;
 }
 
 .sub-header .header-a__color {

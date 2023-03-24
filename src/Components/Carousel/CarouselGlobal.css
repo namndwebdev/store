@@ -23,7 +23,6 @@
 
 .carousel .slick-prev {
   left: 0;
-
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -37,6 +36,7 @@
 .custom-indicator {
   display: inline-block !important;
   position: relative !important;
+  bottom: 20px;
 }
 
 .custom-indicator li {
@@ -59,4 +59,3 @@
   width: 100%;
   height: 100%;
 }
-
