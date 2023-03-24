@@ -39,8 +39,8 @@ export default function CartParity({listCategories}) {
                     <td><h2>Giá tiền</h2></td>
                 </tr>
                 {listParityProduct&&listParityProduct.map((item)=>{
-                        return <tr key={item.attributes.name}>
-                            <td><h2><img src={`${process.env.REACT_APP_LINK_BACK_END}${item.attributes.image.data[0].attributes.url}`} /></h2></td>
+                        return <tr key={item.attributes.name} style={{height:'150px'}}>
+                            <td><h2><img style={{width:'100%',objectFit:'contain',height:'150px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.attributes.image.data[0].attributes.url}`} /></h2></td>
                             <td><h2>{item.attributes.name}</h2></td>
                             <td><button onClick={()=>{
                                 dispatch(addToCart(item.attributes))
