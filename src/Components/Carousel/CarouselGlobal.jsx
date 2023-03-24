@@ -51,13 +51,14 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
             alt=""
             style={{
               borderRadius: "5px",
+              overflow:"hidden"
             }}
           />
         </div>
       );
     }}
 
-    dotsClass="slick-dots custom-indicator bottom-indicator"
+    dotsClass="slick-dots custom-indicator"
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >

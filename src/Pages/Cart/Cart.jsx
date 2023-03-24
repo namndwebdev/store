@@ -1,8 +1,10 @@
 import axios from 'axios'
+import './Cart.css'
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { updateCartList } from '../../redux/cartSlice'
-import './Cart.css'
+import CartParity from './CartParity'
+import {getCategoryBySlug} from '../../services/category'
 
 export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
@@ -18,12 +20,11 @@ export default function Cart(){
         localStorage.setItem('cart', JSON.stringify(list));
     })
     const handleOnClick = async (e) => {
-        const idCategory= e.idCategories.data[0].id;
-        const result = await axios.get(`https://backoffice.nodemy.vn/api/categories/${idCategory}?populate=*`)
+        const slug = e.idCategories.data[0].attributes.slug;
+        const result = await getCategoryBySlug(slug)
         setlistParityProduct(result.data.data.attributes.products.data) 
     }
-
-    const dispatch = useDispatch()
+    
     return <>
     <div className="Page-Cart" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:'column'}} >
         <div className="Page-Cart-Header"> <h1>GIỎ HÀNG <i style={{fontSize:'35px'}} class="bi bi-cart"></i></h1></div>
@@ -56,7 +57,7 @@ export default function Cart(){
                                 <span onClick={()=> handleOnClick(item)}>{item.name}</span>
                             </td>
                             <td style={{width:'20%'}}>
-                                <input style={{width:'30%'}} data={index} onChange={OnChangeTextInput} type="number" value={item.quantity} min='1'/>
+                                <input style={{width:'30%',border:'1px solid black',textAlign:'center'}} data={index} onChange={OnChangeTextInput} type="number" value={item.quantity} min='1'/>
                             </td>
                             <td style={{width:'20%'}}>
                                 {(item.price*item.quantity).toLocaleString('vi-VN', {style : 'currency', currency: 'VND'})}
@@ -65,7 +66,7 @@ export default function Cart(){
                             <button  onClick={function ClickToRemove(){
                                 list.splice(index,1)
                                 setList([...list])
-                                dispatch(updateCartList(list))
+                                
                                 
                             }} ><i class="bi bi-trash3-fill"></i></button>
                             </td>
@@ -89,30 +90,7 @@ export default function Cart(){
         </div>
         <div className='Page-Cart-Footer'><button>Thanh toán</button></div>
         <div className="Page-Cart-Header"> <h1>Sản Phẩm Tương Tự</h1></div>
-        <div style={{width:'1200px'}} className='Page-Cart-ParityProduct'>
-        <table border={1} style={{width:'100%',textAlign:"center"}}>
-            <tbody>
-                <tr>
-                    <td><h2>Sản phẩm</h2></td>
-                    <td><h2>Tên sản phẩm</h2></td>
-                    <td><h2>Số lượng</h2></td>
-                    <td><h2>Giá tiền</h2></td>
-                </tr>
-                {listParityProduct&&listParityProduct.map((item)=>{
-                        return <tr>
-                            <td><h2>123</h2></td>
-                            <td><h2>{item.attributes.name}</h2></td>
-                            <td><h2>1</h2></td>
-                            <td><h2>{Number(item.attributes.price).toLocaleString('vi-VN', {style : 'currency', currency: 'VND'})}</h2></td>
-                        </tr>
-})}
-                    
-                
-            
-            </tbody>
-        </table>
-    </div>
-
+        {listParityProduct&&<CartParity listParityProduct = {listParityProduct}/>}
     </div>
     
     

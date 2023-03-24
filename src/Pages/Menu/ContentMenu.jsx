@@ -36,7 +36,7 @@ export default function ContentMenu() {
                         <Col span={8}>
                             <div style={{width:'100%', paddingTop:'10px', paddingRight:'15px'}}>
                             {imgRight.map((item) => {
-                                return <img style={{ objectFit: 'ccover', display: 'block', width: '100%', height: 'auto' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                                return   <Link to='/1'><img style={{ objectFit: 'ccover', display: 'block', width: '100%', height: 'auto' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img></Link>
                             })}
                             </div>
                         </Col>
@@ -47,7 +47,7 @@ export default function ContentMenu() {
                         <div  style={{display:'flex',width:'100%'}} >
                         {imgSub.map((item) => {
                             return (<Col style={{height:'100%'}} span={8}>
-                                <img style={{ objectFit: 'cover', display: 'block', width: '100%', height: 'auto' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                                <Link to='/1'><img style={{ objectFit: 'cover', display: 'block', width: '100%', height: 'auto' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img></Link>
                             </Col>)
                         })}
                         </div>
