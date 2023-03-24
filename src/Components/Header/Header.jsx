@@ -43,10 +43,10 @@ const Header = () => {
       <div className="header">
         <div className="header-menu store-container">
           <div className="left-header">
-            <img
+            <a href="/"><img
               src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279"
               alt=""
-            />
+            /></a>
           </div>
           <div className="right-header">
             <div className="right-header__line1">

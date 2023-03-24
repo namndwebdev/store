@@ -45,7 +45,7 @@ export default function MegaMenu() {
                 }
             </ul >
             <div  className='content-70'>
-                {/* <ContentMenu></ContentMenu> */}
+                <ContentMenu></ContentMenu>
             </div> 
 
             {isShowMenuItem && <MenuItem typedata={typedata} />}

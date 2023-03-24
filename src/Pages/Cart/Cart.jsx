@@ -10,6 +10,7 @@ export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
     const [list,setList] = useState(dataApi)
     const [listParityProduct,setlistParityProduct] = useState()
+    const [listCategories,setListCategories] = useState([])
     function OnChangeTextInput(e) {
         var indexElement = e.target.getAttribute('data')
         list[indexElement].quantity = e.target.value
@@ -18,7 +19,13 @@ export default function Cart(){
 
     useEffect(()=>{
         localStorage.setItem('cart', JSON.stringify(list));
-    })
+        list.map((item)=>{
+            return setListCategories(item.idCategories.data.map((item)=>{
+                return item.attributes.slug
+            }))
+        })
+        console.log(listCategories);
+    },[])
     const handleOnClick = async (e) => {
         const slug = e.idCategories.data[0].attributes.slug;
         const result = await getCategoryBySlug(slug)
