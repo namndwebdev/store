@@ -16,21 +16,22 @@ function Product({ data }) {
   };
   return (
     <>
-      <div className="col-xs-1 col-xl-3 product-home">
-        <div className="card text-start m-2 card-item">
+
+      <Link to={`/product/${data.attributes.slug}`} className="col-6 col-xl-3 product-home" style={{margin:0}}>
+        <div className="card card-item product-item">
           <div className="card-img-top">
             <img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
               alt="">
             </img>
             <div className="card-mark d-flex justify-content-center align-items-center">
-              <Link to={`/product/${data.attributes.slug}`} style={{color:'white'}}>Click để xem chi tiết</Link>
+              <Link to={`/product/${data.attributes.slug}`} style={{ color: 'white' }}>Click để xem chi tiết</Link>
               <p>Đặt hàng</p>
             </div>
 
           </div>
 
           <div className="card-body">
-            <div className="product-item-name fs-6">{data.attributes.name}</div>
+            <div className="product-item-name fs-sm-6">{data.attributes.name}</div>
             <div className="card-price">
               <div>
                 <p className="oldprice">
@@ -57,7 +58,9 @@ function Product({ data }) {
           </div>
 
         </div>
-      </div>
+      </Link>
+
+
     </>
 
   );

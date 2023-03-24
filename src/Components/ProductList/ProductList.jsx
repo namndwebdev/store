@@ -30,7 +30,7 @@ const ProductList = () => {
   return (
     <div className="product-list-container">
       <div className="row">
-        <h2 className="product-list__title">PC GEARVN - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</h2>
+        <h2 className="product-list__title">PC GEARVN - MIỄN PHÍ GIAO HÀNG</h2>
         {dataList ? dataList.map(data => <Product data={data}></Product>) : <SkeletonLoad></SkeletonLoad>}
       </div>
       {dataList ? <Pagination total={pageSize.length} pageSize={4} onChange={handleChangePage} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} /> : null}

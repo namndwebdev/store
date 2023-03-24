@@ -29,7 +29,12 @@ height: 50px;
 .product-home .card-mark p:first-child{
   color: white;
 }
-
+.product-home{
+  padding: 5px;
+}
+.product-home .product-item{
+  margin: 0;
+}
 .product-home .card-mark p:last-child{
   padding: 5px;
   background-color: black;
@@ -41,3 +46,32 @@ height: 50px;
 .product-home .card-mark p:last-child:hover{
   background-color: #0655A6;
 }
+
+/* ===============REPONSIVE================ */
+@media  screen and (min-width:820px) {
+.product-home .card-img-top{
+display: flex;
+justify-content: center;
+ }
+}
+
+@media screen and (max-width:390px) {
+  .salepercent{
+    display: none;
+  }
+  .product-item-name{
+    font-size: 13px;
+  }
+  .product-list__title{
+    font-size: 15px;
+    text-align: center;
+  }
+  .product-home{
+    padding: 5px;
+    margin: 0;
+  }
+  .product-item{
+    margin: 0 !important;
+  }
+}
+
