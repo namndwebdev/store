@@ -250,13 +250,18 @@
     font-family: inherit;
 }
 
+.header-mobile {
+    display: none;
+}
+
+
 @media screen and (max-width: 820px) {
     .header {
         display: none;
     }
 
     .header-mobile {
-        display: block;
+        display: flex;
     }
     
     .header-logo__mobile {
@@ -312,10 +317,10 @@
 
 @media screen and (max-width:390px) {
     .header-mobile {
-        display: block;
+        display: flex;
     }
 
-    .header {
+    .header-pc {
         display: none;
     }
 

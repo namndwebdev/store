@@ -112,7 +112,31 @@ const Header = () => {
         </div>
       </div>
       <div style={{ width: "100%", border: "1px solid #d4d4d4" }}></div>
-      <SubHeader data={dataHeader}></SubHeader>
+      <div className='subheader-hide'>
+        <SubHeader data={dataHeader}></SubHeader>
+      </div>
+      <div className="header-mobile row">
+        <div className="col-2" style={{position:'relative',left:'10px',top:'3px'}}><i class="fa fa-bars" style={{fontSize:'24px'}}></i></div>
+        <div className="col-8" >
+          <div style={{display:'flex',position:'relative'}}>
+            <img src="//theme.hstatic.net/1000026716/1000440777/14/logo-icon-01.svg?v=35343" alt="" style={{ width: '40px', height: '32px' }} className='header-logo__mobile'/>
+            <img src="//theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35343" alt="" className="header-logo__tablet"/>
+            <SearchHeader></SearchHeader>
+            <button className="header-search__button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div className="col-2">
+          <Link to="cart/">
+            <span className="cart">
+              <Badge badgeContent={cartItemCount} color="error">
+                <ShoppingCartOutlined />
+              </Badge>
+            </span>
+          </Link>
+        </div>
+      </div>
     </>
   );
 };
