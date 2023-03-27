@@ -127,13 +127,14 @@ export const Footer = () => {
                 </a>
                 <br />
                 - Địa chỉ : 436A/71 đường 3/2, Phường 12, Quận 10, Hồ Chí Minh.
-                <p>
-                  "Mua"
-                  <a href="">PC Gaming</a>
-                  ","
-                  <a href="">laptop gaming</a>
-                  ","
-                  <a href=""></a>
+                <p style={{fontSize:"14px"}} className='suggest-item'>
+                  Mua <a href="">PC Gaming</a>
+                  , <a href="">laptop gaming</a>
+                  , <a href="">Card mành hình</a>
+                  , <a href="">Chuột máy tính</a>
+                  , <a href="">màn hình máy tính</a>
+                  , <a href="">máy tính để bàn</a>
+                  , thiết bị chơi game như PS5 hàng đầu Việt Nam bảo hành chính hãng. Mua online nhận ưu đãi hấp dẫn với nhiều chương trình đặc biệt như ngày 8/3, b2s, noel...
                 </p>
               </p>
             </div>

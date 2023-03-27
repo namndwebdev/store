@@ -6,6 +6,7 @@ import {
   UilTruck,
 } from "@iconscout/react-unicons";
 import MegaMenu from "../../Pages/Menu/MegaMenu";
+import './header.css'
 
 const SubHeader = ({ data }) => {
   const [dataMega, SetDataMega] = useState([]);
@@ -24,7 +25,7 @@ const SubHeader = ({ data }) => {
 
   return (
     <>
-      <div className="sub-header__background">
+      <div className="sub-header__background ">
         <div style={{ height: "10px" }}></div>
         <div className="sub-header store-container">
           <span
@@ -34,7 +35,7 @@ const SubHeader = ({ data }) => {
           >
             <UilBars></UilBars>Danh mục sản phẩm
           </span>
-          <span style={{display:'flex', flex:'1'}}>
+          <span className="sub-header__instruction" style={{display:'flex', flex:'1'}}>
             {data &&
               data.length > 0 &&
               data[2].attributes.menuheader.link.map((item, index) => {
@@ -52,9 +53,9 @@ const SubHeader = ({ data }) => {
         </div>
       </div>
       {isShowMenuItem && (
-        <div
+        <div className="subheader-megamenu"
           onMouseEnter={() => setIsShowMenuItem(true)}
-          onMouseLeave={() => setIsShowMenuItem(false)}
+          // onMouseLeave={() => setIsShowMenuItem(false)}
         >
           <MegaMenu />
         </div>

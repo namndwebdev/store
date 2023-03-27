@@ -17,7 +17,6 @@ export default function ProductDetail() {
   let { slug } = useParams()
   let [product, setProduct] = useState({}) //(null)
   let [imageList, setImageList] = useState([])
-
   const items = [
     {
       key: "1",
