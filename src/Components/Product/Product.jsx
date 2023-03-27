@@ -1,8 +1,10 @@
 import React from "react";
 import './Product.css';
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 function Product({ data }) {
+
   const convertToVnd = (price) => {
     const VND = new Intl.NumberFormat("vi-VN", {
       style: "currency",
@@ -16,13 +18,15 @@ function Product({ data }) {
   };
   return (
     <>
-
-      <Link to={`/product/${data.attributes.slug}`} className="col-6 col-xl-3 product-home" style={{margin:0}}>
-        <div className="card card-item product-item">
+      <Link to={`/product/${data.attributes.slug}`} className="col-6 col-xl-3 product-home" style={{ margin: 0 }}>
+        <LazyLoad once={true} placeholder={<img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
+          alt="">
+        </img>} className="card card-item product-item">
           <div className="card-img-top">
             <img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
               alt="">
             </img>
+
             <div className="card-mark d-flex justify-content-center align-items-center">
               <Link to={`/product/${data.attributes.slug}`} style={{ color: 'white' }}>Click để xem chi tiết</Link>
               <p>Đặt hàng</p>
@@ -35,10 +39,10 @@ function Product({ data }) {
             <div className="card-price">
               <div>
                 <p className="oldprice">
-                  {convertToVnd(data.attributes.oldPrice)}
+                  {convertToVnd(data.attributes ? data.attributes.oldPrice : null)}
                 </p>
                 <p className="saleprice">
-                  {convertToVnd(data.attributes.price)}
+                  {convertToVnd(data.attributes ? data.attributes.price : null)}
                 </p>
               </div>
               <div
@@ -49,15 +53,14 @@ function Product({ data }) {
               >
                 <span>
                   {caculateSale(
-                    data.attributes.oldPrice,
-                    data.attributes.price
+                    data.attributes ? data.attributes.oldPrice : null,
+                    data.attributes ? data.attributes.price : null
                   )}
                 </span>
               </div>
             </div>
           </div>
-
-        </div>
+        </LazyLoad>
       </Link>
 
 

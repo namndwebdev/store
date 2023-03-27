@@ -55,7 +55,7 @@ justify-content: center;
  }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:413px) {
   .salepercent{
     display: none;
   }
@@ -63,8 +63,12 @@ justify-content: center;
     font-size: 13px;
   }
   .product-list__title{
+    margin: 20px 0;
+    background-color: red;
+    color: white;
+    padding: 15px;
     font-size: 15px;
-    text-align: center;
+    font-weight: bold;
   }
   .product-home{
     padding: 5px;

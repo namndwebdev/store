@@ -50,7 +50,7 @@
     }
   }
 
-  @media screen and (max-width:390px) {
+  @media screen and (max-width:413px) {
     .blog-list__title{
         font-size: 15px;
         text-align: center;

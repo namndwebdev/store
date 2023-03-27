@@ -4,19 +4,19 @@ import Baner from "../Menu/Baner";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  let [data, setData] = useState([]);
+  let [dataListProduct, setDataListProduct] = useState([]);
 
   useEffect(() => {
     fetch(`https://backoffice.nodemy.vn/api/products?populate=*`)
       .then((res) => res.json())
       .then((res) => {
-        setData(res.data);
+        setDataListProduct(res.data);
       });
   }, []);
   return (
     <>
       <Baner></Baner>
-      <ProductList></ProductList>
+      <ProductList dataListProduct={dataListProduct}></ProductList>
       <ProductBlogList></ProductBlogList>
     </>
   );

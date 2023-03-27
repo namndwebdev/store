@@ -19,6 +19,7 @@
     "react-carousel-minimal": "^1.4.1",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
+    "react-lazyload": "^3.2.0",
     "react-markdown": "^8.0.5",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
@@ -57,7 +58,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "tailwindcss": "^3.2.7"
-  }
+  "devDependencies": {}
 }

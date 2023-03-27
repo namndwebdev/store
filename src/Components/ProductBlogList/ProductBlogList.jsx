@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ProductBlogList.css'
 import { Pagination } from 'antd';
+
 export default function ProductBlogList() {
   const [blogList, setblogList] = useState([])
   const [pageSize, setpageSize] = useState([]) 
@@ -39,7 +40,9 @@ export default function ProductBlogList() {
           {blogList.map((item) => {
             return <div className='row' key={item.id}>
               <div className='col-12 pd-0 col-lg-4 img-fluid overflow-hidden'>
-              <img src='https://laptop88.vn/media/news/1237_man_hinh_laptop_lenovo.jpg' alt='' className='blog-list__img'></img>
+
+                <img src='https://laptop88.vn/media/news/1237_man_hinh_laptop_lenovo.jpg' alt='' className='blog-list__img'></img>
+
                 <img src={item?.attributes?.image?.data?.attributes?.url} alt={item?.attributes?.image?.data?.attributes?.url}></img>
               </div>
               <div className='col-12 col-lg-8 pt-2 pt-lg-5'>
