@@ -3,27 +3,26 @@
   top: 90%;
 }
 .slick-dots li {
-  list-style: none !important;
-  bottom: 50px !important;
+  list-style: none ;
+  bottom: 60px ;
 }
 .slick-dots li button {
-  flex: 0 1 auto !important;
-  width: 30px !important;
-  height: 3px !important;
+  flex: 0 1 auto ;
+  width: 30px ;
+  height: 3px ;
 
 }
-.slick-dots li button:before{
-  width: 30px !important;
+.slick-dots li button:before{ 
+  width: 28px !important;
   height: 3px !important;
-  border-left: 3px solid grey !important;
-  border-radius: 5% !important;
-  background-color: white!important;
+  border-radius: 5px ;
+  background-color: white;
   content: "" !important;
 }
 
 .slick-slider {
-  width: 100% !important;
-  height: 100% !important;
+  width: 100% ;
+  height: 100% ;
   background-color: transparent;
 }
 .slick-list img{

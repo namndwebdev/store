@@ -106,7 +106,6 @@ export default function ProductDetail_infor({ description, cpu, ram }) {
          {/* DETAIL BOTTOM */}
       <Row>
         <Col span={24}>
-          <div>Markdown here</div>
           <ReactMarkdown>{result2}</ReactMarkdown>
         </Col>
       </Row>

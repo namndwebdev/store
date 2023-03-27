@@ -24,31 +24,37 @@ export default function MegaMenu() {
     SetIdActive(data);
   };
 
-  return (
-    <>
-      <div
-        className="wrap-list-megamenu"
-        onMouseLeave={() => setIsShowMenuItem(false)}
-      >
-        <ul>
-          {dataMega.map((item) => (
-            <li
-              className="item-megamenu hovermegamenu"
-              key={item.id}
-              onMouseEnter={() => handleWhenHover(item.attributes)}
-              onMouseLeave={() => {
-                SetIdActive(null);
-              }}
+    const handleWhenHover = (data) => {
+        setIsShowMenuItem(true)
+        setTypeData(data)
+        SetIdActive(data)
+    }
+
+    return <>
+        <div onMouseLeave={() => setIsShowMenuItem(false)} className="wrap-list-megamenu">
+            
+            <ul 
+            
             >
-              <span
-                dangerouslySetInnerHTML={{ __html: item.attributes.icon }}
-              />
-              -{item.attributes.label}
-            </li>
-          ))}
-        </ul>
-        <div className="content-70">
-          {/* <ContentMenu></ContentMenu> */}
+                {
+                    dataMega.map((item) => (
+                        <li
+                            className="item-megamenu hovermegamenu"
+                            key={item.id}
+                            onMouseEnter={() =>handleWhenHover(item.attributes)}
+                            onMouseLeave={()=>{SetIdActive(null)}}
+                        >
+                            <span dangerouslySetInnerHTML={{ __html: item.attributes.icon }} />-
+                            {item.attributes.label}
+                        </li>
+                    )
+                    )
+                }
+            </ul >
+            <div  className='content-70'>
+                <ContentMenu></ContentMenu>
+            </div> 
+            {isShowMenuItem && <MenuItem typedata={typedata} />}
         </div>
 
         {isShowMenuItem && <MenuItem typedata={typedata} />}

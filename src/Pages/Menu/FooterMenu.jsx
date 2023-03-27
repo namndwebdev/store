@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Col, Row } from 'antd';
+import { Link } from "react-router-dom";
 const imageFooter = [
     "https://via.placeholder.com/320x180/FF0000/FFFFFF",
     "https://via.placeholder.com/320x180/FF0000/FFFFFF",
@@ -28,7 +29,7 @@ export default function FooterMenu() {
             <div style={{width:'100%',height:'100%',display:'flex'}}>
             {bottomImg.map((item) => {
                 return (<Col span={6}>
-                    <img key={item} style={{ objectFit: 'contain', width: '100%', height: '100%', paddingRight: '5px' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img>
+                    <Link to='/1'><img key={item} style={{ objectFit: 'contain', width: '100%', height: '100%', paddingRight: '5px' }} src={`${process.env.REACT_APP_LINK_BACK_END}${item}`}></img></Link>
                 </Col>)
             })}
             </div>

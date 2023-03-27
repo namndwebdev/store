@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
-  UilBars,
-  UilBill,
-  UilWrench,
-  UilTruck,
+  UilBars
 } from "@iconscout/react-unicons";
 import MegaMenu from "../../Pages/Menu/MegaMenu";
 import './header.css'
