@@ -18,6 +18,7 @@ import { addToCart, updateCartList } from "../../redux/cartSlice";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartOutlined from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
+import { getHeader } from "../../services/header";
 
 const Header = () => {
   const [dataHeader, setDataHeader] = useState([]);
@@ -25,12 +26,11 @@ const Header = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch(
+    getHeader(
       "https://backoffice.nodemy.vn/api/menu-headers?populate[menuheader][populate][0]=link"
     )
-      .then((res) => res.json())
-      .then((data) => {
-        setDataHeader(data.data);
+      .then((res) => {
+        setDataHeader(res.data.data);
       });
   }, []);
   useEffect(() => {
@@ -43,10 +43,10 @@ const Header = () => {
       <div className="header">
         <div className="header-menu store-container">
           <div className="left-header">
-            <a href="/"><img
+            <img
               src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279"
               alt=""
-            /></a>
+            />
           </div>
           <div className="right-header">
             <div className="right-header__line1">

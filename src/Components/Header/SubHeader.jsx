@@ -4,6 +4,7 @@ import {
 } from "@iconscout/react-unicons";
 import MegaMenu from "../../Pages/Menu/MegaMenu";
 import './header.css'
+import MenuItem from "../../Pages/Menu/MenuItem";
 
 const SubHeader = ({ data }) => {
   const [dataMega, SetDataMega] = useState([]);
@@ -52,7 +53,7 @@ const SubHeader = ({ data }) => {
       {isShowMenuItem && (
         <div className="subheader-megamenu"
           onMouseEnter={() => setIsShowMenuItem(true)}
-          // onMouseLeave={() => setIsShowMenuItem(false)}
+          onMouseLeave={() => setIsShowMenuItem(false)}
         >
           <MegaMenu />
         </div>
