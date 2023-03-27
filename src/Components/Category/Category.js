@@ -20,7 +20,6 @@ export default function Category() {
 
   return (
     <div className="">
-      <Header></Header>
       <div className="container">
         <ProductList dataList={productList}></ProductList>
       </div>
