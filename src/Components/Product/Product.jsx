@@ -2,9 +2,10 @@ import React from "react";
 import './Product.css';
 import { Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
+import { useDispatch } from "react-redux";
 
 function Product({ data }) {
-  console.log(data);
+  const dispatch = useDispatch()
   const convertToVnd = (price) => {
     const VND = new Intl.NumberFormat("vi-VN", {
       style: "currency",
@@ -16,6 +17,7 @@ function Product({ data }) {
     const salePercent = ((oldPrice - newPrice) / oldPrice) * 100;
     return `${Number.parseFloat(salePercent).toFixed(0)}%`;
   };
+  // console.log(data.attributes);
   return (
     <>
       <Link to={`/product/${data.attributes.slug}`} className="col-6 col-xl-3 product-home" style={{ margin: 0 }}>

@@ -7,6 +7,7 @@ import CartParity from './CartParity'
 export default function Cart(){
     const dataApi = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
     const [list,setList] = useState(dataApi)
+    console.log(typeof list);
     function getListCategoriesFromListProduct(e){
         return e.map((item)=>{
             return item.idCategories?item.idCategories.data.map((item)=>{

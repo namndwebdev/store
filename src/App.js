@@ -22,7 +22,7 @@ function App() {
           <Route path="collections/:name" element={<Category></Category>} />
           <Route path="cart/" element={<Cart />} />
         </Route>
-        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/blogs/:slug" element={<Blog/>}/>
       </Routes>
     </div>
   );

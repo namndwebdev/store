@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import ProductBlogList from '../../Components/ProductBlogList/ProductBlogList';
 import { getBlogBySlug } from '../../services/blog';
 import { useParams } from 'react-router-dom';
+import RelatedArticles from './RelatedArticles';
 
 export default function Blog() {
     
@@ -14,10 +15,11 @@ export default function Blog() {
             .then(res => {
                 setBlog(res.data.data.attributes)
             })
+
     }, [])
+
     let content = String(blog.content)
     content = content.replaceAll("](/uploads", "](https://backoffice.nodemy.vn/uploads")
-    console.log(content);
     return <>
         <div className='Blogs-page'>
             <div class="input-container blog-container">
@@ -29,7 +31,9 @@ export default function Blog() {
             <div className='blog-header'>
                 <div className='blog-navbar blog-container'>
                     <div className='navbar-logo'>
-                        <img src="https://gstatic.gvn360.com/2021/12/icon_GVN360-300x300.png" alt="logo!" />
+                        <a href="/">
+                            <img src="https://gstatic.gvn360.com/2021/12/icon_GVN360-300x300.png" alt="logo!" />
+                        </a>
                     </div>
                     <ul className='navbar-menu'>
                         <li>Trang chủ</li>
@@ -54,15 +58,13 @@ export default function Blog() {
                         <p>Share me</p>
                     </button>
                     <div className='contents' >
-                        <ReactMarkdown>{content}</ReactMarkdown>
+                       {content ? <ReactMarkdown>{content}</ReactMarkdown>:"Bài viết không tồn tại" } 
                     </div>
                     <div className="related-posts">
                     </div>
                 </div>
                 <div className="tab-game">
-                    <div>
-                        <ProductBlogList></ProductBlogList>
-                    </div>
+                    <RelatedArticles data={blog.likedBy}/>
                 </div>
             </div>
             <div className="blog-footer ">
@@ -73,8 +75,8 @@ export default function Blog() {
                     <div className="footer-about">
                         <p>ABOUT US</p>
                         <p>GVN360 - GEARVN NEWS</p>
-                        <p>Liên hệ chúng tôi: tutl@gearvn.com</p>
-                        <p>Contact us:<span style={{ color: "#dd3333" }}>tutl@gearvn.com</span></p>
+                        <p>Liên hệ chúng tôi: b78@nodemy.com</p>
+                        <p>Contact us:<span style={{ color: "#dd3333" }}>b78@nodemy.com</span></p>
                     </div>
                 </div>
             </div>
