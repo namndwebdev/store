@@ -2,6 +2,7 @@ import React from "react";
 import './Product.css';
 import { Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
+import { useDispatch } from "react-redux";
 
 function Product({ data }) {
   const dispatch = useDispatch()
