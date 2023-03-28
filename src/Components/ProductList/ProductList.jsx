@@ -4,7 +4,6 @@ import Product from "../Product/Product";
 import { Pagination } from "antd"
 import SkeletonLoad from "./SkeletonLoad";
 import { getProductByCategory, getProductFilterSlug } from "../../services/product";
-
 const ProductList = (dataListProduct) => {
   const [dataList, setDataList] = useState()
   const [pageSize, setpageSize] = useState([])
@@ -21,14 +20,12 @@ const ProductList = (dataListProduct) => {
   let url = 'https://backoffice.nodemy.vn/api/products?'
   function getProductInCategories5Latest(array2) {
     array2.forEach((item, index) => {
-      console.log(item)
       return url += `filters[idCategories][slug][$contains]=${item}&`
     })
   }
 
   getProductInCategories5Latest(array2)
   let lastUrl = url + 'sort[0]=updatedAt%3Adesc'
-  console.log(lastUrl);
   useEffect(() => {
     async function getProductInCategories() {
       let result = await getProductByCategory(lastUrl)
