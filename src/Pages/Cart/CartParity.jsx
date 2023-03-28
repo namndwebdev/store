@@ -8,17 +8,18 @@ import axios from 'axios';
 export default function CartParity({listCategories}) {
     const dispatch = useDispatch()
     const [listParityProduct,setListParityProduct] = useState([])
-    console.log(listCategories);
+    // console.log(listCategories);
     let url = 'https://backoffice.nodemy.vn/api/products?' 
     function getProductInCategories5Latest(listCategories){
         listCategories.forEach((item,index)=>{
             return url += `filters[idCategories][slug][$contains]=${item}&`
         })
+        
     }
     
     getProductInCategories5Latest(listCategories)
     let lastUrl = url + 'sort[0]=updatedAt%3Adesc&populate=*'
-    console.log(lastUrl);
+    // console.log(lastUrl);
     useEffect (()=>{
         axios.get(`${lastUrl}`)
         .then ((res)=>{

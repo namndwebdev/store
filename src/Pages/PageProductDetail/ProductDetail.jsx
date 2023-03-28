@@ -54,6 +54,7 @@ export default function ProductDetail() {
         setImageList(listLink)
       })
   }, [])
+  console.log(product);
   return <>
     {/* BreadCrumbs */}
     {checkResult && product ? <NavBreadcrums nameProduct={product.name} nameBrand={product.idBrand && product.idBrand.data.attributes.name} /> : null}

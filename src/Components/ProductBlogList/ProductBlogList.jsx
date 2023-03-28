@@ -10,16 +10,10 @@ export default function ProductBlogList() {
       .then((res) => res.json())
       .then((res) => {
         setblogList(res.data);
-      })
+        setpageSize(res.meta.pagination.total)
+      })        
   }, [])
-  useEffect(() => {
-    fetch(`https://backoffice.nodemy.vn/api/blogs?populate=*`)
-      .then((res) => res.json())
-      .then((res) => {
-        setpageSize(res.data);
-      })
-  }, [])
-
+ 
   const handleChangePage = (page, pageSize) => {
     fetch(`https://backoffice.nodemy.vn/api/blogs?pagination[page]=${page}&pagination[pageSize]=4&populate=*`)
       .then((res) => res.json())
@@ -50,7 +44,7 @@ export default function ProductBlogList() {
 
           })}
 
-          <Pagination total={pageSize.length} onChange={handleChangePage} pageSize={4} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} />
+          <Pagination total={pageSize} onChange={handleChangePage} pageSize={4} style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }} />
         </div>
         <div className='col-3 blog-list__right'>
           <div className='row'>

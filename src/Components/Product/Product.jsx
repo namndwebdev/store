@@ -1,8 +1,11 @@
 import React from "react";
 import './Product.css';
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import { addToCart } from "../../redux/cartSlice";
 
 function Product({ data }) {
+  const dispatch = useDispatch()
   const convertToVnd = (price) => {
     const VND = new Intl.NumberFormat("vi-VN", {
       style: "currency",
@@ -14,6 +17,7 @@ function Product({ data }) {
     const salePercent = ((oldPrice - newPrice) / oldPrice) * 100;
     return `${Number.parseFloat(salePercent).toFixed(0)}%`;
   };
+  // console.log(data.attributes);
   return (
     <>
       <div className="col-xs-1 col-xl-3 product-home">
@@ -24,7 +28,7 @@ function Product({ data }) {
             </img>
             <div className="card-mark d-flex justify-content-center align-items-center">
               <Link to={`/product/${data.attributes.slug}`} style={{color:'white'}}>Click để xem chi tiết</Link>
-              <p>Đặt hàng</p>
+              <p><button onClick={()=>dispatch(addToCart(data.attributes))}>Đặt Hàng</button></p>
             </div>
 
           </div>
