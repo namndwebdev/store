@@ -24,10 +24,10 @@ function getProductInCategories5Latest(array2){
 }
 
 getProductInCategories5Latest(array2)
-let lastUrl = url + 'sort[0]=updatedAt%3Adesc&populate=*'
+let lastUrl = url + '&sort[0]=updatedAt%3Adesc'
 console.log(lastUrl);
   useEffect(() => {
-    fetch(`https://backoffice.nodemy.vn/api/products?filters[idCategories][slug][$contains]=ghe-ban&filters[idCategories][slug][$contains]=laptop-gaming&filters[idCategories][slug][$contains]=ban-phim&filters[idCategories][slug][$contains]=laptop-xin&&pagination[page]=1&pagination[pageSize]=4&sort[0]=updatedAt%3Adesc&populate=*`)
+    fetch(`${lastUrl}&pagination[page]=1&pagination[pageSize]=4&sort[0]=updatedAt%3Adesc&populate=*`)
     .then((res) => res.json())
     .then((res) => {
       setDataList(res.data);
@@ -36,7 +36,7 @@ console.log(lastUrl);
   }, [])
 
   const handleChangePage = (page, pageSize) => {
-    fetch(`https://backoffice.nodemy.vn/api/products?filters[idCategories][slug][$contains]=ghe-ban&filters[idCategories][slug][$contains]=laptop-gaming&filters[idCategories][slug][$contains]=ban-phim&filters[idCategories][slug][$contains]=laptop-xin&&pagination[page]=${page}&pagination[pageSize]=4&sort[0]=updatedAt%3Adesc&populate=*`)
+    fetch(`${lastUrl}&pagination[page]=${page}&pagination[pageSize]=4&sort[0]=updatedAt%3Adesc&populate=*`)
       .then((res) => res.json())
       .then((res) => {
         setDataList(res.data);

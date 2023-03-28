@@ -35,7 +35,7 @@ export default function CartParity({listCategories}) {
                 <tr>
                     <td><h2>Sản phẩm</h2></td>
                     <td><h2>Tên sản phẩm</h2></td>
-                    <td><h2>Số lượng</h2></td>
+                    <td><h2>Giỏ Hàng</h2></td>
                     <td><h2>Giá tiền</h2></td>
                 </tr>
                 {listParityProduct&&listParityProduct.map((item)=>{

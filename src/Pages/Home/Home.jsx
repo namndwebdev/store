@@ -3,6 +3,7 @@ import ProductList from "../../Components/ProductList/ProductList";
 import Baner from "../Menu/Baner";
 import { useEffect, useState } from "react";
 
+
 export default function Home() {
   let [dataListProduct, setDataListProduct] = useState([]);
 
@@ -15,6 +16,7 @@ export default function Home() {
   }, []);
   return (
     <>
+      
       <Baner></Baner>
       <ProductList dataListProduct={dataListProduct}></ProductList>
       <ProductBlogList></ProductBlogList>

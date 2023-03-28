@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Provider } from 'react-redux'
 import store from './redux/store'
 import "./config/axios"; //config axios global
+import Navba from "./Pages/Home/Navba";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

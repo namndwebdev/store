@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 
 function Product({ data }) {
-
+  console.log(data);
   const convertToVnd = (price) => {
     const VND = new Intl.NumberFormat("vi-VN", {
       style: "currency",
