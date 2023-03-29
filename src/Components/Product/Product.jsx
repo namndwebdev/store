@@ -14,6 +14,7 @@ function Product({ data }) {
     });
     return VND.format(price);
   };
+  
   const caculateSale = (oldPrice, newPrice) => {
     const salePercent = ((oldPrice - newPrice) / oldPrice) * 100;
     return `${Number.parseFloat(salePercent).toFixed(0)}%`;
