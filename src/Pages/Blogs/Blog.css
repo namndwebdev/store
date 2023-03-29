@@ -280,7 +280,7 @@ margin: 10px auto;
   .related-articles .article img {
     width: 100%;
     max-width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -297,6 +297,7 @@ margin: 10px auto;
   }
   
   .related-articles .article p {
+    width: 100%;
     font-size: 14px;
     text-align: center;
     overflow: hidden;

@@ -46,7 +46,7 @@ export default function RelatedArticles({ data }) {
             <h3>
               <a href={`/blogs/${item?.attributes.slug}`} >{item?.attributes?.title}</a>
             </h3>
-            <p>Article 1 Description</p>
+            <p>{item?.attributes?.content}</p>
         </div>
       })}
     </div>
