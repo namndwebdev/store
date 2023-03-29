@@ -3,6 +3,7 @@ import './Product.css';
 import { Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 
 function Product({ data }) {
   const dispatch = useDispatch()
@@ -20,7 +21,7 @@ function Product({ data }) {
   // console.log(data.attributes);
   return (
     <>
-      <Link to={`/product/${data.attributes.slug}`} className="col-6 col-xl-3 product-home" style={{ margin: 0 }}>
+      <div className="col-6 col-xl-3 product-home" style={{ margin: 0 }}>
         <LazyLoad once={true} placeholder={<img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
           alt="">
         </img>} className="card card-item product-item">
@@ -31,7 +32,7 @@ function Product({ data }) {
 
             <div className="card-mark d-flex justify-content-center align-items-center">
               <Link to={`/product/${data.attributes.slug}`} style={{ color: 'white' }}>Click để xem chi tiết</Link>
-              <p>Đặt hàng</p>
+              <p onClick={() => { dispatch(addToCart(data.attributes)) }}>Đặt hàng</p>
             </div>
 
           </div>
@@ -63,11 +64,8 @@ function Product({ data }) {
             </div>
           </div>
         </LazyLoad>
-      </Link>
-
-
+      </div>
     </>
-
   );
 }
 

@@ -39,7 +39,7 @@ export default function RelatedArticles({ data }) {
   console.log(listBlog);
   return <>
     <div className='articles'>Related Articles</div>
-    <div className='related-articles' style={{ display: "flex", width: '100%' }}>
+    <div className='related-articles'>
       {listBlog.map((item) => {
         return <div class="article" key={item.id}>
             <img src={`https://backoffice.nodemy.vn${item.attributes?.image?.data?.attributes.url ? item.attributes?.image?.data?.attributes.url : null}`} alt="Article 1" />

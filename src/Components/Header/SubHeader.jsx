@@ -3,11 +3,13 @@ import {
   UilBars
 } from "@iconscout/react-unicons";
 import MegaMenu from "../../Pages/Menu/MegaMenu";
+import { useHref } from 'react-router-dom';
 
 const SubHeader = ({ data }) => {
   const [dataMega, SetDataMega] = useState([]);
   const [isShowMenuItem, setIsShowMenuItem] = useState(false);
   const [isShowListMenu, setIsShowListMenu] = useState(false);
+  const address = useHref();
 
   useEffect(() => {
     fetch(
@@ -18,7 +20,7 @@ const SubHeader = ({ data }) => {
         SetDataMega(data.data);
       });
   }, []);
-
+  
   return (
     <>
       <div className="sub-header__background">
@@ -48,14 +50,14 @@ const SubHeader = ({ data }) => {
           </span>
         </div>
       </div>
-      {isShowMenuItem && (
-        <div
+      { address === '/' ? null :  isShowMenuItem && (
+        <div className="Category-sub-header store-container"
           onMouseEnter={() => setIsShowMenuItem(true)}
           onMouseLeave={() => setIsShowMenuItem(false)}
         >
           <MegaMenu />
         </div>
-      )}
+      ) }
     </>
   );
 };
