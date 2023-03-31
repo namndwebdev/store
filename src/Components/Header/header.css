@@ -71,11 +71,11 @@
     font-weight: bold;
 }
 
-/* .header .left-header {
+.header .left-header {
     margin-top: 5px;
-    width: 100%;
+    width: 170px;
     height: 52.05px;
-} */
+}
 
 .header {
     font-family: 'Roboto';
@@ -235,6 +235,7 @@
     color: white;
     font-size: 13px;
     padding: 8px 12px;
+    cursor: pointer;
 }
 
 .sub-header__megamenu {
@@ -248,6 +249,12 @@
 
 .sub-header * {
     font-family: inherit;
+}
+.Category-sub-header{
+    position: absolute;
+    z-index: 10000;
+    background-color: #f1f0f1;
+    left: 75px;
 }
 
 .header-mobile {

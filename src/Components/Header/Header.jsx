@@ -6,7 +6,7 @@ import "./header.css";
 import SubHeader from "./SubHeader";
 import { useDispatch, useSelector } from "react-redux";
 import SearchHeader from "./SearchHeader";
-import { addToCart, updateCartList } from "../../redux/cartSlice";
+import { updateCartList } from "../../redux/cartSlice";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartOutlined from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
@@ -18,10 +18,9 @@ const Header = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch(
-      `${process.env.REACT_APP_API}/menu-headers?populate[menuheader][populate][0]=link`
-    )
+    getHeader()
       .then((res) => {
+        console.log(res);
         setDataHeader(res.data.data);
       });
   }, []);
@@ -35,10 +34,10 @@ const Header = () => {
       <div className="header">
         <div className="header-menu store-container">
           <div className="left-header">
-            <img
+          <a href="/"><img
               src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279"
               alt=""
-            />
+            /></a> 
           </div>
           <div className="right-header">
             <div className="right-header__line1">

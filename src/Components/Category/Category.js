@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../Header/Header";
 import "../Category/Category.css";
-import Product from "../Product/Product";
 import ProductList from "../ProductList/ProductList";
 export default function Category() {
   let [productList, setProductList] = useState([]);
@@ -15,7 +13,7 @@ export default function Category() {
       .then((res) => {
         setProductList(res.data);
       });
-  }, []);
+  }, [name]);
 
   return (
     <div className="">

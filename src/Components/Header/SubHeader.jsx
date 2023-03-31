@@ -52,7 +52,7 @@ const SubHeader = ({ data }) => {
         </div>
       </div>
       { address === '/' ? null :  isShowMenuItem && (
-        <div className="subheader-megamenu"
+        <div className="Category-sub-header store-container"
           onMouseEnter={() => setIsShowMenuItem(true)}
           onMouseLeave={() => setIsShowMenuItem(false)}
         >

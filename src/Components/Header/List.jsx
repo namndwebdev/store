@@ -1,10 +1,9 @@
 import { React } from "react";
-import { Link } from "react-router-dom";
 import './List.css'
 
 function List({ dataList, inputValue }) {
 
-  console.log(dataList)
+
   
   return (
     <ul className="dropdown-search">
