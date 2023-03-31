@@ -2,8 +2,8 @@ import './ProductDetail.css'
 import { Divider, Typography, Button, Tabs, Space } from "antd";
 import { React, useEffect, useState } from "react";
 import NavBreadcrums from "../../Components/NavBreadcrums/NavBreadcrums";
-import { useParams } from 'react-router-dom'
-import ProductDetail_infor from "./ProductDetail_infor";
+import { useParams, Link } from 'react-router-dom'
+import ProductDetailInfor from "./ProductDetail_infor";
 import CarouselGlobal from "../../Components/Carousel/CarouselGlobal";
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart } from "../../redux/cartSlice";
@@ -29,7 +29,7 @@ export default function ProductDetail() {
     {
       key: "1",
       label: `Mô tả sản phẩm`,
-      children: product ? <ProductDetail_infor description={product.description} cpu={product.cpu} ram={product.ram} /> : " Không có thông tin",
+      children: product ? <ProductDetailInfor description={product.description} cpu={product.cpu} ram={product.ram} /> : " Không có thông tin",
     },
     {
       key: "2",
@@ -80,11 +80,11 @@ export default function ProductDetail() {
           </Typography.Title> : null}
           <li>
             Mua kèm màn hình giảm sốc lên đên 49% (
-            <a href=""> xem chi tiết</a>).
+            <Link to="#"> xem chi tiết</Link>).
           </li>
           <li>
             Mua kèm các sản phẩm khác giảm giá lên đến 56% (
-            <a href=""> xem chi tiết</a>).
+            <Link to="#"> xem chi tiết</Link>).
           </li>
           <li>Hỗ trợ trả góp MPOS (Thẻ tín dụng), HDSAISON.</li>
           <p>

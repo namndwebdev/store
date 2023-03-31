@@ -1,6 +1,5 @@
 import Slider from "react-slick";
 import "./CarouselGlobal.css";
-import Icon, { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { React } from "react";
 
 export default function CarouselVer2({ hasImage = true, data, ...props }) {

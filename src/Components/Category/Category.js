@@ -9,7 +9,7 @@ export default function Category() {
   let { name}  = useParams();
   useEffect(() => {
     fetch(
-      `https://backoffice.nodemy.vn/api/products?filters[idCategories][name][$eq]=${name}`
+      `${process.env.REACT_APP_API}/products?filters[idCategories][name][$eq]=${name}`
     )
       .then((res) => res.json())
       .then((res) => {

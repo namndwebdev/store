@@ -1,7 +1,6 @@
 import { Layout, Space } from 'antd';
 import FooterMenu from './FooterMenu';
 import MegaMenu from './MegaMenu';
-const { Header, Footer, Sider, Content } = Layout;
 
 const contentStyle = {
   backgroundColor: '#f8f8f8',

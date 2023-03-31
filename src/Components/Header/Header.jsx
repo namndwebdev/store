@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
-  UilNotes,
-  UilUserCircle,
-  UilTicket,
-  UilShoppingCart,
   UilSearch,
-  UilPhone,
-  UilYoutube,
-  UilUser,
-  UilArchway,
 } from "@iconscout/react-unicons";
 import "./header.css";
 import SubHeader from "./SubHeader";
@@ -26,7 +18,7 @@ const Header = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     fetch(
-      "https://backoffice.nodemy.vn/api/menu-headers?populate[menuheader][populate][0]=link"
+      `${process.env.REACT_APP_API}/menu-headers?populate[menuheader][populate][0]=link`
     )
       .then((res) => res.json())
       .then((data) => {

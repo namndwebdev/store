@@ -13,7 +13,7 @@ const SubHeader = ({ data }) => {
 
   useEffect(() => {
     fetch(
-      "https://backoffice.nodemy.vn/api/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link"
+      `${process.env.REACT_APP_API}/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link`
     )
       .then((res) => res.json())
       .then((data) => {

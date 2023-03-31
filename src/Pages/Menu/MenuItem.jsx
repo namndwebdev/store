@@ -22,7 +22,7 @@ const MenuItem = ({ typedata }) => {
             }
         </div>
                     <div className='img-laptop-megamenu hide-on-1300'>
-                       <Link to='1/'><img   src={`${process.env.REACT_APP_LINK_BACK_END}${typedata.bannerFeatures.data.attributes.url}`}></img></Link>
+                       <Link to='1/'><img  alt={typedata.bannerFeatures.data.attributes.alternativeText || ""} src={`${process.env.REACT_APP_LINK_BACK_END}${typedata.bannerFeatures.data.attributes.url}`}></img></Link>
                     </div>  
         </div>
     )
