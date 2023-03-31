@@ -10,6 +10,7 @@ import { addToCart, updateCartList } from "../../redux/cartSlice";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartOutlined from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
+import { getHeader } from "../../services/header";
 
 const Header = () => {
   const [dataHeader, setDataHeader] = useState([]);
@@ -20,9 +21,8 @@ const Header = () => {
     fetch(
       `${process.env.REACT_APP_API}/menu-headers?populate[menuheader][populate][0]=link`
     )
-      .then((res) => res.json())
-      .then((data) => {
-        setDataHeader(data.data);
+      .then((res) => {
+        setDataHeader(res.data.data);
       });
   }, []);
   useEffect(() => {
@@ -35,10 +35,10 @@ const Header = () => {
       <div className="header">
         <div className="header-menu store-container">
           <div className="left-header">
-            <a href="/"><img
+            <img
               src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279"
               alt=""
-            /></a>
+            />
           </div>
           <div className="right-header">
             <div className="right-header__line1">
@@ -104,7 +104,31 @@ const Header = () => {
         </div>
       </div>
       <div style={{ width: "100%", border: "1px solid #d4d4d4" }}></div>
-      <SubHeader data={dataHeader}></SubHeader>
+      <div className='subheader-hide'>
+        <SubHeader data={dataHeader}></SubHeader>
+      </div>
+      <div className="header-mobile row">
+        <div className="col-2" style={{position:'relative',left:'10px',top:'3px'}}><i class="fa fa-bars" style={{fontSize:'24px'}}></i></div>
+        <div className="col-8" >
+          <div style={{display:'flex',position:'relative'}}>
+            <img src="//theme.hstatic.net/1000026716/1000440777/14/logo-icon-01.svg?v=35343" alt="" style={{ width: '40px', height: '32px' }} className='header-logo__mobile'/>
+            <img src="//theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35343" alt="" className="header-logo__tablet"/>
+            <SearchHeader></SearchHeader>
+            <button className="header-search__button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div className="col-2">
+          <Link to="cart/">
+            <span className="cart">
+              <Badge badgeContent={cartItemCount} color="error">
+                <ShoppingCartOutlined />
+              </Badge>
+            </span>
+          </Link>
+        </div>
+      </div>
     </>
   );
 };
