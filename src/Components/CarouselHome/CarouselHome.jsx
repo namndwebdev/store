@@ -10,7 +10,7 @@ function CarouselHome() {
           getImgCarouselHome()
               .then(res => {
                 const listLink = []
-                    res.data.data.attributes.leftBanner.data.map((item) => {
+                    res.data.data.attributes.leftBanner.data.forEach((item) => {
                     let imgLink = `${process.env.REACT_APP_LINK_BACK_END}${item.attributes.url}`
                     listLink.push(imgLink)
                   })

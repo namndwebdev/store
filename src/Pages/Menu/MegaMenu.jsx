@@ -12,7 +12,7 @@ export default function MegaMenu() {
 
 
     useEffect(() => {
-        fetch('https://backoffice.nodemy.vn/api/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link&populate[3]=bannerFeatures')
+        fetch(`${process.env.REACT_APP_API}/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link&populate[3]=bannerFeatures`)
             .then((res) => res.json())
             .then((data) => {
                 SetDataMega(data.data);
@@ -47,7 +47,7 @@ export default function MegaMenu() {
                 }
             </ul >
             <div  className='content-70'>
-              { address =="/" ?<ContentMenu></ContentMenu>: null}  
+              { address ==="/" ?<ContentMenu></ContentMenu>: null}  
             </div> 
             {isShowMenuItem && <MenuItem typedata={typedata} />}
         </div>

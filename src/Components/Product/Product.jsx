@@ -19,15 +19,14 @@ function Product({ data }) {
     const salePercent = ((oldPrice - newPrice) / oldPrice) * 100;
     return `${Number.parseFloat(salePercent).toFixed(0)}%`;
   };
-  // console.log(data.attributes);
   return (
     <>
       <div className="col-6 col-xl-3 product-home" style={{ margin: 0 }}>
-        <LazyLoad once={true} placeholder={<img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
+        <LazyLoad once={true} placeholder={<img src={`${process.env.REACT_APP_LINK_BACK_END}${data.attributes.image.data[0].attributes.url}`}
           alt="">
         </img>} className="card card-item product-item">
           <div className="card-img-top">
-            <img src={`https://backoffice.nodemy.vn${data.attributes.image.data[0].attributes.url}`}
+            <img src={`${process.env.REACT_APP_LINK_BACK_END}${data.attributes.image.data[0].attributes.url}`}
               alt="">
             </img>
 

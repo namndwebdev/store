@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from "react";
 import {
-  UilNotes,
-  UilUserCircle,
-  UilTicket,
-  UilShoppingCart,
   UilSearch,
-  UilPhone,
-  UilYoutube,
-  UilUser,
-  UilArchway,
 } from "@iconscout/react-unicons";
 import "./header.css";
 import SubHeader from "./SubHeader";
 import { useDispatch, useSelector } from "react-redux";
 import SearchHeader from "./SearchHeader";
-import { addToCart, updateCartList } from "../../redux/cartSlice";
+import { updateCartList } from "../../redux/cartSlice";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartOutlined from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
+import { getHeader } from "../../services/header";
 
 const Header = () => {
   const [dataHeader, setDataHeader] = useState([]);
@@ -25,12 +18,10 @@ const Header = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch(
-      "https://backoffice.nodemy.vn/api/menu-headers?populate[menuheader][populate][0]=link"
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setDataHeader(data.data);
+    getHeader()
+      .then((res) => {
+        console.log(res);
+        setDataHeader(res.data.data);
       });
   }, []);
   useEffect(() => {
@@ -43,10 +34,10 @@ const Header = () => {
       <div className="header">
         <div className="header-menu store-container">
           <div className="left-header">
-            <a href="/"><img
+          <a href="/"><img
               src="https://theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35279"
               alt=""
-            /></a>
+            /></a> 
           </div>
           <div className="right-header">
             <div className="right-header__line1">
@@ -112,7 +103,31 @@ const Header = () => {
         </div>
       </div>
       <div style={{ width: "100%", border: "1px solid #d4d4d4" }}></div>
-      <SubHeader data={dataHeader}></SubHeader>
+      <div className='subheader-hide'>
+        <SubHeader data={dataHeader}></SubHeader>
+      </div>
+      <div className="header-mobile row">
+        <div className="col-2" style={{position:'relative',left:'10px',top:'3px'}}><i class="fa fa-bars" style={{fontSize:'24px'}}></i></div>
+        <div className="col-8" >
+          <div style={{display:'flex',position:'relative'}}>
+            <img src="//theme.hstatic.net/1000026716/1000440777/14/logo-icon-01.svg?v=35343" alt="" style={{ width: '40px', height: '32px' }} className='header-logo__mobile'/>
+            <img src="//theme.hstatic.net/1000026716/1000440777/14/logo.svg?v=35343" alt="" className="header-logo__tablet"/>
+            <SearchHeader></SearchHeader>
+            <button className="header-search__button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div className="col-2">
+          <Link to="cart/">
+            <span className="cart">
+              <Badge badgeContent={cartItemCount} color="error">
+                <ShoppingCartOutlined />
+              </Badge>
+            </span>
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.css'
 import ReactMarkdown from "react-markdown";
-import ProductBlogList from '../../Components/ProductBlogList/ProductBlogList';
 import { getBlogBySlug } from '../../services/blog';
 import { useParams } from 'react-router-dom';
 import RelatedArticles from './RelatedArticles';
@@ -16,7 +15,7 @@ export default function Blog() {
                 setBlog(res.data.data.attributes)
             })
 
-    }, [])
+    }, [slug])
 
     let content = String(blog.content)
     content = content.replaceAll("](/uploads", "](https://backoffice.nodemy.vn/uploads")

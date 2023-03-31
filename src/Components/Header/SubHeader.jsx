@@ -4,6 +4,7 @@ import {
 } from "@iconscout/react-unicons";
 import MegaMenu from "../../Pages/Menu/MegaMenu";
 import { useHref } from 'react-router-dom';
+import './header.css'
 
 const SubHeader = ({ data }) => {
   const [dataMega, SetDataMega] = useState([]);
@@ -13,7 +14,7 @@ const SubHeader = ({ data }) => {
 
   useEffect(() => {
     fetch(
-      "https://backoffice.nodemy.vn/api/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link"
+      `${process.env.REACT_APP_API}/dropdown-tabs?populate[0]=section&populate[1]=section.image&populate[2]=section.link`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -23,7 +24,7 @@ const SubHeader = ({ data }) => {
   
   return (
     <>
-      <div className="sub-header__background">
+      <div className="sub-header__background ">
         <div style={{ height: "10px" }}></div>
         <div className="sub-header store-container">
           <span
@@ -33,7 +34,7 @@ const SubHeader = ({ data }) => {
           >
             <UilBars></UilBars>Danh mục sản phẩm
           </span>
-          <span style={{display:'flex', flex:'1'}}>
+          <span className="sub-header__instruction" style={{display:'flex', flex:'1'}}>
             {data &&
               data.length > 0 &&
               data[2].attributes.menuheader.link.map((item, index) => {

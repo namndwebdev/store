@@ -3,7 +3,7 @@ import "./ProductDetail.css";
 import ReactMarkdown from "react-markdown";
 import { Col, Row, Typography } from "antd";
 
-export default function ProductDetail_infor({ description, cpu, ram }) {
+export default function ProductDetailInfor({ description, cpu, ram }) {
 
   let result2 = String(description)
   result2 = result2.replaceAll("](/uploads", "](https://backoffice.nodemy.vn/uploads")

@@ -6,7 +6,7 @@ export default function ProductBlogList() {
   const [blogList, setblogList] = useState([])
   const [pageSize, setpageSize] = useState([])
   useEffect(() => {
-    fetch(`https://backoffice.nodemy.vn/api/blogs?pagination[page]=1&pagination[pageSize]=4&populate=*`)
+    fetch(`${process.env.REACT_APP_API}/blogs?pagination[page]=1&pagination[pageSize]=4&populate=*`)
       .then((res) => res.json())
       .then((res) => {
         setblogList(res.data);
@@ -15,7 +15,7 @@ export default function ProductBlogList() {
   }, [])
 
   useEffect(() => {
-    fetch(`https://backoffice.nodemy.vn/api/blogs?populate=*`)
+    fetch(`${process.env.REACT_APP_API}/blogs?populate=*`)
       .then((res) => res.json())
       .then((res) => {
         setpageSize(res.data);
@@ -23,7 +23,7 @@ export default function ProductBlogList() {
   }, [])
 
   const handleChangePage = (page, pageSize) => {
-    fetch(`https://backoffice.nodemy.vn/api/blogs?pagination[page]=${page}&pagination[pageSize]=4&populate=*`)
+    fetch(`${process.env.REACT_APP_API}/blogs?pagination[page]=${page}&pagination[pageSize]=4&populate=*`)
       .then((res) => res.json())
       .then((res) => {
         setblogList(res.data);
@@ -41,7 +41,7 @@ export default function ProductBlogList() {
           {blogList.map((item) => {
             return <div className='row' key={item.id}>
               <div className='col-12 pd-0 col-lg-4 img-fluid overflow-hidden'>
-                <img style={{width:300,height:300}}src={`https://backoffice.nodemy.vn${item.attributes.image.data.attributes.url}`} alt={`https://backoffice.nodemy.vn${item.attributes.image.data.attributes.url}`}></img>
+                <img style={{width:300,height:300}}src={`${process.env.REACT_APP_LINK_BACK_END}${item.attributes.image.data.attributes.url}`} alt={`${process.env.REACT_APP_LINK_BACK_END}${item.attributes.image.data.attributes.url}`}></img>
               </div>
               <div className='col-12 col-lg-8 pt-2 pt-lg-5'>
                 <h2 className='fw-bold text-danger blog-list-item__tittle'>{item?.attributes?.title}</h2>

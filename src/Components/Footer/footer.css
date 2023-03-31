@@ -59,5 +59,13 @@
 }
 
 .shop-system:hover {
-    color: red;
+    color: #f45b4f;
+}
+
+.suggest-item a{
+    color: #428bca; 
+}
+
+.suggest-item a:hover {
+    color: #f45b4f;
 }
