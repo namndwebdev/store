@@ -1,4 +1,4 @@
 import axios from 'axios'
-axios.defaults.baseURL = 'https://backoffice.nodemy.vn/api';
+axios.defaults.baseURL = `${process.env.REACT_APP_API}`;
 
 export default axios

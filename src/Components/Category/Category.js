@@ -13,7 +13,6 @@ export default function Category() {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res)
         setProductList(res.data);
       });
   }, []);

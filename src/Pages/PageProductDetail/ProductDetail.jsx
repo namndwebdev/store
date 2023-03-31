@@ -5,7 +5,7 @@ import NavBreadcrums from "../../Components/NavBreadcrums/NavBreadcrums";
 import { useParams, Link } from 'react-router-dom'
 import ProductDetailInfor from "./ProductDetail_infor";
 import CarouselGlobal from "../../Components/Carousel/CarouselGlobal";
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addToCart } from "../../redux/cartSlice";
 import { getProductBySlug } from '../../services/product'
 const { Text } = Typography;
@@ -20,7 +20,6 @@ export const checkObjectKeys = (obj, keys) => {
 }
 export default function ProductDetail() {
   const dispatch = useDispatch()
-  const cart = useSelector(state => state.cart)
   let { slug } = useParams()
   let [product, setProduct] = useState({}) //(null)
   let [imageList, setImageList] = useState([])
@@ -53,8 +52,7 @@ export default function ProductDetail() {
         })
         setImageList(listLink)
       })
-  }, [])
-  console.log(product);
+  }, [slug])
   return <>
     {/* BreadCrumbs */}
     {checkResult && product ? <NavBreadcrums nameProduct={product.name} nameBrand={product.idBrand && product.idBrand.data.attributes.name} /> : null}

@@ -10,7 +10,7 @@ function List({ dataList, inputValue }) {
           {inputValue && (
             <div className="header-search-content">
               <img
-                src={`https://backoffice.nodemy.vn${item.image?.data[0].attributes.url}`}
+                src={`${process.env.REACT_APP_LINK_BACK_END}${item.image?.data[0].attributes.url}`}
                 alt=""
               />
               <p className="input-content">{item.attributes.name}</p>

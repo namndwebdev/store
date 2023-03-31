@@ -3,11 +3,11 @@ import "./ProductList.css";
 import Product from "../Product/Product";
 import { Pagination } from "antd"
 import SkeletonLoad from "./SkeletonLoad";
-import { getProductByCategory, getProductFilterSlug } from "../../services/product";
+import { getProductByCategory } from "../../services/product";
 const ProductList = (dataListProduct) => {
   const [dataList, setDataList] = useState()
   const [pageSize, setpageSize] = useState([])
-  const test = (dataListProduct.dataListProduct)
+  const listCateGoryFromProduct = (dataListProduct.dataListProduct) || []
   function getListCategoriesFromListProduct(e) {
     return e.map((item) => {
       return item.attributes.idCategories ? item.attributes.idCategories.data.map((item) => {
@@ -15,9 +15,9 @@ const ProductList = (dataListProduct) => {
       }) : []
     })
   }
-  const array = getListCategoriesFromListProduct(test)
+  const array = getListCategoriesFromListProduct(listCateGoryFromProduct)
   const array2 = new Set(array.flat().filter(Boolean))
-  let url = 'https://backoffice.nodemy.vn/api/products?'
+  let url = `${process.env.REACT_APP_API}/products?`
   function getProductInCategories5Latest(array2) {
     array2.forEach((item, index) => {
       return url += `filters[idCategories][slug][$contains]=${item}&`

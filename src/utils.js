@@ -3,5 +3,4 @@ const convertToVnd = (price) => {
     style: "currency",
     currency: "VND",
   });
-  console.log("Việt Nam đồng: " + VND.format(price));
 };

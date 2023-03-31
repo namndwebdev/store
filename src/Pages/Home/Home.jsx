@@ -7,7 +7,7 @@ export default function Home() {
   let [dataListProduct, setDataListProduct] = useState([]);
 
   useEffect(() => {
-    fetch(`https://backoffice.nodemy.vn/api/products?populate=*`)
+    fetch(`${process.env.REACT_APP_API}/products?populate=*`)
       .then((res) => res.json())
       .then((res) => {
         setDataListProduct(res.data);
