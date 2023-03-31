@@ -8,18 +8,21 @@
 }
 .blog-body{
     display:flex;
+    flex-direction: column;
     margin-top: 20px;
 }
 .blog-content {
-  width: 60%;
+  width: 100%;
  
 }
+.blog-content .contents p img {
+margin: 10px auto;
+}
 .tab-game{
-    flex: 1;
-    width: 40%;
+
+    width: 100%;
     height: 100%;
     display: inline-block;
-    padding-left: 30px;
    
 }
 .box-game{
@@ -238,3 +241,67 @@
 .related-posts .posts .post{
     margin-left: 5px;
 }
+/*  article css */
+.articles{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #a74dec;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.related-articles {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .related-articles h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .related-articles .article {
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 0 5px;
+    margin-bottom: 30px;
+    border: 1px solid #d7cfcf;
+    border-radius: 5px;
+  }
+  
+  .related-articles .article img {
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .related-articles .article h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .related-articles .article p {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+ 

@@ -3,31 +3,13 @@ import "./CarouselGlobal.css";
 import Icon, { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { React } from "react";
 
-const PreviousBtn = (props) => {
-  // console.log(props);
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-      <LeftOutlined style={{ color: "blue", fontSize: "30px" }} />
-    </div>
-  );
-};
-const NextBtn = (props) => {
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-      <RightOutlined style={{ color: "blue", fontSize: "30px" }} />
-    </div>
-  );
-};
-
 export default function CarouselVer2({ hasImage = true, data, ...props }) {
 
   let carouselHome = <Slider
     autoplay
     autoplaySpeed={1500}
     dots
-    initialSlide={1}
+    initialSlide={0}
     infinite
   >
     {data && data.map((item) => (
@@ -38,10 +20,10 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
   </Slider>
 
   let carouselDetail = <Slider
-    // autoplay
+    autoplay
     autoplaySpeed={1500}
     dots
-    initialSlide={1}
+    initialSlide={0}
     infinite
     customPaging={(i) => {
       return (
@@ -62,7 +44,7 @@ export default function CarouselVer2({ hasImage = true, data, ...props }) {
   >
     {data && data.map((item) => (
       <div key={Math.random()}  >
-        <img src={item} alt="" style={{ width: "100%", height:"100%" }} />
+        <img src={item} alt="" style={{ width: "100%", height:"100%", borderRadius:"5px" }} />
       </div>
     ))}
   </Slider>

@@ -1,7 +1,6 @@
 import { Layout, Space } from 'antd';
-import MegaMenu from './MegaMenu';
-import ContentMenu from './ContentMenu';
 import FooterMenu from './FooterMenu';
+import MegaMenu from './MegaMenu';
 const { Header, Footer, Sider, Content } = Layout;
 
 const contentStyle = {
@@ -25,13 +24,10 @@ export default function Baner() {
     }}
     size={[0, 48]}
   >
-    <Layout className='store-container'>
-      <Layout>
-        <Sider style={siderStyle}><MegaMenu></MegaMenu></Sider>
-        <Content style={contentStyle}><ContentMenu></ContentMenu></Content>
-      </Layout>
-      <Footer style={footerStyle}><FooterMenu></FooterMenu></Footer>
-    </Layout>
+    <div className='store-container'>
+      <MegaMenu></MegaMenu>
+      <FooterMenu></FooterMenu>
+    </div>
   </Space>
 
 

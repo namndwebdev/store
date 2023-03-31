@@ -1,29 +1,23 @@
+import ProductBlogList from "../../Components/ProductBlogList/ProductBlogList";
 import ProductList from "../../Components/ProductList/ProductList";
-import { useState } from "react";
-import MegaMenu from "../Menu/MegaMenu";
-import Header from "../../Components/Header/Header";
-import Breadcrumbs from "../../Components/NavBreadcrums/NavBreadcrums";
 import Baner from "../Menu/Baner";
-import SubHeader from "../../Components/Header/SubHeader";
-import { useEffect } from "react";
-import FooterMenu from "../Menu/FooterMenu";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  let [data, setData] = useState([]);
+  let [dataListProduct, setDataListProduct] = useState([]);
 
   useEffect(() => {
     fetch(`https://backoffice.nodemy.vn/api/products?populate=*`)
       .then((res) => res.json())
       .then((res) => {
-        setData(res.data);
+        setDataListProduct(res.data);
       });
   }, []);
-  // console.log(data);
   return (
     <>
       <Baner></Baner>
-      <ProductList dataList={data}></ProductList>
-      <ProductList dataList={data}></ProductList>
+      <ProductList dataListProduct={dataListProduct}></ProductList>
+      <ProductBlogList></ProductBlogList>
     </>
   );
 }

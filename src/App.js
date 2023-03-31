@@ -19,10 +19,10 @@ function App() {
           <Route path="product/:slug" element={<ProductDetail />} />
           <Route path="checkout/" element={<Checkout />} />
           <Route path="checkout/thank/" element={<CheckoutThank></CheckoutThank>} />
-          <Route path="category/:catId" element={<Category></Category>} />
-          <Route path="cart/" element={<Cart />} />         
+          <Route path="collections/:name" element={<Category></Category>} />
+          <Route path="cart/" element={<Cart />} />
         </Route>
-        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/blogs/:slug" element={<Blog/>}/>
       </Routes>
     </div>
   );

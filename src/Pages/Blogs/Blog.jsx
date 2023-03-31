@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.css'
 import ReactMarkdown from "react-markdown";
+import ProductBlogList from '../../Components/ProductBlogList/ProductBlogList';
+import { getBlogBySlug } from '../../services/blog';
+import { useParams } from 'react-router-dom';
+import RelatedArticles from './RelatedArticles';
+
 export default function Blog() {
+    
+    let { slug } = useParams()
     const [blog, setBlog] = useState([])
     useEffect(() => {
-        fetch(`https://backoffice.nodemy.vn/api/blogs/26`)
-            .then(res => res.json())
-            .then(data => {
-                setBlog(data.data.attributes)
+        getBlogBySlug(slug)
+            .then(res => {
+                setBlog(res.data.data.attributes)
             })
 
     }, [])
+
     let content = String(blog.content)
     content = content.replaceAll("](/uploads", "](https://backoffice.nodemy.vn/uploads")
-
     return <>
         <div className='Blogs-page'>
             <div class="input-container blog-container">
@@ -25,7 +31,9 @@ export default function Blog() {
             <div className='blog-header'>
                 <div className='blog-navbar blog-container'>
                     <div className='navbar-logo'>
-                        <img src="https://gstatic.gvn360.com/2021/12/icon_GVN360-300x300.png" alt="logo!" />
+                        <a href="/">
+                            <img src="https://gstatic.gvn360.com/2021/12/icon_GVN360-300x300.png" alt="logo!" />
+                        </a>
                     </div>
                     <ul className='navbar-menu'>
                         <li>Trang chủ</li>
@@ -50,39 +58,26 @@ export default function Blog() {
                         <p>Share me</p>
                     </button>
                     <div className='contents' >
-                        <ReactMarkdown>{content}</ReactMarkdown>
+                       {content ? <ReactMarkdown>{content}</ReactMarkdown>:"Bài viết không tồn tại" } 
                     </div>
                     <div className="related-posts">
-                        <h3>RELATED ARTICLES</h3>
-                        <div className="posts">
-                            <div className="post">
-                                <img src="https://gstatic.gvn360.com/2023/03/4JETjErxBnB2jNSwnrLkyQ-1200-80-218x150.jpg" alt="" />
-                            </div>
-                            <div className="post">
-                                <img src="https://gstatic.gvn360.com/2023/03/Khung-1-5-1-218x150.jpg" alt="" />
-                            </div>
-                            <div className="post">
-                                <img src="https://gstatic.gvn360.com/2023/03/Khung-1-Recovered-2-218x150.jpg" alt="" />
-                            </div>
-                </div>
-
                     </div>
                 </div>
                 <div className="tab-game">
-                    <div className='box-game'>TOP GAME</div>
+                    <RelatedArticles data={blog.likedBy}/>
                 </div>
             </div>
             <div className="blog-footer ">
                 <div className='footer-main blog-container'>
-                <div className="footer-logo">
-                    <img style={{width:"90%"}} src="https://gstatic.gvn360.com/2021/09/GVN360-544x180-01-300x99-1.png" alt="" />
-                </div>
-                <div className="footer-about">
-                    <p>ABOUT US</p>
-                    <p>GVN360 - GEARVN NEWS</p>  
-                    <p>Liên hệ chúng tôi: tutl@gearvn.com</p> 
-                    <p>Contact us:<span style={{color:"#dd3333"}}>tutl@gearvn.com</span></p>
-                </div>
+                    <div className="footer-logo">
+                        <img style={{ width: "90%" }} src="https://gstatic.gvn360.com/2021/09/GVN360-544x180-01-300x99-1.png" alt="" />
+                    </div>
+                    <div className="footer-about">
+                        <p>ABOUT US</p>
+                        <p>GVN360 - GEARVN NEWS</p>
+                        <p>Liên hệ chúng tôi: b78@nodemy.com</p>
+                        <p>Contact us:<span style={{ color: "#dd3333" }}>b78@nodemy.com</span></p>
+                    </div>
                 </div>
             </div>
         </div>

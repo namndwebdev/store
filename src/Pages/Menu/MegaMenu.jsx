@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react'
 import './MegaMenu.css'
 import MenuItem from './MenuItem'
 import ContentMenu from './ContentMenu'
+import { useHref } from 'react-router-dom';
 export default function MegaMenu() {
     const [dataMega, SetDataMega] = useState([])
     const [isShowMenuItem, setIsShowMenuItem] = useState(false)
     const [typedata, setTypeData] = useState(null)
     const [idactive, SetIdActive] = useState(null)
+    const address = useHref();
 
 
     useEffect(() => {
@@ -45,9 +47,8 @@ export default function MegaMenu() {
                 }
             </ul >
             <div  className='content-70'>
-                <ContentMenu></ContentMenu>
+              { address =="/" ?<ContentMenu></ContentMenu>: null}  
             </div> 
-
             {isShowMenuItem && <MenuItem typedata={typedata} />}
         </div>
     </>

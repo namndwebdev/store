@@ -249,3 +249,9 @@
 .sub-header * {
   font-family: inherit;
 }
+.Category-sub-header{
+    position: absolute;
+    z-index: 10000;
+    background-color: #f1f0f1;
+    left: 75px;
+}
