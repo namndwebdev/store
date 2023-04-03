@@ -6,7 +6,6 @@ import axios from "axios";
 const SearchHeader = () => {
   const [inputText, setInputText] = useState("");
   const [dataSearch, setDataSearch] = useState([]);
-
   const debounceTextSearchValue = useDebounce(inputText, 1000);
 
   useEffect(() => {
