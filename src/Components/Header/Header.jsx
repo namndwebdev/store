@@ -20,7 +20,6 @@ const Header = () => {
   useEffect(() => {
     getHeader()
       .then((res) => {
-        console.log(res);
         setDataHeader(res.data.data);
       });
   }, []);

@@ -148,3 +148,14 @@
     display: none !important;
   }
 }
+
+
+@media screen and (max-width: 500px) {
+  .wrap-list-megamenu ul {
+    display: none;
+  }
+  .wrap-list-megamenu .content-70{
+    width: 100%;
+    max-width: 100%
+  }
+}

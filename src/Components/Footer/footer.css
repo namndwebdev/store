@@ -69,3 +69,26 @@
 .suggest-item a:hover {
     color: #f45b4f;
 }
+
+@media screen and (max-width: 500px) {
+    .footer .footer-promotion__form {
+        margin:auto;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .left-footer span {
+        font-size: 13px;
+    }
+    .footer .footer-promotion__form .footer-register{
+        margin-left: unset !important;
+        width: 100%;
+    }
+
+    .footer .footer-promotion__form .footer-register *{
+        height: 30px;
+        width: 40%;
+        margin:10px;
+    }
+}
