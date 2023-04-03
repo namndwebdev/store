@@ -322,7 +322,7 @@
     }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width: 500px) {
     .header-mobile {
         display: flex;
     }
@@ -389,4 +389,14 @@
         justify-content: center;
         align-items: center;
     }
+
+    .header-mobile{
+        padding: 20px 10px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+  
 }

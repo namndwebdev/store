@@ -55,7 +55,7 @@ export default function Cart(){
                 {list.map((item,index)=>{
                   return    <tr key={index} style={{height:'150px'}}>
                             <td style={{width:'20%'}} className="Page-Cart-Body-img">
-                            <img style={{width:'100%',objectFit:'contain',height:'150px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item.image.data[0].attributes.url}`} alt=''></img>
+                            <img style={{width:'100%',objectFit:'contain',height:'150px'}} src={`${process.env.REACT_APP_LINK_BACK_END}${item?.image?.data[0]?.attributes?.url}`} alt=''></img>
                             </td>
                             <td  className='Page-Cart-Body-NameItem'>
                                 <span>{item.name}</span>
@@ -70,7 +70,8 @@ export default function Cart(){
                             <button  onClick={function ClickToRemove(){
                                 list.splice(index,1)
                                 setList([...list])
-                                dispatch(updateCartList(list))
+                                localStorage.setItem('cart', JSON.stringify(list));
+                                // dispatch(updateCartList(list))
                                 
                                 
                             }} ><i class="bi bi-trash3-fill"></i></button>

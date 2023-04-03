@@ -4,7 +4,6 @@ import { Pagination } from 'antd';
 
 
 export default function RelatedArticles({ data }) {
-  // const [list,setList] = useState(dataAPI)
   const list = [data]
   const [listBlog, setListBlog] = useState([])
   function getListCategoriesFromListBLog() {
@@ -20,11 +19,10 @@ export default function RelatedArticles({ data }) {
 
   function getBlogInCategories5Latest(listCategoriesBlog) {
     let url = `${process.env.REACT_APP_API}/blogs?`
-    let lastUrl = ''
     listCategoriesBlog.forEach((item) => {
       url += `filters[likedBy][username][$contains]=${item}&`
     })
-    return lastUrl = url + 'sort[0]=updatedAt%3Adesc&populate=*'
+    return url + 'sort[0]=updatedAt%3Adesc&populate=*'
   }
   const lastUrl = getBlogInCategories5Latest(listCategoriesBlog)
 

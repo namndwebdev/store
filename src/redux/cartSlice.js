@@ -10,11 +10,11 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, { payload }) => {
-      const addItem = state.cartItem.find(item => item.name === payload.name)
-      const cartItem = addItem ? state.cartItem.map(x => x.name === addItem.name ? { ...x, quantity: x.quantity + 1 } : x) : [...state.cartItem, { ...payload, quantity: Number(1) }]
+    addToCart: (state, actions ) => {
+      const addItem = state.cartItem.find(item => item.name === actions.payload.name)
+      const cartItem = addItem ? state.cartItem.map(x => x.name === addItem.name ? { ...x, quantity: x.quantity + 1 } : x) : [...state.cartItem, { ...actions.payload, quantity: Number(1) }]
       localStorage.setItem('cart', JSON.stringify(cartItem)); // Lưu giỏ hàng vào LocalStorage
-      window.location.href = '/cart';
+      window.location='/cart'
       return { ...state, cartItem }
     },
     updateCartList: (state, { payload }) => {
