@@ -71,11 +71,11 @@
     font-weight: bold;
 }
 
-/* .header .left-header {
+.header .left-header {
     margin-top: 5px;
-    width: 100%;
+    width: 170px;
     height: 52.05px;
-} */
+}
 
 .header {
     font-family: 'Roboto';
